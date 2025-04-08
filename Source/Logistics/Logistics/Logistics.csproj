@@ -53,18 +53,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Building\Building_LogisticsSystemController.cs" />
     <Compile Include="Building\Building_LogisticsInterfaceBase.cs" />
     <Compile Include="CompProperties\CompProperties_InputInterface.cs" />
+    <Compile Include="CompProperties\CompProperties_LogisticsContainer.cs" />
     <Compile Include="CompProperties\CompProperties_OutputInterface.cs" />
+    <Compile Include="Patch\JobDriver_HaulToCell\MakeNewToils.cs" />
+    <Compile Include="ThingComp\Comp_LogisticsContainer.cs" />
     <Compile Include="ThingComp\Comp_OutputInterface.cs" />
     <Compile Include="ThingComp\Comp_InputInterface.cs" />
     <Compile Include="Logistics.cs" />
     <Compile Include="Patch\Toils_Goto\GotoThing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoomRoleWorker\RoomRoleWorker_Warehouse.cs" />
+    <Compile Include="Util\Electronics.cs" />
+    <Compile Include="Util\LogisticsSystem.cs" />
+    <Compile Include="Util\Toils.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Util\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

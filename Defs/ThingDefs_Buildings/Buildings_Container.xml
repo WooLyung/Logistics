@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ThingDef ParentName="LogisticsContainerBase">
+        <defName>SmallLogisticsContainer</defName>
+        <label>small logistics container</label>
+        <description>A container connected to the logistics system for item storage. Items stored in
+            the logistics container can be input and output through devices such as logistics
+            interfaces within the same logistics system. Can store up to 2 stacks of items.</description>
+        <graphicData>
+            <texPath>Things/Building/SmallLogisticsContainer</texPath>
+        </graphicData>
+        <statBases>
+            <MaxHitPoints>50</MaxHitPoints>
+            <Mass>4</Mass>
+        </statBases>
+        <researchPrerequisites>
+            <li>BasicLogistics</li>
+        </researchPrerequisites>
+        <building>
+            <maxItemsInCell>2</maxItemsInCell>
+        </building>
+    </ThingDef>
+</Defs>

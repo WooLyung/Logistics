@@ -27,6 +27,7 @@
     </ThingDef>
 
     <ThingDef ParentName="LogisticsInterfaceBase" Name="LogisticsInnerInterfaceBase" Abstract="True">
+        <rotatable>false</rotatable>
         <graphicData>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>(0.8, 0.8)</drawSize>
@@ -44,11 +45,116 @@
         </graphicData>
         <passability>PassThroughOnly</passability>
         <pathCost>30</pathCost>
-        <blockWind>true</blockWind>
         <fillPercent>0.4</fillPercent>
         <statBases>
             <Mass>6</Mass>
             <Flammability>0.5</Flammability>
         </statBases>
+    </ThingDef>
+
+    <ThingDef ParentName="LogisticsInterfaceBase" Name="LogisticsWallInterfaceBase" Abstract="True">
+        <graphicData>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(1.0, 1.0)</drawSize>
+            <damageData>
+                <rect>(0.234375,0,0.515625,0.984375)</rect>
+                <cornerTL>Damage/Corner</cornerTL>
+                <cornerTR>Damage/Corner</cornerTR>
+                <cornerBL>Damage/Corner</cornerBL>
+                <cornerBR>Damage/Corner</cornerBR>
+            </damageData>
+        </graphicData>
+        <fillPercent>1.0</fillPercent>
+        <building>
+            <canPlaceOverWall>true</canPlaceOverWall>
+            <isEdifice>true</isEdifice>
+        </building>
+        <passability>Impassable</passability>
+        <staticSunShadowHeight>1.0</staticSunShadowHeight>
+        <blockWind>true</blockWind>
+        <coversFloor>true</coversFloor>
+        <blockLight>true</blockLight>
+        <blockWeather>true</blockWeather>
+        <castEdgeShadows>true</castEdgeShadows>
+        <canOverlapZones>false</canOverlapZones>
+        <statBases>
+            <Mass>6</Mass>
+            <Flammability>0.5</Flammability>
+        </statBases>
+        <placeWorkers>
+            <li>PlaceWorker_Vent</li>
+        </placeWorkers>
+    </ThingDef>
+
+    <ThingDef ParentName="BuildingBase" Name="LogisticsContainerBase" Abstract="True">
+        <size>(1,1)</size>
+        <thingClass>Building_Storage</thingClass>
+        <category>Building</category>
+        <designationCategory>LogisticsCategory</designationCategory>
+        <useHitPoints>true</useHitPoints>
+        <selectable>true</selectable>
+        <altitudeLayer>Building</altitudeLayer>
+        <blockWind>true</blockWind>
+        <passability>PassThroughOnly</passability>
+        <pathCost>30</pathCost>
+        <fillPercent>0.4</fillPercent>
+        <inspectorTabs>
+            <li>ITab_Storage</li>
+        </inspectorTabs>
+        <surfaceType>Item</surfaceType>
+        <canOverlapZones>false</canOverlapZones>
+        <building>
+            <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
+            <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+            <storageGroupTag>LogisticsContainer</storageGroupTag>
+            <blueprintClass>Blueprint_Storage</blueprintClass>
+            <fixedStorageSettings>
+                <filter>
+                    <disallowNotEverStorable>true</disallowNotEverStorable>
+                    <categories>
+                        <li>Root</li>
+                    </categories>
+                    <disallowedCategories>
+                        <li>Chunks</li>
+                        <li>Plants</li>
+                        <li>Buildings</li>
+                    </disallowedCategories>
+                    <disallowedThingDefs MayRequire="Ludeon.RimWorld.Biotech">
+                        <li MayRequire="Ludeon.RimWorld.Biotech">Wastepack</li>
+                    </disallowedThingDefs>
+                    <specialFiltersToDisallow>
+                        <li>AllowLargeCorpses</li>
+                    </specialFiltersToDisallow>
+                </filter>
+            </fixedStorageSettings>
+            <defaultStorageSettings>
+                <priority>Preferred</priority>
+                <filter>
+                    <categories>
+                        <li>Foods</li>
+                        <li>Manufactured</li>
+                        <li>ResourcesRaw</li>
+                        <li>Items</li>
+                        <li>Weapons</li>
+                        <li>Apparel</li>
+                        <li>BodyParts</li>
+                    </categories>
+                </filter>
+            </defaultStorageSettings>
+        </building>
+        <graphicData>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(1.0, 1.0)</drawSize>
+            <damageData>
+                <rect>(0.234375,0,0.515625,0.984375)</rect>
+                <cornerTL>Damage/Corner</cornerTL>
+                <cornerTR>Damage/Corner</cornerTR>
+                <cornerBL>Damage/Corner</cornerBL>
+                <cornerBR>Damage/Corner</cornerBR>
+            </damageData>
+        </graphicData>
+        <comps>
+            <li Class="Logistics.CompProperties_LogisticsContainer" />
+        </comps>
     </ThingDef>
 </Defs>

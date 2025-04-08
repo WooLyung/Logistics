@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
     <BasicLogistics.label>기초 물류</BasicLogistics.label>
-    <BasicLogistics.description>물류 시스템을 위한 기초적인 장치를 연구합니다. 물류 시스템은 물류 시스템 컨트롤러를 중심으로 컨테이너와 인터페이스가 지하로 연결되어 구성됩니다.</BasicLogistics.description>
+    <BasicLogistics.description>물류 시스템을 위한 기초적인 장치를 연구합니다. 물류 시스템은 물류 시스템 제어기를 중심으로 컨테이너와 인터페이스가 지하로 연결되어 구성됩니다.</BasicLogistics.description>
 
     <AdvancedLogistics.label>심화 물류</AdvancedLogistics.label>
     <AdvancedLogistics.description>더 효율적이고 개선된 물류 시스템을 구축합니다.</AdvancedLogistics.description>
@@ -41,4 +41,7 @@
     
     <LogisticsInputPort.label>물류 투입구</LogisticsInputPort.label>
     <LogisticsInputPort.description>인접한 물류 시스템으로 물건을 투입시키는 장치를 연구합니다.</LogisticsInputPort.description>
+    
+    <VerticalLogisticsLift.label>수직 물류 승강기</VerticalLogisticsLift.label>
+    <VerticalLogisticsLift.description>승강기를 이용해 좁은 공간에 밀집된 물류를 보관합니다.</VerticalLogisticsLift.description>
 </LanguageData>

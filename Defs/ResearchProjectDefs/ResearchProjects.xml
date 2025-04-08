@@ -9,7 +9,7 @@
         <baseCost>2000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>0.00</researchViewX>
-        <researchViewY>0.00</researchViewY>
+        <researchViewY>1.40</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <prerequisites>
@@ -24,7 +24,7 @@
         <baseCost>3000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>2.00</researchViewX>
-        <researchViewY>0.00</researchViewY>
+        <researchViewY>1.40</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
@@ -42,7 +42,7 @@
         <baseCost>4000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>4.00</researchViewX>
-        <researchViewY>0.00</researchViewY>
+        <researchViewY>1.40</researchViewY>
         <techLevel>Spacer</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
@@ -60,7 +60,7 @@
         <baseCost>1000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>1.00</researchViewX>
-        <researchViewY>1.40</researchViewY>
+        <researchViewY>2.80</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <prerequisites>
@@ -75,7 +75,7 @@
         <baseCost>1500</baseCost>
         <tab>Logistics</tab>
         <researchViewX>2.00</researchViewX>
-        <researchViewY>0.70</researchViewY>
+        <researchViewY>2.10</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <prerequisites>
@@ -90,7 +90,7 @@
         <baseCost>2000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>3.00</researchViewX>
-        <researchViewY>1.40</researchViewY>
+        <researchViewY>2.80</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
@@ -109,7 +109,7 @@
         <baseCost>1200</baseCost>
         <tab>Logistics</tab>
         <researchViewX>1.00</researchViewX>
-        <researchViewY>2.10</researchViewY>
+        <researchViewY>0.70</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <prerequisites>
@@ -124,7 +124,7 @@
         <baseCost>1200</baseCost>
         <tab>Logistics</tab>
         <researchViewX>1.00</researchViewX>
-        <researchViewY>2.80</researchViewY>
+        <researchViewY>0.00</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <prerequisites>
@@ -139,7 +139,7 @@
         <baseCost>2000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>3.00</researchViewX>
-        <researchViewY>0.70</researchViewY>
+        <researchViewY>2.10</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
@@ -157,7 +157,7 @@
         <baseCost>2200</baseCost>
         <tab>Logistics</tab>
         <researchViewX>3.00</researchViewX>
-        <researchViewY>2.10</researchViewY>
+        <researchViewY>0.70</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
@@ -176,7 +176,7 @@
         <baseCost>4000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>5.00</researchViewX>
-        <researchViewY>0.70</researchViewY>
+        <researchViewY>2.10</researchViewY>
         <techLevel>Spacer</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
@@ -195,7 +195,7 @@
         <baseCost>4000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>5.00</researchViewX>
-        <researchViewY>2.10</researchViewY>
+        <researchViewY>0.70</researchViewY>
         <techLevel>Spacer</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
@@ -208,13 +208,32 @@
     </ResearchProjectDef>
 
     <ResearchProjectDef>
-        <defName>AutoTransferNode</defName>
-        <label>auto transfer node</label>
-        <description>Automatically transfers nearby items into the connected logistics system..</description>
+        <defName>VerticalLogisticsLift</defName>
+        <label>vertical logistics lift</label>
+        <description>Stores densely packed logistics items using a lift system in a compact space.</description>
         <baseCost>4000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>5.00</researchViewX>
-        <researchViewY>1.40</researchViewY>
+        <researchViewY>2.80</researchViewY>
+        <techLevel>Spacer</techLevel>
+        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+        <requiredResearchFacilities>
+            <li>MultiAnalyzer</li>
+        </requiredResearchFacilities>
+        <prerequisites>
+            <li>LogisticsNetwork</li>
+            <li>MassiveLogisticsSystem</li>
+        </prerequisites>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
+        <defName>AutoTransferNode</defName>
+        <label>auto transfer node</label>
+        <description>Automatically transfers nearby items into the connected logistics system.</description>
+        <baseCost>4000</baseCost>
+        <tab>Logistics</tab>
+        <researchViewX>5.00</researchViewX>
+        <researchViewY>0.00</researchViewY>
         <techLevel>Spacer</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
@@ -232,7 +251,7 @@
         <baseCost>2500</baseCost>
         <tab>Logistics</tab>
         <researchViewX>3.00</researchViewX>
-        <researchViewY>2.80</researchViewY>
+        <researchViewY>0.00</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>

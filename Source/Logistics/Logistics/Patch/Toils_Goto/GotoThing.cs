@@ -1,7 +1,9 @@
 ﻿using HarmonyLib;
+using Logistics.Util;
 using RimWorld;
 using System.Linq;
 using System.Reflection;
+using UnityEngine;
 using Verse;
 using Verse.AI;
 
@@ -34,42 +36,50 @@ namespace Logistics
 
                 if (thing != null)
                 {
-                    if (thing.def.EverHaulable)
+                    if (thing.IsInContainer())
                     {
                         Room room = thing.GetRoom();
-                        var interfaces = room.ContainedAndAdjacentThings
-                            .Where(i => 
-                                i.HasComp<Comp_OutputInterface>() 
-                                && i.Spawned
-                                && !i.IsForbidden(actor)
-                                && actor.CanReserve(thing))
-                            .ToList();
+                        var closest = LogisticsSystem.FindAvailableClosestOutputInterfaceSingle(thing.GetRoom(), actor);
 
-                        var closeInterface = interfaces
-                            .OrderBy(i => actor.Position.DistanceTo(i.Position))
-                            .FirstOrDefault();
-
-                        if (!interfaces.Empty() && actor.Position.DistanceTo(closeInterface.SpawnedParentOrMe.Position) < actor.Position.DistanceTo(thing.Position))
+                        if (closest != null)
                         {
-                            thing = closeInterface;
-                            dest = thing;
-                            actor.Reserve(thing, actor.jobs.curJob);
-                            toil.defaultCompleteMode = ToilCompleteMode.Never;
-                            useInterface = true;
+                            PawnPath path1 = LogisticsSystem.FindPath(actor, closest.Position);
+                            PawnPath path2 = LogisticsSystem.FindPath(actor, thing.Position);
+                            float cost1 = path1.TotalCost;
+                            float cost2 = path2.TotalCost;
+                            path1.ReleaseToPool();
+                            path2.ReleaseToPool();
 
-                            int postArrivalWait = ((CompProperties_OutputInterface)thing.TryGetComp<Comp_OutputInterface>().props).outputTick;
-                            int waitCounter = -1;
-                            toil.tickAction = delegate
+                            if (cost1 < cost2)
                             {
-                                if (waitCounter == -1 &&!actor.pather.Moving)
-                                    waitCounter = 0;
-                                if (waitCounter != -1)
+                                thing = closest;
+                                dest = thing;
+                                actor.Reserve(thing, actor.jobs.curJob);
+                                toil.defaultCompleteMode = ToilCompleteMode.Never;
+                                useInterface = true;
+
+                                int postArrivalWait = ((CompProperties_OutputInterface)thing.TryGetComp<Comp_OutputInterface>().props).outputTick;
+                                int waitCounter = -1;
+                                toil.tickAction = delegate
                                 {
-                                    waitCounter++;
-                                    if (waitCounter >= postArrivalWait)
-                                        actor.jobs.curDriver.ReadyForNextToil();
-                                }
-                            };
+                                    if (waitCounter == -1 && !actor.pather.Moving)
+                                    {
+                                        waitCounter = 0;
+                                        toil.actor.jobs.curJob.SetTarget(TargetIndex.C, thing);
+                                        toil.WithProgressBar(TargetIndex.C, () =>
+                                        {
+                                            float progress = (float)waitCounter / postArrivalWait;
+                                            return progress;
+                                        });
+                                    }
+                                    if (waitCounter != -1)
+                                    {
+                                        waitCounter++;
+                                        if (waitCounter >= postArrivalWait)
+                                            actor.jobs.curDriver.ReadyForNextToil();
+                                    }
+                                };
+                            }
                         }
                     }
 
