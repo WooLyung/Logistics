@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ResearchTabDef>
+        <defName>Logistics</defName>
+        <label>Logistics</label>
+        <generalTitle>Logistics projects</generalTitle>
+        <generalDescription>Research logistics to build more advanced logistics systems and logistics networks.</generalDescription>
+    </ResearchTabDef>
+</Defs>

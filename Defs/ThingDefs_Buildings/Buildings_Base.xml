@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <DesignationCategoryDef>
+        <defName>LogisticsCategory</defName>
+        <label>LogisticsCategory</label>
+        <order>950</order>
+    </DesignationCategoryDef>
+
+    <ThingDef ParentName="BuildingBase" Name="LogisticsInterfaceBase" Abstract="True">
+        <category>Building</category>
+        <designationCategory>LogisticsCategory</designationCategory>
+        <useHitPoints>true</useHitPoints>
+        <selectable>true</selectable>
+        <altitudeLayer>Building</altitudeLayer>
+        <blockWind>true</blockWind>
+        <comps>
+            <li Class="CompProperties_Flickable" />
+            <li Class="CompProperties_Glower">
+                <glowRadius>3</glowRadius>
+                <glowColor>(255,150,100,0)</glowColor>
+            </li>
+            <li Class="CompProperties_Breakdownable" />
+        </comps>
+        <building>
+            <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+        </building>
+    </ThingDef>
+
+    <ThingDef ParentName="LogisticsInterfaceBase" Name="LogisticsInnerInterfaceBase" Abstract="True">
+        <graphicData>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(0.8, 0.8)</drawSize>
+            <shadowData>
+                <volume>(0.5,0.3,0.7)</volume>
+                <offset>(0,0,-0.15)</offset>
+            </shadowData>
+            <damageData>
+                <rect>(0.234375,0,0.515625,0.984375)</rect>
+                <cornerTL>Damage/Corner</cornerTL>
+                <cornerTR>Damage/Corner</cornerTR>
+                <cornerBL>Damage/Corner</cornerBL>
+                <cornerBR>Damage/Corner</cornerBR>
+            </damageData>
+        </graphicData>
+        <passability>PassThroughOnly</passability>
+        <pathCost>30</pathCost>
+        <blockWind>true</blockWind>
+        <fillPercent>0.4</fillPercent>
+        <statBases>
+            <Mass>6</Mass>
+            <Flammability>0.5</Flammability>
+        </statBases>
+    </ThingDef>
+</Defs>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ThingDef ParentName="LogisticsInnerInterfaceBase">
+        <defName>LogisticsInputInterface</defName>
+        <label>logistics input interface</label>
+        <description>An interface for inserting items into logistics containers. It can be used in logistics warehouses that include a logistics system controller. Built with low technology, it operates at a slow speed.</description>
+        <graphicData>
+            <texPath>Things/Building/LogisticsInputInterface</texPath>
+        </graphicData>
+        <comps>
+            <li Class="Logistics.CompProperties_InputInterface">
+                <inputTick>60</inputTick>
+            </li>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>200</basePowerConsumption>
+                <shortCircuitInRain>true</shortCircuitInRain>
+            </li>
+        </comps>
+        <researchPrerequisites>
+            <li>BasicLogistics</li>
+        </researchPrerequisites>
+        <hasInteractionCell>false</hasInteractionCell>
+    </ThingDef>
+
+    <ThingDef ParentName="LogisticsInnerInterfaceBase">
+        <defName>LogisticsOutputInterface</defName>
+        <label>logistics output interface</label>
+        <description>An interface for extracting items from logistics containers. It can be used in logistics warehouses that include a logistics system controller. Built with low technology, it operates at a slow speed.</description>
+        <graphicData>
+            <texPath>Things/Building/LogisticsOutputInterface</texPath>
+        </graphicData>
+        <comps>
+            <li Class="Logistics.CompProperties_OutputInterface">
+                <outputTick>60</outputTick>
+            </li>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>200</basePowerConsumption>
+                <shortCircuitInRain>true</shortCircuitInRain>
+            </li>
+        </comps>
+        <researchPrerequisites>
+            <li>BasicLogistics</li>
+        </researchPrerequisites>
+    </ThingDef>
+</Defs>
