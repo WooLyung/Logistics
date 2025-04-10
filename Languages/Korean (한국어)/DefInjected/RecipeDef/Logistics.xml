@@ -3,4 +3,8 @@
     <Make_ConveyorBelt.label>컨베이어 벨트 제작</Make_ConveyorBelt.label>
     <Make_ConveyorBelt.description>컨베이어 벨트를 만듭니다.</Make_ConveyorBelt.description>
     <Make_ConveyorBelt.jobString>컨베이어 벨트 제작 중.</Make_ConveyorBelt.jobString>
+    
+    <Make_LogisticsComponent.label>물류 부품 제작</Make_LogisticsComponent.label>
+    <Make_LogisticsComponent.description>물류 부품을 만듭니다.</Make_LogisticsComponent.description>
+    <Make_LogisticsComponent.jobString>물류 부품 제작 중.</Make_LogisticsComponent.jobString>
 </LanguageData>

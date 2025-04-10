@@ -82,7 +82,7 @@ namespace Logistics
             Map map = actor2.Map;
             LocalTargetInfo cell = job.GetTarget(TargetIndex.B);
             Room room = RegionAndRoomQuery.RoomAt(cell.Cell, map);
-            var closest = LogisticsSystem.FindAvailableClosestInputInterfaceSingle(room, actor2);
+            var closest = LogisticsSystem.FindAvailableClosestInputInterface(room, actor2);
 
             float cost1 = 0, cost2 = 0;
             if (closest != null)

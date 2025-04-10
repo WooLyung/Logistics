@@ -66,6 +66,42 @@
         <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
     </ThingDef>
 
+    <ThingDef ParentName="LogisticsInnerInterfaceBase">
+        <defName>LogisticsIOInterface</defName>
+        <label>logistics input/output interface</label>
+        <description>An interface for extracting and inserting items. It can be used in
+            logistics warehouses that include a logistics system controller. Built with low
+            technology, it operates at a slow speed.</description>
+        <graphicData>
+            <texPath>Things/Building/LogisticsIOInterface</texPath>
+        </graphicData>
+        <comps>
+            <li Class="Logistics.CompProperties_InputInterface">
+                <inputTick>180</inputTick>
+            </li>
+            <li Class="Logistics.CompProperties_OutputInterface">
+                <outputTick>180</outputTick>
+            </li>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>100</basePowerConsumption>
+                <shortCircuitInRain>true</shortCircuitInRain>
+            </li>
+        </comps>
+        <researchPrerequisites>
+            <li>IntegratedInputOutput</li>
+        </researchPrerequisites>
+        <statBases>
+            <WorkToBuild>1000</WorkToBuild>
+        </statBases>
+        <costList>
+            <Steel>30</Steel>
+            <ComponentIndustrial>2</ComponentIndustrial>
+            <ConveyorBelt>2</ConveyorBelt>
+        </costList>
+        <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    </ThingDef>
+
     <ThingDef ParentName="LogisticsWallInterfaceBase">
         <defName>LogisticsOutputWallInterface</defName>
         <label>logistics output wall interface</label>
@@ -126,6 +162,42 @@
             <Steel>60</Steel>
             <ComponentIndustrial>1</ComponentIndustrial>
             <ConveyorBelt>1</ConveyorBelt>
+        </costList>
+        <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    </ThingDef>
+
+    <ThingDef ParentName="LogisticsWallInterfaceBase">
+        <defName>LogisticsIOWallInterface</defName>
+        <label>logistics input/output wall interface</label>
+        <description>A wall-mounted interface that inserts and extracts items.
+            It allows materials to be transported through walls.</description>
+        <graphicData>
+            <texPath>Things/Building/LogisticsIOWallInterface</texPath>
+        </graphicData>
+        <comps>
+            <li Class="Logistics.CompProperties_InputInterface">
+                <inputTick>180</inputTick>
+            </li>
+            <li Class="Logistics.CompProperties_OutputInterface">
+                <outputTick>180</outputTick>
+            </li>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>100</basePowerConsumption>
+                <shortCircuitInRain>true</shortCircuitInRain>
+            </li>
+        </comps>
+        <researchPrerequisites>
+            <li>IntegratedInputOutput</li>
+            <li>AdvancedLogistics</li>
+        </researchPrerequisites>
+        <statBases>
+            <WorkToBuild>1800</WorkToBuild>
+        </statBases>
+        <costList>
+            <Steel>60</Steel>
+            <ComponentIndustrial>2</ComponentIndustrial>
+            <ConveyorBelt>2</ConveyorBelt>
         </costList>
         <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
     </ThingDef>

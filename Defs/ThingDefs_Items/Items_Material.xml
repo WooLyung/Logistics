@@ -26,4 +26,31 @@
         </thingCategories>
         <allowedArchonexusCount>10</allowedArchonexusCount>
     </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>LogisticsComponent</defName>
+        <label>logistics component</label>
+        <description>An advanced collection of components used to construct logistics devices.</description>
+        <graphicData>
+            <texPath>Things/Item/LogisticsComponent</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(0.7, 0.7)</drawSize>
+        </graphicData>
+        <soundInteract>Metal_Drop</soundInteract>
+        <soundDrop>Standard_Drop</soundDrop>
+        <stackLimit>25</stackLimit>
+        <healthAffectsPrice>false</healthAffectsPrice>
+        <statBases>
+            <MaxHitPoints>70</MaxHitPoints>
+            <MarketValue>340</MarketValue>
+            <Mass>0.6</Mass>
+            <Flammability>0.6</Flammability>
+            <DeteriorationRate>2.0</DeteriorationRate>
+        </statBases>
+        <intricate>true</intricate>
+        <thingCategories>
+            <li>Manufactured</li>
+        </thingCategories>
+        <allowedArchonexusCount>10</allowedArchonexusCount>
+    </ThingDef>
 </Defs>

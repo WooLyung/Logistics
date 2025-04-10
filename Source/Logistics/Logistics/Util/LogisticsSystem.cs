@@ -9,7 +9,7 @@ namespace Logistics.Util
 {
     public static class LogisticsSystem
     {
-        public static IEnumerable<Thing> FindAvailableOutputInterfacesSingle(Room room, Pawn actor = null)
+        public static IEnumerable<Thing> FindAvailableOutputInterfaces(Room room, Pawn actor = null)
         {
             if (!room.ContainedAndAdjacentThings.Any(t => t is Building_LogisticsSystemController controller && controller.IsOperational()))
                 yield break;
@@ -20,11 +20,19 @@ namespace Logistics.Util
                     && (actor == null || (!t.IsForbidden(actor) && actor.CanReserve(t)
                     && actor.Map.reachability.CanReach(actor.Position, t.Position, PathEndMode.Touch, TraverseParms.For(actor, Danger.Some, TraverseMode.ByPawn))))
                     && t.IsOperational())
+                {
+                    if (actor != null && actor.playerSettings != null && actor.playerSettings.RespectsAllowedArea && !actor.Drafted)
+                    {
+                        Area allowed = actor.playerSettings.EffectiveAreaRestrictionInPawnCurrentMap;
+                        if (allowed != null && !allowed[t.Position])
+                            continue;
+                    }
                     yield return t;
+                }
             }
         }
 
-        public static IEnumerable<Thing> FindAvailableInputInterfacesSingle(Room room, Pawn actor = null)
+        public static IEnumerable<Thing> FindAvailableInputInterfaces(Room room, Pawn actor = null)
         {
             if (!room.ContainedAndAdjacentThings.Any(t => t is Building_LogisticsSystemController controller && controller.IsOperational()))
                 yield break;
@@ -35,23 +43,21 @@ namespace Logistics.Util
                     && (actor == null || (!t.IsForbidden(actor) && actor.CanReserve(t)
                     && actor.Map.reachability.CanReach(actor.Position, t.Position, PathEndMode.Touch, TraverseParms.For(actor, Danger.Some, TraverseMode.ByPawn))))
                     && t.IsOperational())
+                {
+                    if (actor != null && actor.playerSettings != null && actor.playerSettings.RespectsAllowedArea && !actor.Drafted)
+                    {
+                        Area allowed = actor.playerSettings.EffectiveAreaRestrictionInPawnCurrentMap;
+                        if (allowed != null && !allowed[t.Position])
+                            continue;
+                    }
                     yield return t;
+                }
             }
         }
 
-        public static IEnumerable<Thing> FindAvailableOutputInterfacesSingle(Thing thing, Pawn actor = null)
+        public static Thing FindAvailableClosestOutputInterface(Room room, Pawn actor)
         {
-            return FindAvailableOutputInterfacesSingle(thing.GetRoom(), actor);
-        }
-
-        public static IEnumerable<Thing> FindAvailableInputInterfacesSingle(Thing thing, Pawn actor = null)
-        {
-            return FindAvailableInputInterfacesSingle(thing.GetRoom(), actor);
-        }
-
-        public static Thing FindAvailableClosestOutputInterfaceSingle(Room room, Pawn actor)
-        {
-            var interfaces = FindAvailableOutputInterfacesSingle(room, actor);
+            var interfaces = FindAvailableOutputInterfaces(room, actor);
             if (interfaces.Count() == 0)
                 return null;
             return interfaces.MinBy(t =>
@@ -63,9 +69,9 @@ namespace Logistics.Util
             });
         }
 
-        public static Thing FindAvailableClosestInputInterfaceSingle(Room room, Pawn actor)
+        public static Thing FindAvailableClosestInputInterface(Room room, Pawn actor)
         {
-            var interfaces = FindAvailableInputInterfacesSingle(room, actor);
+            var interfaces = FindAvailableInputInterfaces(room, actor);
             if (interfaces.Count() == 0)
                 return null;
             return interfaces.MinBy(t =>

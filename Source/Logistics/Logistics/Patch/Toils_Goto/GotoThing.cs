@@ -39,7 +39,7 @@ namespace Logistics
                     if (thing.IsInContainer())
                     {
                         Room room = thing.GetRoom();
-                        var closest = LogisticsSystem.FindAvailableClosestOutputInterfaceSingle(thing.GetRoom(), actor);
+                        var closest = LogisticsSystem.FindAvailableClosestOutputInterface(thing.GetRoom(), actor);
 
                         if (closest != null)
                         {
