@@ -7,15 +7,16 @@
     </DesignationCategoryDef>
 
     <ThingDef ParentName="BuildingBase" Name="LogisticsInterfaceBase" Abstract="True">
-        <category>Building</category>
         <designationCategory>LogisticsCategory</designationCategory>
         <useHitPoints>true</useHitPoints>
         <selectable>true</selectable>
         <altitudeLayer>Building</altitudeLayer>
         <blockWind>true</blockWind>
+        <rotatable>false</rotatable>
         <comps>
             <li Class="CompProperties_Flickable" />
             <li Class="CompProperties_Breakdownable" />
+             <li Class="CompProperties_Forbiddable" />
         </comps>
         <building>
             <destroySound>BuildingDestroyed_Metal_Small</destroySound>
@@ -23,7 +24,6 @@
     </ThingDef>
 
     <ThingDef ParentName="LogisticsInterfaceBase" Name="LogisticsInnerInterfaceBase" Abstract="True">
-        <rotatable>false</rotatable>
         <graphicData>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>(1.0, 1.0)</drawSize>
@@ -36,7 +36,6 @@
         <pathCost>30</pathCost>
         <fillPercent>0.4</fillPercent>
         <statBases>
-            <Mass>6</Mass>
             <MaxHitPoints>120</MaxHitPoints>
             <Flammability>0.8</Flammability>
         </statBases>
@@ -44,7 +43,7 @@
 
     <ThingDef ParentName="LogisticsInterfaceBase" Name="LogisticsWallInterfaceBase" Abstract="True">
         <graphicData>
-            <graphicClass>Graphic_Multi</graphicClass>
+            <graphicClass>Graphic_Single</graphicClass>
             <drawSize>(1.0, 1.0)</drawSize>
         </graphicData>
         <fillPercent>1.0</fillPercent>
@@ -64,9 +63,6 @@
             <MaxHitPoints>200</MaxHitPoints>
             <Flammability>0.5</Flammability>
         </statBases>
-        <placeWorkers>
-            <li>PlaceWorker_Vent</li>
-        </placeWorkers>
     </ThingDef>
 
     <ThingDef ParentName="BuildingBase" Name="LogisticsContainerBase" Abstract="True">

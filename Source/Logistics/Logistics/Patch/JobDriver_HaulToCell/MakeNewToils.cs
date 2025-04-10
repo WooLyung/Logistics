@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using Logistics.Util;
 using RimWorld;
 using System;
 using System.Collections.Generic;
@@ -82,7 +81,7 @@ namespace Logistics
             Map map = actor2.Map;
             LocalTargetInfo cell = job.GetTarget(TargetIndex.B);
             Room room = RegionAndRoomQuery.RoomAt(cell.Cell, map);
-            var closest = LogisticsSystem.FindAvailableClosestInputInterface(room, actor2);
+            var closest = LogisticsSystem.FindAvailableClosestInterface<Comp_InputInterface>(room, actor2);
 
             float cost1 = 0, cost2 = 0;
             if (closest != null)

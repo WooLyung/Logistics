@@ -10,12 +10,17 @@
             <texPath>Things/Building/SmallLogisticsContainer</texPath>
         </graphicData>
         <statBases>
-            <MaxHitPoints>50</MaxHitPoints>
-            <Mass>4</Mass>
+            <MaxHitPoints>200</MaxHitPoints>
+            <Flammability>0.5</Flammability>
+            <WorkToBuild>1800</WorkToBuild>
         </statBases>
         <researchPrerequisites>
             <li>BasicLogistics</li>
         </researchPrerequisites>
+        <costList>
+            <Steel>20</Steel>
+            <ConveyorBelt>1</ConveyorBelt>
+        </costList>
         <building>
             <maxItemsInCell>2</maxItemsInCell>
         </building>

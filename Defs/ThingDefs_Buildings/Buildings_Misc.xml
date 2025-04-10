@@ -6,8 +6,7 @@
         <thingClass>Logistics.Building_LogisticsSystemController</thingClass>
         <description>Controls the logistics system of a warehouse using a central core.
             Each logistics warehouse requires a single controller, and without it, the system cannot
-            function. Due to limitations of the core, it cannot handle complex calculations, meaning not all
-            logistics devices can be used simultaneously.
+            function.
 
             \n\nThe controller consumes a large amount of power based on the size of the warehouse.
             To ensure stable operation, maintaining a reliable power supply is essential.</description>
@@ -54,5 +53,46 @@
         <researchPrerequisites>
             <li>BasicLogistics</li>
         </researchPrerequisites>
+    </ThingDef>
+
+    <ThingDef ParentName="BuildingBase">
+        <defName>Conveyor</defName>
+        <designationCategory>LogisticsCategory</designationCategory>
+        <label>conveyor</label>
+        <description>A conveyor used to extend the logistics system beyond the logistics warehouse.
+            Connects conveyor interfaces and other logistics devices that are part of the system.
+            Conveyors are directional and their orientation affects functionality.</description>
+        <graphicData>
+            <texPath>Things/Building/Conveyor</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <building>
+            <isEdifice>false</isEdifice>
+        </building>
+        <useHitPoints>true</useHitPoints>
+        <selectable>true</selectable>
+        <altitudeLayer>FloorEmplacement</altitudeLayer>
+        <blockWind>false</blockWind>
+        <passability>Standable</passability>
+        <pathCost>0</pathCost>
+        <fillPercent>0.4</fillPercent>
+        <researchPrerequisites>
+            <li>ConveyorInterface</li>
+        </researchPrerequisites>
+        <statBases>
+            <MaxHitPoints>60</MaxHitPoints>
+            <Flammability>0.5</Flammability>
+            <WorkToBuild>1000</WorkToBuild>
+        </statBases>
+        <placeWorkers>
+            <li>PlaceWorker_Conduit</li>
+        </placeWorkers>
+        <costList>
+            <ConveyorBelt>1</ConveyorBelt>
+        </costList>
+        <comps>
+            <li Class="Logistics.CompProperties_Conveyor" />
+        </comps>
+        <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
     </ThingDef>
 </Defs>

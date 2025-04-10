@@ -1,7 +1,7 @@
 ﻿using RimWorld;
 using Verse;
 
-namespace Logistics.Util
+namespace Logistics
 {
     static class Electronics
     {
@@ -20,6 +20,10 @@ namespace Logistics.Util
 
             var breakdown = thing.TryGetComp<CompBreakdownable>();
             if (breakdown != null && breakdown.BrokenDown)
+                return false;
+
+            var forbiddable = thing.TryGetComp<CompForbiddable>();
+            if (forbiddable != null && forbiddable.Forbidden)
                 return false;
 
             return true;

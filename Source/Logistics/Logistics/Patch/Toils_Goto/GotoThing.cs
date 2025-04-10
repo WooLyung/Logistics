@@ -1,5 +1,5 @@
 ﻿using HarmonyLib;
-using Logistics.Util;
+using Logistics;
 using RimWorld;
 using System.Linq;
 using System.Reflection;
@@ -39,7 +39,7 @@ namespace Logistics
                     if (thing.IsInContainer())
                     {
                         Room room = thing.GetRoom();
-                        var closest = LogisticsSystem.FindAvailableClosestOutputInterface(thing.GetRoom(), actor);
+                        var closest = LogisticsSystem.FindAvailableClosestInterface<Comp_OutputInterface>(thing.GetRoom(), actor);
 
                         if (closest != null)
                         {

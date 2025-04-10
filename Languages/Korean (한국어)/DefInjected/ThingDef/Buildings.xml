@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
     <LogisticsSystemController.label>물류 시스템 제어기</LogisticsSystemController.label>
-    <LogisticsSystemController.description>중앙의 코어를 이용해 물류 창고의 물류 시스템을 제어합니다. 하나의 물류 창고는 하나의 제어기가 필요하며, 제어기가 가동하지 않는다면 물류 시스템은 정지합니다. 제어기 코어의 한계로 복잡한 연산을 수행할 수 없기에 모든 물류 시스템 장치를 사용할 수는 없습니다. \n\n제어기는 물류 창고의 크기에 비례하여 막대한 전력을 소비합니다. 안정적인 물류 시스템을 위해선 전력 공급을 신경써야 합니다.</LogisticsSystemController.description>
+    <LogisticsSystemController.description>중앙의 코어를 이용해 물류 창고의 물류 시스템을 제어합니다. 하나의 물류 창고는 하나의 제어기가 필요하며, 제어기가 가동하지 않는다면 물류 시스템은 정지합니다. \n\n제어기는 물류 창고의 크기에 비례하여 막대한 전력을 소비합니다. 안정적인 물류 시스템을 위해선 전력 공급을 신경써야 합니다.</LogisticsSystemController.description>
 
     <LogisticsInputInterface.label>물류 입력 인터페이스</LogisticsInputInterface.label>
     <LogisticsInputInterface.description>물류 컨테이너로 물건을 넣을 수 있는 인터페이스입니다. 물류 시스템 컨트롤러가 포함된 물류 창고에서 사용할 수 있습니다. 낮은 기술로 만들어져 속도가 느립니다.</LogisticsInputInterface.description>
@@ -23,4 +23,10 @@
 
     <SmallLogisticsContainer.label>소형 물류 컨테이너</SmallLogisticsContainer.label>
     <SmallLogisticsContainer.description>물류 시스템에 연결되어 물품을 보관하는 컨테이너입니다. 물류 컨테이너에 보관된 물품은 같은 물류 시스템의 물류 인터페이스를 비롯한 장치를 통해 입출력됩니다. 최대 2개의 스택을 보관할 수 있습니다.</SmallLogisticsContainer.description>
+
+    <ConveyorInterface.label>컨베이어 인터페이스</ConveyorInterface.label>
+    <ConveyorInterface.description>물류 창고 밖으로 물류 시스템을 확장시키기 위한 인터페이스입니다. 인터페이스와 물류 장치를 컨베이어로 연결하여 사용합니다.</ConveyorInterface.description>
+
+    <Conveyor.label>컨베이어</Conveyor.label>
+    <Conveyor.description>물류 창고 밖으로 물류 시스템을 확장시키기 위한 컨베이어입니다. 물류 시스템에 연결된 컨베이어 인터페이스와 다른 물류 장치를 컨베이어로 연결하여 사용합니다. 컨베이어는 방향에 영향을 받습니다.</Conveyor.description>
 </LanguageData>

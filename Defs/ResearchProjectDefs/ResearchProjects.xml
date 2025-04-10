@@ -302,7 +302,7 @@
         <baseCost>2500</baseCost>
         <tab>Logistics</tab>
         <researchViewX>4.00</researchViewX>
-        <researchViewY>4.20</researchViewY>
+        <researchViewY>3.50</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>

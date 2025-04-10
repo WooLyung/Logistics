@@ -11,7 +11,7 @@ namespace Logistics
             base.TickRare();
 
             CompPowerTrader comp = this.GetComp<CompPowerTrader>();
-            if (comp != null && comp.PowerOn)
+            if (comp != null)
             {
                 Room room = this.GetRoom();
                 int dynamicUsage = room == null ? 0 : room.CellCount * 10;

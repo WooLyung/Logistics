@@ -201,4 +201,35 @@
         </costList>
         <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
     </ThingDef>
+
+    <ThingDef ParentName="LogisticsWallInterfaceBase">
+        <thingClass>Logistics.Building_ConveyorInterface</thingClass>
+        <defName>ConveyorInterface</defName>
+        <label>conveyor interface</label>
+        <description>An interface used to extend the logistics system beyond the logistics
+            warehouse.
+            It connects to logistics devices via conveyors for external integration.</description>
+        <graphicData>
+            <texPath>Things/Building/ConveyorInterface</texPath>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>100</basePowerConsumption>
+                <shortCircuitInRain>true</shortCircuitInRain>
+            </li>
+        </comps>
+        <researchPrerequisites>
+            <li>ConveyorInterface</li>
+        </researchPrerequisites>
+        <statBases>
+            <WorkToBuild>2500</WorkToBuild>
+        </statBases>
+        <costList>
+            <Steel>60</Steel>
+            <ConveyorBelt>1</ConveyorBelt>
+            <LogisticsComponent>1</LogisticsComponent>
+        </costList>
+        <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    </ThingDef>
 </Defs>
