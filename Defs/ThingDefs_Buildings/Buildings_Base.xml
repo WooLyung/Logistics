@@ -15,10 +15,6 @@
         <blockWind>true</blockWind>
         <comps>
             <li Class="CompProperties_Flickable" />
-            <li Class="CompProperties_Glower">
-                <glowRadius>3</glowRadius>
-                <glowColor>(255,150,100,0)</glowColor>
-            </li>
             <li Class="CompProperties_Breakdownable" />
         </comps>
         <building>
@@ -35,20 +31,14 @@
                 <volume>(0.5,0.3,0.7)</volume>
                 <offset>(0,0,-0.15)</offset>
             </shadowData>
-            <damageData>
-                <rect>(0.234375,0,0.515625,0.984375)</rect>
-                <cornerTL>Damage/Corner</cornerTL>
-                <cornerTR>Damage/Corner</cornerTR>
-                <cornerBL>Damage/Corner</cornerBL>
-                <cornerBR>Damage/Corner</cornerBR>
-            </damageData>
         </graphicData>
         <passability>PassThroughOnly</passability>
         <pathCost>30</pathCost>
         <fillPercent>0.4</fillPercent>
         <statBases>
             <Mass>6</Mass>
-            <Flammability>0.5</Flammability>
+            <MaxHitPoints>120</MaxHitPoints>
+            <Flammability>0.8</Flammability>
         </statBases>
     </ThingDef>
 
@@ -56,13 +46,6 @@
         <graphicData>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>(1.0, 1.0)</drawSize>
-            <damageData>
-                <rect>(0.234375,0,0.515625,0.984375)</rect>
-                <cornerTL>Damage/Corner</cornerTL>
-                <cornerTR>Damage/Corner</cornerTR>
-                <cornerBL>Damage/Corner</cornerBL>
-                <cornerBR>Damage/Corner</cornerBR>
-            </damageData>
         </graphicData>
         <fillPercent>1.0</fillPercent>
         <building>
@@ -78,7 +61,7 @@
         <castEdgeShadows>true</castEdgeShadows>
         <canOverlapZones>false</canOverlapZones>
         <statBases>
-            <Mass>6</Mass>
+            <MaxHitPoints>200</MaxHitPoints>
             <Flammability>0.5</Flammability>
         </statBases>
         <placeWorkers>

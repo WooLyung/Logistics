@@ -6,8 +6,7 @@
         <thingClass>Logistics.Building_LogisticsSystemController</thingClass>
         <description>Controls the logistics system of a warehouse using a central core.
             Each logistics warehouse requires a single controller, and without it, the system cannot
-            function.
-            Due to limitations of the core, it cannot handle complex calculations, meaning not all
+            function. Due to limitations of the core, it cannot handle complex calculations, meaning not all
             logistics devices can be used simultaneously.
 
             \n\nThe controller consumes a large amount of power based on the size of the warehouse.
@@ -26,16 +25,22 @@
         <fillPercent>0.5</fillPercent>
         <canOverlapZones>false</canOverlapZones>
         <statBases>
-            <MaxHitPoints>250</MaxHitPoints>
+            <MaxHitPoints>400</MaxHitPoints>
+            <WorkToBuild>8000</WorkToBuild>
             <Flammability>0.6</Flammability>
         </statBases>
         <size>(1,1)</size>
         <building>
             <destroySound>BuildingDestroyed_Metal_Big</destroySound>
         </building>
-        <defaultPlacingRot>North</defaultPlacingRot>
+        <costList>
+            <Steel>200</Steel>
+            <ComponentIndustrial>8</ComponentIndustrial>
+            <ConveyorBelt>4</ConveyorBelt>
+        </costList>
         <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
         <designationCategory>LogisticsCategory</designationCategory>
+        <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
         <tickerType>Rare</tickerType>
         <comps>
             <li Class="CompProperties_Power">

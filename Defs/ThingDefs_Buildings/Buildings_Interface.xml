@@ -22,7 +22,15 @@
         <researchPrerequisites>
             <li>BasicLogistics</li>
         </researchPrerequisites>
-        <hasInteractionCell>false</hasInteractionCell>
+        <statBases>
+            <WorkToBuild>1000</WorkToBuild>
+        </statBases>
+        <costList>
+            <Steel>30</Steel>
+            <ComponentIndustrial>1</ComponentIndustrial>
+            <ConveyorBelt>1</ConveyorBelt>
+        </costList>
+        <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
     </ThingDef>
 
     <ThingDef ParentName="LogisticsInnerInterfaceBase">
@@ -47,6 +55,15 @@
         <researchPrerequisites>
             <li>BasicLogistics</li>
         </researchPrerequisites>
+        <statBases>
+            <WorkToBuild>1000</WorkToBuild>
+        </statBases>
+        <costList>
+            <Steel>30</Steel>
+            <ComponentIndustrial>1</ComponentIndustrial>
+            <ConveyorBelt>1</ConveyorBelt>
+        </costList>
+        <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
     </ThingDef>
 
     <ThingDef ParentName="LogisticsWallInterfaceBase">
@@ -70,7 +87,15 @@
         <researchPrerequisites>
             <li>AdvancedLogistics</li>
         </researchPrerequisites>
-        <hasInteractionCell>false</hasInteractionCell>
+        <statBases>
+            <WorkToBuild>1800</WorkToBuild>
+        </statBases>
+        <costList>
+            <Steel>60</Steel>
+            <ComponentIndustrial>1</ComponentIndustrial>
+            <ConveyorBelt>1</ConveyorBelt>
+        </costList>
+        <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
     </ThingDef>
 
     <ThingDef ParentName="LogisticsWallInterfaceBase">
@@ -94,6 +119,14 @@
         <researchPrerequisites>
             <li>AdvancedLogistics</li>
         </researchPrerequisites>
-        <hasInteractionCell>false</hasInteractionCell>
+        <statBases>
+            <WorkToBuild>1800</WorkToBuild>
+        </statBases>
+        <costList>
+            <Steel>60</Steel>
+            <ComponentIndustrial>1</ComponentIndustrial>
+            <ConveyorBelt>1</ConveyorBelt>
+        </costList>
+        <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
     </ThingDef>
 </Defs>
