@@ -60,7 +60,7 @@
         <baseCost>1000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>1.00</researchViewX>
-        <researchViewY>2.80</researchViewY>
+        <researchViewY>3.50</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <prerequisites>
@@ -75,7 +75,7 @@
         <baseCost>1500</baseCost>
         <tab>Logistics</tab>
         <researchViewX>2.00</researchViewX>
-        <researchViewY>2.10</researchViewY>
+        <researchViewY>2.80</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <prerequisites>
@@ -90,7 +90,7 @@
         <baseCost>2000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>3.00</researchViewX>
-        <researchViewY>2.80</researchViewY>
+        <researchViewY>3.50</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
@@ -147,6 +147,39 @@
         </requiredResearchFacilities>
         <prerequisites>
             <li>AdvancedLogistics</li>
+        </prerequisites>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
+        <defName>ConveyorInterface</defName>
+        <label>conveyor interface</label>
+        <description>Expands the logistics system through conveyor-based connections.</description>
+        <baseCost>2200</baseCost>
+        <tab>Logistics</tab>
+        <researchViewX>3.00</researchViewX>
+        <researchViewY>2.80</researchViewY>
+        <techLevel>Industrial</techLevel>
+        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+        <prerequisites>
+            <li>AdvancedLogistics</li>
+        </prerequisites>
+        <requiredResearchFacilities>
+            <li>MultiAnalyzer</li>
+        </requiredResearchFacilities>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
+        <defName>IntegratedInputOutput</defName>
+        <label>integrated input/output</label>
+        <description>Researches an interface that combines both input and output into a single unit.</description>
+        <baseCost>1500</baseCost>
+        <tab>Logistics</tab>
+        <researchViewX>1.00</researchViewX>
+        <researchViewY>2.10</researchViewY>
+        <techLevel>Industrial</techLevel>
+        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+        <prerequisites>
+            <li>BasicLogistics</li>
         </prerequisites>
     </ResearchProjectDef>
 
@@ -214,7 +247,7 @@
         <baseCost>4000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>5.00</researchViewX>
-        <researchViewY>2.80</researchViewY>
+        <researchViewY>3.50</researchViewY>
         <techLevel>Spacer</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
@@ -259,6 +292,24 @@
         </requiredResearchFacilities>
         <prerequisites>
             <li>AdvancedLogistics</li>
+        </prerequisites>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
+        <defName>IntegratedLogisticsContainer</defName>
+        <label>integrated logistics container</label>
+        <description>Research a container capable of storing all items, including corpses and waste.</description>
+        <baseCost>2500</baseCost>
+        <tab>Logistics</tab>
+        <researchViewX>4.00</researchViewX>
+        <researchViewY>4.20</researchViewY>
+        <techLevel>Industrial</techLevel>
+        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+        <requiredResearchFacilities>
+            <li>MultiAnalyzer</li>
+        </requiredResearchFacilities>
+        <prerequisites>
+            <li>MassiveLogisticsSystem</li>
         </prerequisites>
     </ResearchProjectDef>
 </Defs>

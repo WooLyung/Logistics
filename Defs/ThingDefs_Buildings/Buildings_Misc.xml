@@ -4,16 +4,20 @@
         <defName>LogisticsSystemController</defName>
         <label>logistics system controller</label>
         <thingClass>Logistics.Building_LogisticsSystemController</thingClass>
-        <description>It is the controller for the logistics system.
-            Each controller manages a single logistics warehouse, and the logistics system operates
-            only while the controller is active.
-            The controller consumes power proportional to the size of the room it's placed in, and
-            the logistics system shuts down if power is lost.</description>
+        <description>Controls the logistics system of a warehouse using a central core.
+            Each logistics warehouse requires a single controller, and without it, the system cannot
+            function.
+            Due to limitations of the core, it cannot handle complex calculations, meaning not all
+            logistics devices can be used simultaneously.
+
+            \n\nThe controller consumes a large amount of power based on the size of the warehouse.
+            To ensure stable operation, maintaining a reliable power supply is essential.</description>
         <graphicData>
             <texPath>Things/Building/LogisticsSystemController</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>(3.3,3.3)</drawSize>
+            <drawSize>(0.9,0.9)</drawSize>
         </graphicData>
+        <rotatable>false</rotatable>
         <altitudeLayer>Building</altitudeLayer>
         <passability>PassThroughOnly</passability>
         <pathCost>50</pathCost>
@@ -25,7 +29,7 @@
             <MaxHitPoints>250</MaxHitPoints>
             <Flammability>0.6</Flammability>
         </statBases>
-        <size>(3,2)</size>
+        <size>(1,1)</size>
         <building>
             <destroySound>BuildingDestroyed_Metal_Big</destroySound>
         </building>

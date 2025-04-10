@@ -24,6 +24,9 @@
     <FastInputOutput.label>빠른 입출력</FastInputOutput.label>
     <FastInputOutput.description>더 빠른 속도의 인터페이스를 개발합니다.</FastInputOutput.description>
     
+    <IntegratedInputOutput.label>통합 입출력</IntegratedInputOutput.label>
+    <IntegratedInputOutput.description>입출력이 하나로 통합된 인터페이스를 연구합니다.</IntegratedInputOutput.description>
+    
     <RefrigeratedLogisticsContainer.label>냉각 물류 컨테이너</RefrigeratedLogisticsContainer.label>
     <RefrigeratedLogisticsContainer.description>내용물이 썩지 않도록 차갑게 유지하는 컨테이너를 연구합니다.</RefrigeratedLogisticsContainer.description>
 
@@ -44,4 +47,10 @@
     
     <VerticalLogisticsLift.label>수직 물류 승강기</VerticalLogisticsLift.label>
     <VerticalLogisticsLift.description>승강기를 이용해 좁은 공간에 밀집된 물류를 보관합니다.</VerticalLogisticsLift.description>
+    
+    <ConveyorInterface.label>컨베이어 인터페이스</ConveyorInterface.label>
+    <ConveyorInterface.description>컨베이어를 통해 물류 시스템을 확장합니다.</ConveyorInterface.description>
+    
+    <IntegratedLogisticsContainer.label>통합 물류 컨테이너</IntegratedLogisticsContainer.label>
+    <IntegratedLogisticsContainer.description>시체와 폐기물을 포함한 모든 물품을 보관할 수 있는 컨테이너를 연구합니다.</IntegratedLogisticsContainer.description>
 </LanguageData>

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
     <LogisticsSystemController.label>물류 시스템 제어기</LogisticsSystemController.label>
-    <LogisticsSystemController.description>물류 시스템을 제어하는 제어기입니다. 하나의 제어기는 하나의 물류 창고를 담당하며, 제어기가 가동하는 물류 창고는 물류 시스템이 동작합니다. 제어기는 방 크기에 비례한 전력을 소비하며, 전력이 끊기면 물류 시스템이 정지합니다.</LogisticsSystemController.description>
+    <LogisticsSystemController.description>중앙의 코어를 이용해 물류 창고의 물류 시스템을 제어합니다. 하나의 물류 창고는 하나의 제어기가 필요하며, 제어기가 가동하지 않는다면 물류 시스템은 정지합니다. 제어기 코어의 한계로 복잡한 연산을 수행할 수 없기에 모든 물류 시스템 장치를 사용할 수는 없습니다. \n\n제어기는 물류 창고의 크기에 비례하여 막대한 전력을 소비합니다. 안정적인 물류 시스템을 위해선 전력 공급을 신경써야 합니다.</LogisticsSystemController.description>
 
     <LogisticsInputInterface.label>물류 입력 인터페이스</LogisticsInputInterface.label>
     <LogisticsInputInterface.description>물류 컨테이너로 물건을 넣을 수 있는 인터페이스입니다. 물류 시스템 컨트롤러가 포함된 물류 창고에서 사용할 수 있습니다. 낮은 기술로 만들어져 속도가 느립니다.</LogisticsInputInterface.description>
