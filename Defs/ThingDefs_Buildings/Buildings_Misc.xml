@@ -84,15 +84,57 @@
             <Flammability>0.5</Flammability>
             <WorkToBuild>1000</WorkToBuild>
         </statBases>
-        <placeWorkers>
-            <li>PlaceWorker_Conduit</li>
-        </placeWorkers>
         <costList>
             <ConveyorBelt>1</ConveyorBelt>
         </costList>
         <comps>
             <li Class="Logistics.CompProperties_Conveyor" />
         </comps>
+        <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    </ThingDef>
+
+    <ThingDef ParentName="BuildingBase">
+        <defName>WallConveyor</defName>
+        <label>wall conveyor</label>
+        <description>A wall with an underground conveyor system buried beneath it.</description>
+        <designationCategory>LogisticsCategory</designationCategory>
+        <useHitPoints>true</useHitPoints>
+        <selectable>true</selectable>
+        <altitudeLayer>Building</altitudeLayer>
+        <fillPercent>1.0</fillPercent>
+        <passability>Impassable</passability>
+        <staticSunShadowHeight>1.0</staticSunShadowHeight>
+        <blockWind>true</blockWind>
+        <coversFloor>true</coversFloor>
+        <blockLight>true</blockLight>
+        <blockWeather>true</blockWeather>
+        <castEdgeShadows>true</castEdgeShadows>
+        <canOverlapZones>false</canOverlapZones>
+        <graphicData>
+            <drawSize>(1.0, 1.0)</drawSize>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <texPath>Things/Building/WallConveyor</texPath>
+        </graphicData>
+        <comps>
+            <li Class="Logistics.CompProperties_Conveyor" />
+        </comps>
+        <researchPrerequisites>
+            <li>ConveyorInterface</li>
+        </researchPrerequisites>
+        <statBases>
+            <MaxHitPoints>200</MaxHitPoints>
+            <Flammability>0.5</Flammability>
+            <WorkToBuild>2000</WorkToBuild>
+        </statBases>
+        <building>
+            <canPlaceOverWall>true</canPlaceOverWall>
+            <isEdifice>true</isEdifice>
+            <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+        </building>
+        <costList>
+            <Steel>30</Steel>
+            <ConveyorBelt>1</ConveyorBelt>
+        </costList>
         <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
     </ThingDef>
 </Defs>

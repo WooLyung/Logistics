@@ -10,9 +10,7 @@
             <texPath>Things/Building/LogisticsInputInterface</texPath>
         </graphicData>
         <comps>
-            <li Class="Logistics.CompProperties_InputInterface">
-                <inputTick>180</inputTick>
-            </li>
+            <li Class="Logistics.CompProperties_InputInterface"/>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>
                 <basePowerConsumption>100</basePowerConsumption>
@@ -43,9 +41,7 @@
             <texPath>Things/Building/LogisticsOutputInterface</texPath>
         </graphicData>
         <comps>
-            <li Class="Logistics.CompProperties_OutputInterface">
-                <outputTick>180</outputTick>
-            </li>
+            <li Class="Logistics.CompProperties_OutputInterface"/>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>
                 <basePowerConsumption>100</basePowerConsumption>
@@ -76,12 +72,8 @@
             <texPath>Things/Building/LogisticsIOInterface</texPath>
         </graphicData>
         <comps>
-            <li Class="Logistics.CompProperties_InputInterface">
-                <inputTick>180</inputTick>
-            </li>
-            <li Class="Logistics.CompProperties_OutputInterface">
-                <outputTick>180</outputTick>
-            </li>
+            <li Class="Logistics.CompProperties_InputInterface"/>
+            <li Class="Logistics.CompProperties_OutputInterface"/>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>
                 <basePowerConsumption>100</basePowerConsumption>
@@ -111,9 +103,7 @@
             <texPath>Things/Building/LogisticsOutputWallInterface</texPath>
         </graphicData>
         <comps>
-            <li Class="Logistics.CompProperties_OutputInterface">
-                <outputTick>180</outputTick>
-            </li>
+            <li Class="Logistics.CompProperties_OutputInterface"/>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>
                 <basePowerConsumption>100</basePowerConsumption>
@@ -143,9 +133,7 @@
             <texPath>Things/Building/LogisticsInputWallInterface</texPath>
         </graphicData>
         <comps>
-            <li Class="Logistics.CompProperties_InputInterface">
-                <inputTick>180</inputTick>
-            </li>
+            <li Class="Logistics.CompProperties_InputInterface"/>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>
                 <basePowerConsumption>100</basePowerConsumption>
@@ -175,12 +163,8 @@
             <texPath>Things/Building/LogisticsIOWallInterface</texPath>
         </graphicData>
         <comps>
-            <li Class="Logistics.CompProperties_InputInterface">
-                <inputTick>180</inputTick>
-            </li>
-            <li Class="Logistics.CompProperties_OutputInterface">
-                <outputTick>180</outputTick>
-            </li>
+            <li Class="Logistics.CompProperties_InputInterface"/>
+            <li Class="Logistics.CompProperties_OutputInterface"/>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>
                 <basePowerConsumption>100</basePowerConsumption>

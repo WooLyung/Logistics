@@ -29,4 +29,7 @@
 
     <Conveyor.label>컨베이어</Conveyor.label>
     <Conveyor.description>물류 창고 밖으로 물류 시스템을 확장시키기 위한 컨베이어입니다. 물류 시스템에 연결된 컨베이어 인터페이스와 다른 물류 장치를 컨베이어로 연결하여 사용합니다. 컨베이어는 방향에 영향을 받습니다.</Conveyor.description>
+
+    <WallConveyor.label>벽 컨베이어</WallConveyor.label>
+    <WallConveyor.description>지하에 컨베이어가 매설된 벽입니다.</WallConveyor.description>
 </LanguageData>

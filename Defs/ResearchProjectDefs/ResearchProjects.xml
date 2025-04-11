@@ -133,24 +133,6 @@
     </ResearchProjectDef>
 
     <ResearchProjectDef>
-        <defName>FastInputOutput</defName>
-        <label>fast input/output</label>
-        <description>Develop interfaces with faster transfer speeds.</description>
-        <baseCost>2000</baseCost>
-        <tab>Logistics</tab>
-        <researchViewX>3.00</researchViewX>
-        <researchViewY>2.10</researchViewY>
-        <techLevel>Industrial</techLevel>
-        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
-        <requiredResearchFacilities>
-            <li>MultiAnalyzer</li>
-        </requiredResearchFacilities>
-        <prerequisites>
-            <li>AdvancedLogistics</li>
-        </prerequisites>
-    </ResearchProjectDef>
-
-    <ResearchProjectDef>
         <defName>ConveyorInterface</defName>
         <label>conveyor interface</label>
         <description>Expands the logistics system through conveyor-based connections.</description>
@@ -217,7 +199,6 @@
         </requiredResearchFacilities>
         <prerequisites>
             <li>LogisticsNetwork</li>
-            <li>FastInputOutput</li>
         </prerequisites>
     </ResearchProjectDef>
 

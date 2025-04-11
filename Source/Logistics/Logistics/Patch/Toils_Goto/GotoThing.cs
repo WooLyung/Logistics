@@ -1,9 +1,6 @@
 ﻿using HarmonyLib;
-using Logistics;
 using RimWorld;
-using System.Linq;
 using System.Reflection;
-using UnityEngine;
 using Verse;
 using Verse.AI;
 
@@ -23,7 +20,6 @@ namespace Logistics
         {
             Toil toil = ToilMaker.MakeToil("GotoThing");
 
-            bool useInterface = false;
             Pawn actor = null;
             LocalTargetInfo dest = null;
             Thing thing = null;
@@ -43,8 +39,8 @@ namespace Logistics
 
                         if (closest != null)
                         {
-                            PawnPath path1 = LogisticsSystem.FindPath(actor, closest.Position);
-                            PawnPath path2 = LogisticsSystem.FindPath(actor, thing.Position);
+                            PawnPath path1 = LogisticsSystem.FindPath(actor, actor.Position, closest.Position);
+                            PawnPath path2 = LogisticsSystem.FindPath(actor, actor.Position, thing.Position);
                             float cost1 = path1.TotalCost;
                             float cost2 = path2.TotalCost;
                             path1.ReleaseToPool();
@@ -54,31 +50,6 @@ namespace Logistics
                             {
                                 thing = closest;
                                 dest = thing;
-                                actor.Reserve(thing, actor.jobs.curJob);
-                                toil.defaultCompleteMode = ToilCompleteMode.Never;
-                                useInterface = true;
-
-                                int postArrivalWait = ((CompProperties_OutputInterface)thing.TryGetComp<Comp_OutputInterface>().props).outputTick;
-                                int waitCounter = -1;
-                                toil.tickAction = delegate
-                                {
-                                    if (waitCounter == -1 && !actor.pather.Moving)
-                                    {
-                                        waitCounter = 0;
-                                        toil.actor.jobs.curJob.SetTarget(TargetIndex.C, thing);
-                                        toil.WithProgressBar(TargetIndex.C, () =>
-                                        {
-                                            float progress = (float)waitCounter / postArrivalWait;
-                                            return progress;
-                                        });
-                                    }
-                                    if (waitCounter != -1)
-                                    {
-                                        waitCounter++;
-                                        if (waitCounter >= postArrivalWait)
-                                            actor.jobs.curDriver.ReadyForNextToil();
-                                    }
-                                };
                             }
                         }
                     }
@@ -89,17 +60,6 @@ namespace Logistics
 
                 actor.pather.StartPath(dest, peMode);
             };
-
-            toil.AddFinishAction(delegate
-            {
-                if (useInterface)
-                {
-                    Job job = actor.jobs.curJob;
-                    ReservationManager manager = actor.Map.reservationManager;
-                    if (manager.ReservedBy(thing, actor))
-                        manager.Release(thing, actor, job);
-                }
-            });
 
             toil.defaultCompleteMode = ToilCompleteMode.PatherArrival;
             if (canGotoSpawnedParent)

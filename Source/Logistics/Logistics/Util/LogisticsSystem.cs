@@ -52,10 +52,7 @@ namespace Logistics
 
                         Thing itf = v.GetThingList(t.Map).FirstOrDefault(t2 => t2.HasComp<IO>());
                         if (itf != null && IsAvailableInterface(itf))
-                        {
                             yield return itf;
-                            continue;
-                        }
 
                         Thing conveyor = v.GetThingList(t.Map).FirstOrDefault(t2 => t2.HasComp<Comp_Conveyor>());
                         if (conveyor != null)
@@ -82,10 +79,7 @@ namespace Logistics
                             {
                                 Thing itf = v.GetThingList(t.Map).FirstOrDefault(t2 => t2.HasComp<IO>());
                                 if (itf != null && IsAvailableInterface(itf))
-                                {
                                     yield return itf;
-                                    continue;
-                                }
 
                                 Thing conveyor2 = v.GetThingList(t.Map).FirstOrDefault(t2 => t2.HasComp<Comp_Conveyor>());
                                 if (conveyor2 != null)
@@ -104,10 +98,7 @@ namespace Logistics
                                 {
                                     Thing itf = v.GetThingList(t.Map).FirstOrDefault(t2 => t2.HasComp<IO>());
                                     if (itf != null && IsAvailableInterface(itf))
-                                    {
                                         yield return itf;
-                                        continue;
-                                    }
 
                                     Thing conveyor2 = v.GetThingList(t.Map).FirstOrDefault(t2 => t2.HasComp<Comp_Conveyor>());
                                     if (conveyor2 != null && -d == conveyor2.Rotation.FacingCell)
@@ -122,23 +113,23 @@ namespace Logistics
                 }
             }
         }
-        public static Thing FindAvailableClosestInterface<IO>(Room room, Pawn actor) where IO : Comp_Interface
+        public static Thing FindAvailableClosestInterface<IO>(Room room, Pawn actor, IntVec3? from = null) where IO : Comp_Interface
         {
             var interfaces = FindAvailableInterfaces<IO>(room, actor);
             if (interfaces.Count() == 0)
                 return null;
             return interfaces.MinBy(t =>
             {
-                PawnPath path = FindPath(actor, t.Position);
+                PawnPath path = FindPath(actor, from ?? actor.Position, t.Position);
                 float totalCost = path.TotalCost;
                 path.ReleaseToPool();
                 return totalCost;
             });
         }
 
-        public static PawnPath FindPath(Pawn pawn, IntVec3 to)
+        public static PawnPath FindPath(Pawn pawn, IntVec3 from, IntVec3 to)
         {
-            return pawn.Map.pathFinder.FindPath(pawn.Position, to, TraverseParms.For(pawn, Danger.Some, TraverseMode.ByPawn), PathEndMode.Touch);
+            return pawn.Map.pathFinder.FindPath(from, to, TraverseParms.For(pawn, Danger.Some, TraverseMode.ByPawn), PathEndMode.Touch);
         }
 
         public static bool IsInContainer(this Thing thing)

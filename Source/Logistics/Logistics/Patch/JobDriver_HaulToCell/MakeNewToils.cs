@@ -3,6 +3,7 @@ using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using UnityEngine;
 using Verse;
 using Verse.AI;
 
@@ -78,6 +79,7 @@ namespace Logistics
 
             Job job = __instance.job;
             Pawn actor2 = __instance.pawn;
+            Thing thing2 = job.GetTarget(TargetIndex.A).Thing;
             Map map = actor2.Map;
             LocalTargetInfo cell = job.GetTarget(TargetIndex.B);
             Room room = RegionAndRoomQuery.RoomAt(cell.Cell, map);
@@ -86,8 +88,8 @@ namespace Logistics
             float cost1 = 0, cost2 = 0;
             if (closest != null)
             {
-                PawnPath path1 = LogisticsSystem.FindPath(actor2, closest.Position);
-                PawnPath path2 = LogisticsSystem.FindPath(actor2, cell.Cell);
+                PawnPath path1 = LogisticsSystem.FindPath(actor2, thing2.Position, closest.Position);
+                PawnPath path2 = LogisticsSystem.FindPath(actor2, thing2.Position, cell.Cell);
                 cost1 = path1.TotalCost;
                 cost2 = path2.TotalCost;
                 path1.ReleaseToPool();
@@ -97,13 +99,9 @@ namespace Logistics
             Toil carryToCell;
             if (closest != null && cost1 < cost2)
             {
-                int postArrivalWait = ((CompProperties_InputInterface)closest.TryGetComp<Comp_InputInterface>().props).inputTick;
                 job.SetTarget(TargetIndex.C, closest);
                 carryToCell = Toils.CarryHauledThingToInterface(closest, TargetIndex.B, PathEndMode.ClosestTouch);
-
-                yield return Toils_Reserve.Reserve(TargetIndex.C);
                 yield return carryToCell;
-                yield return Toils_General.WaitWith(TargetIndex.C, postArrivalWait, true);
             }
             else
             {
