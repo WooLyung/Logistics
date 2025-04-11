@@ -10,6 +10,7 @@
 
             \n\nThe controller consumes a large amount of power based on the size of the warehouse.
             To ensure stable operation, maintaining a reliable power supply is essential.</description>
+        <uiOrder>100</uiOrder>
         <graphicData>
             <texPath>Things/Building/LogisticsSystemController</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
@@ -57,6 +58,7 @@
 
     <ThingDef ParentName="BuildingBase">
         <defName>Conveyor</defName>
+        <thingClass>Logistics.Building_Conveyor</thingClass>
         <designationCategory>LogisticsCategory</designationCategory>
         <label>conveyor</label>
         <description>A conveyor used to extend the logistics system beyond the logistics warehouse.
@@ -66,6 +68,7 @@
             <texPath>Things/Building/Conveyor</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
+        <uiOrder>500</uiOrder>
         <building>
             <isEdifice>false</isEdifice>
         </building>
@@ -75,6 +78,7 @@
         <blockWind>false</blockWind>
         <passability>Standable</passability>
         <pathCost>0</pathCost>
+        <drawerType>RealtimeOnly</drawerType>
         <fillPercent>0.4</fillPercent>
         <researchPrerequisites>
             <li>ConveyorInterface</li>
@@ -99,6 +103,7 @@
         <description>A wall with an underground conveyor system buried beneath it.</description>
         <designationCategory>LogisticsCategory</designationCategory>
         <useHitPoints>true</useHitPoints>
+        <uiOrder>501</uiOrder>
         <selectable>true</selectable>
         <altitudeLayer>Building</altitudeLayer>
         <fillPercent>1.0</fillPercent>
@@ -116,7 +121,7 @@
             <texPath>Things/Building/WallConveyor</texPath>
         </graphicData>
         <comps>
-            <li Class="Logistics.CompProperties_Conveyor" />
+            <li Class="Logistics.CompProperties_Conveyor"/>
         </comps>
         <researchPrerequisites>
             <li>ConveyorInterface</li>

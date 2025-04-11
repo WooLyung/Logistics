@@ -53,12 +53,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Building\Building_Conveyor.cs" />
     <Compile Include="Building\Building_ConveyorInterface.cs" />
     <Compile Include="Building\Building_LogisticsSystemController.cs" />
     <Compile Include="CompProperties\CompProperties_Conveyor.cs" />
     <Compile Include="CompProperties\CompProperties_InputInterface.cs" />
     <Compile Include="CompProperties\CompProperties_LogisticsContainer.cs" />
     <Compile Include="CompProperties\CompProperties_OutputInterface.cs" />
+    <Compile Include="GameComponent\GameComponent_ConveyorView .cs" />
     <Compile Include="Patch\JobDriver_HaulToCell\MakeNewToils.cs" />
     <Compile Include="ThingComp\Comp_Conveyor.cs" />
     <Compile Include="ThingComp\Comp_Interface.cs" />

@@ -60,7 +60,7 @@
         <baseCost>1000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>1.00</researchViewX>
-        <researchViewY>3.50</researchViewY>
+        <researchViewY>2.80</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <prerequisites>
@@ -75,7 +75,7 @@
         <baseCost>1500</baseCost>
         <tab>Logistics</tab>
         <researchViewX>2.00</researchViewX>
-        <researchViewY>2.80</researchViewY>
+        <researchViewY>2.10</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <prerequisites>
@@ -90,7 +90,7 @@
         <baseCost>2000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>3.00</researchViewX>
-        <researchViewY>3.50</researchViewY>
+        <researchViewY>2.80</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
@@ -139,7 +139,7 @@
         <baseCost>2200</baseCost>
         <tab>Logistics</tab>
         <researchViewX>3.00</researchViewX>
-        <researchViewY>2.80</researchViewY>
+        <researchViewY>2.10</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <prerequisites>
@@ -228,7 +228,7 @@
         <baseCost>4000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>5.00</researchViewX>
-        <researchViewY>3.50</researchViewY>
+        <researchViewY>2.80</researchViewY>
         <techLevel>Spacer</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
@@ -283,7 +283,7 @@
         <baseCost>2500</baseCost>
         <tab>Logistics</tab>
         <researchViewX>4.00</researchViewX>
-        <researchViewY>3.50</researchViewY>
+        <researchViewY>2.10</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>

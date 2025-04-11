@@ -9,6 +9,7 @@
         <graphicData>
             <texPath>Things/Building/LogisticsInputInterface</texPath>
         </graphicData>
+        <uiOrder>200</uiOrder>
         <comps>
             <li Class="Logistics.CompProperties_InputInterface"/>
             <li Class="CompProperties_Power">
@@ -40,6 +41,7 @@
         <graphicData>
             <texPath>Things/Building/LogisticsOutputInterface</texPath>
         </graphicData>
+        <uiOrder>201</uiOrder>
         <comps>
             <li Class="Logistics.CompProperties_OutputInterface"/>
             <li Class="CompProperties_Power">
@@ -71,6 +73,7 @@
         <graphicData>
             <texPath>Things/Building/LogisticsIOInterface</texPath>
         </graphicData>
+        <uiOrder>202</uiOrder>
         <comps>
             <li Class="Logistics.CompProperties_InputInterface"/>
             <li Class="Logistics.CompProperties_OutputInterface"/>
@@ -93,17 +96,18 @@
         </costList>
         <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
     </ThingDef>
-
+    
     <ThingDef ParentName="LogisticsWallInterfaceBase">
-        <defName>LogisticsOutputWallInterface</defName>
-        <label>logistics output wall interface</label>
-        <description>A wall-mounted interface that extracts items from an adjacent logistics system.
+        <defName>LogisticsInputWallInterface</defName>
+        <label>logistics input wall interface</label>
+        <description>A wall-mounted interface that inserts items into an adjacent logistics system.
             It allows materials to be transported through walls.</description>
         <graphicData>
-            <texPath>Things/Building/LogisticsOutputWallInterface</texPath>
+            <texPath>Things/Building/LogisticsInputWallInterface</texPath>
         </graphicData>
+        <uiOrder>300</uiOrder>
         <comps>
-            <li Class="Logistics.CompProperties_OutputInterface"/>
+            <li Class="Logistics.CompProperties_InputInterface"/>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>
                 <basePowerConsumption>100</basePowerConsumption>
@@ -125,15 +129,16 @@
     </ThingDef>
 
     <ThingDef ParentName="LogisticsWallInterfaceBase">
-        <defName>LogisticsInputWallInterface</defName>
-        <label>logistics input wall interface</label>
-        <description>A wall-mounted interface that inserts items into an adjacent logistics system.
+        <defName>LogisticsOutputWallInterface</defName>
+        <label>logistics output wall interface</label>
+        <description>A wall-mounted interface that extracts items from an adjacent logistics system.
             It allows materials to be transported through walls.</description>
         <graphicData>
-            <texPath>Things/Building/LogisticsInputWallInterface</texPath>
+            <texPath>Things/Building/LogisticsOutputWallInterface</texPath>
         </graphicData>
+        <uiOrder>301</uiOrder>
         <comps>
-            <li Class="Logistics.CompProperties_InputInterface"/>
+            <li Class="Logistics.CompProperties_OutputInterface"/>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>
                 <basePowerConsumption>100</basePowerConsumption>
@@ -162,6 +167,7 @@
         <graphicData>
             <texPath>Things/Building/LogisticsIOWallInterface</texPath>
         </graphicData>
+        <uiOrder>302</uiOrder>
         <comps>
             <li Class="Logistics.CompProperties_InputInterface"/>
             <li Class="Logistics.CompProperties_OutputInterface"/>
@@ -196,6 +202,7 @@
         <graphicData>
             <texPath>Things/Building/ConveyorInterface</texPath>
         </graphicData>
+        <uiOrder>350</uiOrder>
         <comps>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>

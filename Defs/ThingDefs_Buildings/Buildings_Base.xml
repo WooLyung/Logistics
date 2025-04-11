@@ -3,7 +3,7 @@
     <DesignationCategoryDef>
         <defName>LogisticsCategory</defName>
         <label>LogisticsCategory</label>
-        <order>950</order>
+        <order>24</order>
     </DesignationCategoryDef>
 
     <ThingDef ParentName="BuildingBase" Name="LogisticsInterfaceBase" Abstract="True">

@@ -9,6 +9,7 @@
         <graphicData>
             <texPath>Things/Building/SmallLogisticsContainer</texPath>
         </graphicData>
+        <uiOrder>400</uiOrder>
         <statBases>
             <MaxHitPoints>200</MaxHitPoints>
             <Flammability>0.5</Flammability>
@@ -21,6 +22,7 @@
             <Steel>20</Steel>
             <ConveyorBelt>1</ConveyorBelt>
         </costList>
+        <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
         <building>
             <maxItemsInCell>2</maxItemsInCell>
         </building>
