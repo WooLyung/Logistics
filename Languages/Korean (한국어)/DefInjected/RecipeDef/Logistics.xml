@@ -7,4 +7,8 @@
     <Make_LogisticsComponent.label>물류 부품 제작</Make_LogisticsComponent.label>
     <Make_LogisticsComponent.description>물류 부품을 만듭니다.</Make_LogisticsComponent.description>
     <Make_LogisticsComponent.jobString>물류 부품 제작 중.</Make_LogisticsComponent.jobString>
+    
+    <Make_NetworkComponent.label>네트워크 부품 제작</Make_NetworkComponent.label>
+    <Make_NetworkComponent.description>네트워크 부품을 만듭니다.</Make_NetworkComponent.description>
+    <Make_NetworkComponent.jobString>네트워크 부품 제작 중.</Make_NetworkComponent.jobString>
 </LanguageData>

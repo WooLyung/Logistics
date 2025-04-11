@@ -27,4 +27,63 @@
             <maxItemsInCell>2</maxItemsInCell>
         </building>
     </ThingDef>
+    
+    <ThingDef ParentName="LogisticsContainerBase">
+        <defName>MediumLogisticsContainer</defName>
+        <label>medium logistics container</label>
+        <description>A container connected to the logistics system for item storage. Items stored in
+            the logistics container can be input and output through devices such as logistics
+            interfaces within the same logistics system. Can store up to 3 stacks of items.</description>
+        <graphicData>
+            <texPath>Things/Building/MediumLogisticsContainer</texPath>
+        </graphicData>
+        <uiOrder>401</uiOrder>
+        <statBases>
+            <MaxHitPoints>300</MaxHitPoints>
+            <Flammability>0.5</Flammability>
+            <WorkToBuild>3600</WorkToBuild>
+        </statBases>
+        <researchPrerequisites>
+            <li>LargeLogisticsSystem</li>
+        </researchPrerequisites>
+        <costList>
+            <Steel>30</Steel>
+            <Plasteel>5</Plasteel>
+            <ConveyorBelt>2</ConveyorBelt>
+        </costList>
+        <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+        <building>
+            <maxItemsInCell>3</maxItemsInCell>
+        </building>
+    </ThingDef>
+    
+    <ThingDef ParentName="LogisticsContainerBase">
+        <defName>LargeLogisticsContainer</defName>
+        <label>large logistics container</label>
+        <description>A container connected to the logistics system for item storage. Items stored in
+            the logistics container can be input and output through devices such as logistics
+            interfaces within the same logistics system. Can store up to 4 stacks of items.</description>
+        <graphicData>
+            <texPath>Things/Building/LargeLogisticsContainer</texPath>
+        </graphicData>
+        <uiOrder>402</uiOrder>
+        <statBases>
+            <MaxHitPoints>400</MaxHitPoints>
+            <Flammability>0.5</Flammability>
+            <WorkToBuild>5000</WorkToBuild>
+        </statBases>
+        <researchPrerequisites>
+            <li>MassiveLogisticsSystem</li>
+        </researchPrerequisites>
+        <costList>
+            <Steel>30</Steel>
+            <Plasteel>10</Plasteel>
+            <LogisticsComponent>1</LogisticsComponent>
+            <ConveyorBelt>3</ConveyorBelt>
+        </costList>
+        <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+        <building>
+            <maxItemsInCell>4</maxItemsInCell>
+        </building>
+    </ThingDef>
 </Defs>

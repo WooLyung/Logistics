@@ -5,4 +5,7 @@
 
     <LogisticsComponent.label>물류 부품</LogisticsComponent.label>
     <LogisticsComponent.description>물류 장치를 제작하기 위한 고도화된 부품 모음입니다.</LogisticsComponent.description>
+    
+    <NetworkComponent.label>네트워크 부품</NetworkComponent.label>
+    <NetworkComponent.description>네트워크와 연결된 물류 장치를 제작하기 위한 첨단 부품 모음입니다.</NetworkComponent.description>
 </LanguageData>

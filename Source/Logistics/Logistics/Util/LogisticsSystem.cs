@@ -12,7 +12,7 @@ namespace Logistics
 
         public static bool IsAvailableInterface(Thing t, Pawn actor = null, bool area = true)
         {
-            if ((actor == null || (!t.IsForbidden(actor) && actor.CanReserve(t)
+            if ((actor == null || (!t.IsForbidden(actor)
                 && actor.Map.reachability.CanReach(actor.Position, t.Position, PathEndMode.Touch, TraverseParms.For(actor, Danger.Some, TraverseMode.ByPawn))))
                 && t.IsOperational())
             {
@@ -29,10 +29,12 @@ namespace Logistics
 
         public static bool IsAvailableSystem(Room room)
         {
+            if (room.PsychologicallyOutdoors)
+                return false;
             return room.ContainedAndAdjacentThings.Any(t => t is Building_LogisticsSystemController controller && controller.IsOperational());
         }
 
-        public static IEnumerable<Thing> FindAvailableInterfaces<IO>(Room room, Pawn actor = null) where IO : Comp_Interface
+        public static IEnumerable<Thing> FindAvailableInterfaces<IO>(Room room, Pawn actor = null, bool network = true) where IO : Comp_Interface
         {
             if (!IsAvailableSystem(room))
                 yield break;
@@ -41,6 +43,25 @@ namespace Logistics
             {
                 if (t.HasComp<IO>() && IsAvailableInterface(t, actor))
                     yield return t;
+                if (network && t is Building_LogisticsNetworkLinker linker && linker.IsOperational())
+                {
+                    string target = linker.Target;
+                    var ls = linker.Map.listerThings.ThingsOfDef(ThingDef.Named("LogisticsSystemController"));
+                    
+                    foreach (var t2 in ls)
+                    {
+                        if (t2 is Building_LogisticsSystemController controller)
+                        {
+                            if (controller.ControllerID == target)
+                            {
+                                var ls2 = FindAvailableInterfaces<IO>(controller.GetRoom(), actor, false);
+                                foreach (var itf in ls2)
+                                    yield return itf;
+                                break;
+                            }
+                        }
+                    }
+                }
                 if (t is Building_ConveyorInterface && IsAvailableInterface(t, actor, area: false))
                 {
                     Stack<IntVec3> stack = new Stack<IntVec3>();

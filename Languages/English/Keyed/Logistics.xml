@@ -2,4 +2,20 @@
 <LanguageData>
     <ConveyorViewToggleLabel>Conveyor View Toggle</ConveyorViewToggleLabel>
     <ConveyorViewToggleDesc>Toggles the visibility of placed conveyor structures.</ConveyorViewToggleDesc>
+    
+    <ControllerID>Controller ID</ControllerID>
+
+    <ControllerRenameLabel>Change Controller ID</ControllerRenameLabel>
+    <ControllerRenameDesc>Edit the identifier for this logistics system controller.</ControllerRenameDesc>
+    <ControllerRenameEnter>Enter new controller ID:</ControllerRenameEnter>
+    <ControllerRenameConfirm>Confirm</ControllerRenameConfirm>
+    <ControllerRenameCancel>Cancel</ControllerRenameCancel>
+    <ControllerRenameMessage>Controller ID set.</ControllerRenameMessage>
+    
+    <LinkTargetLabel>Connect to controller</LinkTargetLabel>
+    <LinkTargetDesc>Set the ID of the controller to connect to.</LinkTargetDesc>
+    <LinkTargetEnter>Enter controller ID:</LinkTargetEnter>
+    <LinkTargetConfirm>Confirm</LinkTargetConfirm>
+    <LinkTargetCancel>Cancel</LinkTargetCancel>
+    <LinkTargetMessage>Target controller ID set.</LinkTargetMessage>
 </LanguageData>

@@ -7,7 +7,7 @@
         <graphicData>
             <texPath>Things/Item/ConveyorBelt</texPath>
             <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>(0.7, 0.7)</drawSize>
+            <drawSize>(0.6, 0.6)</drawSize>
         </graphicData>
         <soundInteract>Metal_Drop</soundInteract>
         <soundDrop>Standard_Drop</soundDrop>
@@ -34,7 +34,7 @@
         <graphicData>
             <texPath>Things/Item/LogisticsComponent</texPath>
             <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>(0.7, 0.7)</drawSize>
+            <drawSize>(0.6, 0.6)</drawSize>
         </graphicData>
         <soundInteract>Metal_Drop</soundInteract>
         <soundDrop>Standard_Drop</soundDrop>
@@ -52,5 +52,32 @@
             <li>Manufactured</li>
         </thingCategories>
         <allowedArchonexusCount>10</allowedArchonexusCount>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>NetworkComponent</defName>
+        <label>network component</label>
+        <description>A collection of advanced components used to construct logistics devices connected to the network.</description>
+        <graphicData>
+            <texPath>Things/Item/NetworkComponent</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(0.6, 0.6)</drawSize>
+        </graphicData>
+        <soundInteract>Metal_Drop</soundInteract>
+        <soundDrop>Standard_Drop</soundDrop>
+        <stackLimit>10</stackLimit>
+        <healthAffectsPrice>false</healthAffectsPrice>
+        <statBases>
+            <MaxHitPoints>70</MaxHitPoints>
+            <MarketValue>700</MarketValue>
+            <Mass>0.6</Mass>
+            <Flammability>0.6</Flammability>
+            <DeteriorationRate>2.0</DeteriorationRate>
+        </statBases>
+        <intricate>true</intricate>
+        <thingCategories>
+            <li>Manufactured</li>
+        </thingCategories>
+        <allowedArchonexusCount>4</allowedArchonexusCount>
     </ThingDef>
 </Defs>

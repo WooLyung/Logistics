@@ -4,12 +4,7 @@
         <defName>LogisticsSystemController</defName>
         <label>logistics system controller</label>
         <thingClass>Logistics.Building_LogisticsSystemController</thingClass>
-        <description>Controls the logistics system of a warehouse using a central core.
-            Each logistics warehouse requires a single controller, and without it, the system cannot
-            function.
-
-            \n\nThe controller consumes a large amount of power based on the size of the warehouse.
-            To ensure stable operation, maintaining a reliable power supply is essential.</description>
+        <description>Controls the logistics system of a warehouse using a central core. Each logistics warehouse requires a single controller, and without it, the system cannot function.\n\nThe controller consumes a large amount of power based on the size of the warehouse. To ensure stable operation, maintaining a reliable power supply is essential.</description>
         <uiOrder>100</uiOrder>
         <graphicData>
             <texPath>Things/Building/LogisticsSystemController</texPath>
@@ -43,6 +38,11 @@
         <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
         <tickerType>Rare</tickerType>
         <comps>
+            <li Class="CompProperties_Glower">
+                <glowRadius>3.5</glowRadius>
+                <glowColor>(145, 236, 231)</glowColor>
+                <overlightRadius>1.5</overlightRadius>
+            </li>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>
                 <shortCircuitInRain>true</shortCircuitInRain>
@@ -57,13 +57,67 @@
     </ThingDef>
 
     <ThingDef ParentName="BuildingBase">
+        <defName>LogisticsNetworkLinker</defName>
+        <label>logistics network linker</label>
+        <thingClass>Logistics.Building_LogisticsNetworkLinker</thingClass>
+        <description>A device used to connect two logistics systems via a network. Install the linker in one logistics system and input the controller ID of the target system to establish a connection. Through this link, the connected system can access containers in the target logistics network. To enable access in the opposite direction, an additional linker is required.</description>
+        <uiOrder>101</uiOrder>
+        <graphicData>
+            <texPath>Things/Building/LogisticsNetworkLinker</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(1.0,1.0)</drawSize>
+        </graphicData>
+        <rotatable>false</rotatable>
+        <altitudeLayer>Building</altitudeLayer>
+        <passability>PassThroughOnly</passability>
+        <pathCost>50</pathCost>
+        <blockWind>true</blockWind>
+        <castEdgeShadows>false</castEdgeShadows>
+        <fillPercent>0.5</fillPercent>
+        <canOverlapZones>false</canOverlapZones>
+        <statBases>
+            <MaxHitPoints>200</MaxHitPoints>
+            <WorkToBuild>14000</WorkToBuild>
+            <Flammability>0.4</Flammability>
+        </statBases>
+        <size>(1,1)</size>
+        <building>
+            <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+        </building>
+        <costList>
+            <Steel>30</Steel>
+            <Plasteel>120</Plasteel>
+            <NetworkComponent>2</NetworkComponent>
+            <ComponentSpacer>2</ComponentSpacer>
+        </costList>
+        <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+        <designationCategory>LogisticsCategory</designationCategory>
+        <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+        <comps>
+            <li Class="CompProperties_Glower">
+                <glowRadius>3.5</glowRadius>
+                <glowColor>(145, 236, 231)</glowColor>
+                <overlightRadius>1.5</overlightRadius>
+            </li>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <shortCircuitInRain>true</shortCircuitInRain>
+                <basePowerConsumption>400</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Flickable" />
+            <li Class="CompProperties_Breakdownable" />
+        </comps>
+        <researchPrerequisites>
+            <li>LogisticsNetwork</li>
+        </researchPrerequisites>
+    </ThingDef>
+
+    <ThingDef ParentName="BuildingBase">
         <defName>Conveyor</defName>
         <thingClass>Logistics.Building_Conveyor</thingClass>
         <designationCategory>LogisticsCategory</designationCategory>
         <label>conveyor</label>
-        <description>A conveyor used to extend the logistics system beyond the logistics warehouse.
-            Connects conveyor interfaces and other logistics devices that are part of the system.
-            Conveyors are directional and their orientation affects functionality.</description>
+        <description>A conveyor used to extend the logistics system beyond the logistics warehouse. Connects conveyor interfaces and other logistics devices that are part of the system. Conveyors are directional and their orientation affects functionality.</description>
         <graphicData>
             <texPath>Things/Building/Conveyor</texPath>
             <graphicClass>Graphic_Single</graphicClass>

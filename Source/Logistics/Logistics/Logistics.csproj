@@ -51,10 +51,19 @@
       <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Building\Building_Conveyor.cs" />
     <Compile Include="Building\Building_ConveyorInterface.cs" />
+    <Compile Include="Building\Building_LogisticsNetworkLinker.cs" />
     <Compile Include="Building\Building_LogisticsSystemController.cs" />
     <Compile Include="CompProperties\CompProperties_Conveyor.cs" />
     <Compile Include="CompProperties\CompProperties_InputInterface.cs" />

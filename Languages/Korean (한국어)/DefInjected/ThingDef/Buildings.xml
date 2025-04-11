@@ -24,6 +24,12 @@
     <SmallLogisticsContainer.label>소형 물류 컨테이너</SmallLogisticsContainer.label>
     <SmallLogisticsContainer.description>물류 시스템에 연결되어 물품을 보관하는 컨테이너입니다. 물류 컨테이너에 보관된 물품은 같은 물류 시스템의 물류 인터페이스를 비롯한 장치를 통해 입출력됩니다. 최대 2개의 스택을 보관할 수 있습니다.</SmallLogisticsContainer.description>
 
+    <MediumLogisticsContainer.label>중형 물류 컨테이너</MediumLogisticsContainer.label>
+    <MediumLogisticsContainer.description>물류 시스템에 연결되어 물품을 보관하는 컨테이너입니다. 물류 컨테이너에 보관된 물품은 같은 물류 시스템의 물류 인터페이스를 비롯한 장치를 통해 입출력됩니다. 최대 3개의 스택을 보관할 수 있습니다.</MediumLogisticsContainer.description>
+
+    <LargeLogisticsContainer.label>대형 물류 컨테이너</LargeLogisticsContainer.label>
+    <LargeLogisticsContainer.description>물류 시스템에 연결되어 물품을 보관하는 컨테이너입니다. 물류 컨테이너에 보관된 물품은 같은 물류 시스템의 물류 인터페이스를 비롯한 장치를 통해 입출력됩니다. 최대 4개의 스택을 보관할 수 있습니다.</LargeLogisticsContainer.description>
+
     <ConveyorInterface.label>컨베이어 인터페이스</ConveyorInterface.label>
     <ConveyorInterface.description>물류 창고 밖으로 물류 시스템을 확장시키기 위한 인터페이스입니다. 인터페이스와 물류 장치를 컨베이어로 연결하여 사용합니다.</ConveyorInterface.description>
 
@@ -32,4 +38,7 @@
 
     <WallConveyor.label>벽 컨베이어</WallConveyor.label>
     <WallConveyor.description>지하에 컨베이어가 매설된 벽입니다.</WallConveyor.description>
+    
+    <LogisticsNetworkLinker.label>물류 네트워크 링커</LogisticsNetworkLinker.label>
+    <LogisticsNetworkLinker.description>두 개의 물류 시스템을 네트워크로 연결하는 장치입니다. 링커를 한 물류 시스템에 설치하고 연결할 다른 물류 시스템의 제어기 ID를 링커에 입력하면 연결됩니다. 링커로 연결된 곳에서 물류 시스템의 컨테이너에 접근할 수 있습니다. 그 반대를 위해선 추가 링커가 필요합니다.</LogisticsNetworkLinker.description>
 </LanguageData>
