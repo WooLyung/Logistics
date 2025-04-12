@@ -87,25 +87,6 @@
             <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
             <storageGroupTag>LogisticsContainer</storageGroupTag>
             <blueprintClass>Blueprint_Storage</blueprintClass>
-            <fixedStorageSettings>
-                <filter>
-                    <disallowNotEverStorable>true</disallowNotEverStorable>
-                    <categories>
-                        <li>Root</li>
-                    </categories>
-                    <disallowedCategories>
-                        <li>Chunks</li>
-                        <li>Plants</li>
-                        <li>Buildings</li>
-                    </disallowedCategories>
-                    <disallowedThingDefs MayRequire="Ludeon.RimWorld.Biotech">
-                        <li MayRequire="Ludeon.RimWorld.Biotech">Wastepack</li>
-                    </disallowedThingDefs>
-                    <specialFiltersToDisallow>
-                        <li>AllowLargeCorpses</li>
-                    </specialFiltersToDisallow>
-                </filter>
-            </fixedStorageSettings>
             <defaultStorageSettings>
                 <priority>Preferred</priority>
                 <filter>
@@ -135,5 +116,42 @@
         <comps>
             <li Class="Logistics.CompProperties_LogisticsContainer" />
         </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="LogisticsContainerBase" Name="LogisticsContainerNormalBase" Abstract="True">
+        <building>
+            <fixedStorageSettings>
+                <filter>
+                    <disallowNotEverStorable>true</disallowNotEverStorable>
+                    <categories>
+                        <li>Root</li>
+                    </categories>
+                    <disallowedCategories>
+                        <li>Chunks</li>
+                        <li>Plants</li>
+                        <li>Buildings</li>
+                    </disallowedCategories>
+                    <disallowedThingDefs MayRequire="Ludeon.RimWorld.Biotech">
+                        <li MayRequire="Ludeon.RimWorld.Biotech">Wastepack</li>
+                    </disallowedThingDefs>
+                    <specialFiltersToDisallow>
+                        <li>AllowLargeCorpses</li>
+                    </specialFiltersToDisallow>
+                </filter>
+            </fixedStorageSettings>
+        </building>
+    </ThingDef>
+
+    <ThingDef ParentName="LogisticsContainerBase" Name="LogisticsContainerIntegratedBase" Abstract="True">
+        <building>
+            <fixedStorageSettings>
+                <filter>
+                    <disallowNotEverStorable>true</disallowNotEverStorable>
+                    <categories>
+                        <li>Root</li>
+                    </categories>
+                </filter>
+            </fixedStorageSettings>
+        </building>
     </ThingDef>
 </Defs>

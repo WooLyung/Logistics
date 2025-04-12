@@ -69,21 +69,6 @@
     </ResearchProjectDef>
 
     <ResearchProjectDef>
-        <defName>RefrigeratedLogisticsContainer</defName>
-        <label>refrigerated logistics container</label>
-        <description>Research a container that keeps its contents cool to prevent spoilage.</description>
-        <baseCost>1500</baseCost>
-        <tab>Logistics</tab>
-        <researchViewX>2.00</researchViewX>
-        <researchViewY>2.10</researchViewY>
-        <techLevel>Industrial</techLevel>
-        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
-        <prerequisites>
-            <li>LargeLogisticsSystem</li>
-        </prerequisites>
-    </ResearchProjectDef>
-
-    <ResearchProjectDef>
         <defName>MassiveLogisticsSystem</defName>
         <label>massive logistics system</label>
         <description>Further expand containers to construct a highly compact logistics system.</description>
@@ -198,6 +183,7 @@
             <li>MultiAnalyzer</li>
         </requiredResearchFacilities>
         <prerequisites>
+            <li>ConveyorInterface</li>
             <li>LogisticsNetwork</li>
         </prerequisites>
     </ResearchProjectDef>
@@ -261,16 +247,17 @@
         <defName>IntegratedLogisticsContainer</defName>
         <label>integrated logistics container</label>
         <description>Research a container capable of storing all items, including corpses and waste.</description>
-        <baseCost>2500</baseCost>
+        <baseCost>4000</baseCost>
         <tab>Logistics</tab>
-        <researchViewX>4.00</researchViewX>
-        <researchViewY>2.10</researchViewY>
+        <researchViewX>5.00</researchViewX>
+        <researchViewY>2.80</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
             <li>MultiAnalyzer</li>
         </requiredResearchFacilities>
         <prerequisites>
+            <li>LogisticsNetwork</li>
             <li>MassiveLogisticsSystem</li>
         </prerequisites>
     </ResearchProjectDef>

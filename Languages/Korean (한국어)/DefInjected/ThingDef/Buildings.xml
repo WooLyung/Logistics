@@ -39,6 +39,9 @@
     <LargeLogisticsContainer.label>대형 물류 컨테이너</LargeLogisticsContainer.label>
     <LargeLogisticsContainer.description>물류 시스템에 연결되어 물품을 보관하는 컨테이너입니다. 물류 컨테이너에 보관된 물품은 같은 물류 시스템의 물류 인터페이스를 비롯한 장치를 통해 입출력됩니다. 최대 4개의 스택을 보관할 수 있습니다.</LargeLogisticsContainer.description>
 
+    <IntegratedLogisticsContainer.label>통합 물류 컨테이너</IntegratedLogisticsContainer.label>
+    <IntegratedLogisticsContainer.description>모든 종류의 물류를 저장할 수 있는 물류 컨테이너입니다. 최대 2개의 스택을 보관할 수 있습니다.</IntegratedLogisticsContainer.description>
+
     <ConveyorInterface.label>컨베이어 인터페이스</ConveyorInterface.label>
     <ConveyorInterface.description>물류 창고 밖으로 물류 시스템을 확장시키기 위한 인터페이스입니다. 인터페이스와 물류 장치를 컨베이어로 연결하여 사용합니다.</ConveyorInterface.description>
 

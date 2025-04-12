@@ -27,9 +27,6 @@
     <IntegratedInputOutput.label>통합 입출력</IntegratedInputOutput.label>
     <IntegratedInputOutput.description>입출력이 하나로 통합된 인터페이스를 연구합니다.</IntegratedInputOutput.description>
     
-    <RefrigeratedLogisticsContainer.label>냉각 물류 컨테이너</RefrigeratedLogisticsContainer.label>
-    <RefrigeratedLogisticsContainer.description>내용물이 썩지 않도록 차갑게 유지하는 컨테이너를 연구합니다.</RefrigeratedLogisticsContainer.description>
-
     <RemoteInterface.label>원격 인터페이스</RemoteInterface.label>
     <RemoteInterface.description>물류 시스템으로부터 완전히 독립된 물류 네트워크의 인터페이스입니다.</RemoteInterface.description>
 
@@ -44,9 +41,6 @@
     
     <LogisticsInputPort.label>물류 투입구</LogisticsInputPort.label>
     <LogisticsInputPort.description>인접한 물류 시스템으로 물건을 투입시키는 장치를 연구합니다.</LogisticsInputPort.description>
-    
-    <VerticalLogisticsLift.label>수직 물류 승강기</VerticalLogisticsLift.label>
-    <VerticalLogisticsLift.description>승강기를 이용해 좁은 공간에 밀집된 물류를 보관합니다.</VerticalLogisticsLift.description>
     
     <ConveyorInterface.label>컨베이어 인터페이스</ConveyorInterface.label>
     <ConveyorInterface.description>컨베이어를 통해 물류 시스템을 확장합니다.</ConveyorInterface.description>
