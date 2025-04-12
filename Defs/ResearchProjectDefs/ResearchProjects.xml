@@ -39,7 +39,7 @@
         <defName>LogisticsNetwork</defName>
         <label>logistics network</label>
         <description>Connect multiple logistics systems to form a large-scale network.</description>
-        <baseCost>4000</baseCost>
+        <baseCost>5000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>4.00</researchViewX>
         <researchViewY>1.40</researchViewY>
@@ -136,7 +136,7 @@
         <defName>ConveyorInterface</defName>
         <label>conveyor interface</label>
         <description>Expands the logistics system through conveyor-based connections.</description>
-        <baseCost>2200</baseCost>
+        <baseCost>1000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>3.00</researchViewX>
         <researchViewY>2.10</researchViewY>
@@ -218,25 +218,6 @@
         <prerequisites>
             <li>LogisticsSmartExporter</li>
             <li>LogisticsNetwork</li>
-        </prerequisites>
-    </ResearchProjectDef>
-
-    <ResearchProjectDef>
-        <defName>VerticalLogisticsLift</defName>
-        <label>vertical logistics lift</label>
-        <description>Stores densely packed logistics items using a lift system in a compact space.</description>
-        <baseCost>4000</baseCost>
-        <tab>Logistics</tab>
-        <researchViewX>5.00</researchViewX>
-        <researchViewY>2.80</researchViewY>
-        <techLevel>Spacer</techLevel>
-        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
-        <requiredResearchFacilities>
-            <li>MultiAnalyzer</li>
-        </requiredResearchFacilities>
-        <prerequisites>
-            <li>LogisticsNetwork</li>
-            <li>MassiveLogisticsSystem</li>
         </prerequisites>
     </ResearchProjectDef>
 

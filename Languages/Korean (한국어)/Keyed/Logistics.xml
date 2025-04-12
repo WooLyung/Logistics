@@ -3,19 +3,20 @@
     <ConveyorViewToggleLabel>컨베이어 뷰 토글</ConveyorViewToggleLabel>
     <ConveyorViewToggleDesc>컨베이어를 보이거나 보이지 않게 설정합니다.</ConveyorViewToggleDesc>
 
-    <ControllerID>제어기 ID</ControllerID>
+    <NetworkID>네트워크 ID</NetworkID>
+    <LinkTargetID>링크 대상 ID</LinkTargetID>
 
-    <ControllerRenameLabel>제어기 ID 설정</ControllerRenameLabel>
-    <ControllerRenameDesc>물류 시스템 제어기의 ID를 설정정합니다.</ControllerRenameDesc>
-    <ControllerRenameEnter>새 제어기 ID를 입력:</ControllerRenameEnter>
-    <ControllerRenameConfirm>확인</ControllerRenameConfirm>
-    <ControllerRenameCancel>취소</ControllerRenameCancel>
-    <ControllerRenameMessage>제어기 ID를 설정했습니다.</ControllerRenameMessage>
+    <NetworkIDLabel>네트워크 ID 설정</NetworkIDLabel>
+    <NetworkIDDesc>물류 네트워크에서 사용할 네트워크 ID를 설정합니다.</NetworkIDDesc>
+    <NetworkIDEnter>네트워크 ID 설정</NetworkIDEnter>
+    <NetworkIDConfirm>확인</NetworkIDConfirm>
+    <NetworkIDCancel>취소</NetworkIDCancel>
+    <NetworkIDMessage>네트워크 ID를 설정했습니다.</NetworkIDMessage>
 
-    <LinkTargetLabel>제어기 연결</LinkTargetLabel>
-    <LinkTargetDesc>연결한 제어기 ID를 설정합니다.</LinkTargetDesc>
-    <LinkTargetEnter>제어기 ID 입력:</LinkTargetEnter>
+    <LinkTargetLabel>링크 대상 설정</LinkTargetLabel>
+    <LinkTargetDesc>연결할 링크 대상의 ID를 설정합니다.</LinkTargetDesc>
+    <LinkTargetEnter>링크 대상 설정</LinkTargetEnter>
     <LinkTargetConfirm>확인</LinkTargetConfirm>
     <LinkTargetCancel>취소</LinkTargetCancel>
-    <LinkTargetMessage>대상 제어기 ID를 설정했습니다.</LinkTargetMessage>
+    <LinkTargetMessage>링크 대상을 설정했습니다.</LinkTargetMessage>
 </LanguageData>

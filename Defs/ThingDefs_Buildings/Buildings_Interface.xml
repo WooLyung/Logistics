@@ -3,9 +3,7 @@
     <ThingDef ParentName="LogisticsInnerInterfaceBase">
         <defName>LogisticsInputInterface</defName>
         <label>logistics input interface</label>
-        <description>An interface for inserting items into logistics containers. It can be used in
-            logistics warehouses that include a logistics system controller. Built with low
-            technology, it operates at a slow speed.</description>
+        <description>An interface for inserting items into logistics containers. It can be used in logistics warehouses that include a logistics system controller.</description>
         <graphicData>
             <texPath>Things/Building/LogisticsInputInterface</texPath>
         </graphicData>
@@ -35,9 +33,7 @@
     <ThingDef ParentName="LogisticsInnerInterfaceBase">
         <defName>LogisticsOutputInterface</defName>
         <label>logistics output interface</label>
-        <description>An interface for extracting items from logistics containers. It can be used in
-            logistics warehouses that include a logistics system controller. Built with low
-            technology, it operates at a slow speed.</description>
+        <description>An interface for extracting items from logistics containers. It can be used in logistics warehouses that include a logistics system controller.</description>
         <graphicData>
             <texPath>Things/Building/LogisticsOutputInterface</texPath>
         </graphicData>
@@ -67,9 +63,7 @@
     <ThingDef ParentName="LogisticsInnerInterfaceBase">
         <defName>LogisticsIOInterface</defName>
         <label>logistics input/output interface</label>
-        <description>An interface for extracting and inserting items. It can be used in
-            logistics warehouses that include a logistics system controller. Built with low
-            technology, it operates at a slow speed.</description>
+        <description>An interface for extracting and inserting items. It can be used in logistics warehouses that include a logistics system controller.</description>
         <graphicData>
             <texPath>Things/Building/LogisticsIOInterface</texPath>
         </graphicData>
@@ -100,8 +94,7 @@
     <ThingDef ParentName="LogisticsWallInterfaceBase">
         <defName>LogisticsInputWallInterface</defName>
         <label>logistics input wall interface</label>
-        <description>A wall-mounted interface that inserts items into an adjacent logistics system.
-            It allows materials to be transported through walls.</description>
+        <description>A wall-mounted interface that inserts items into an adjacent logistics system. It allows materials to be transported through walls.</description>
         <graphicData>
             <texPath>Things/Building/LogisticsInputWallInterface</texPath>
         </graphicData>
@@ -131,8 +124,7 @@
     <ThingDef ParentName="LogisticsWallInterfaceBase">
         <defName>LogisticsOutputWallInterface</defName>
         <label>logistics output wall interface</label>
-        <description>A wall-mounted interface that extracts items from an adjacent logistics system.
-            It allows materials to be transported through walls.</description>
+        <description>A wall-mounted interface that extracts items from an adjacent logistics system. It allows materials to be transported through walls.</description>
         <graphicData>
             <texPath>Things/Building/LogisticsOutputWallInterface</texPath>
         </graphicData>
@@ -162,8 +154,7 @@
     <ThingDef ParentName="LogisticsWallInterfaceBase">
         <defName>LogisticsIOWallInterface</defName>
         <label>logistics input/output wall interface</label>
-        <description>A wall-mounted interface that inserts and extracts items.
-            It allows materials to be transported through walls.</description>
+        <description>A wall-mounted interface that inserts and extracts items. It allows materials to be transported through walls.</description>
         <graphicData>
             <texPath>Things/Building/LogisticsIOWallInterface</texPath>
         </graphicData>
@@ -196,9 +187,7 @@
         <thingClass>Logistics.Building_ConveyorInterface</thingClass>
         <defName>ConveyorInterface</defName>
         <label>conveyor interface</label>
-        <description>An interface used to extend the logistics system beyond the logistics
-            warehouse.
-            It connects to logistics devices via conveyors for external integration.</description>
+        <description>An interface used to extend the logistics system beyond the logistics warehouse. It connects to logistics devices via conveyors for external integration.</description>
         <graphicData>
             <texPath>Things/Building/ConveyorInterface</texPath>
         </graphicData>
@@ -222,5 +211,103 @@
             <LogisticsComponent>1</LogisticsComponent>
         </costList>
         <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    </ThingDef>
+
+    <ThingDef ParentName="LogisticsInnerInterfaceBase">
+        <defName>RemoteInputInterface</defName>
+        <thingClass>Logistics.Building_RemoteInterface</thingClass>
+        <label>remote input interface</label>
+        <description>An input interface that can connect to the logistics network. Provides immediate access to logistics systems linked via a network linker.</description>
+        <graphicData>
+            <texPath>Things/Building/RemoteInputInterface</texPath>
+        </graphicData>
+        <uiOrder>203</uiOrder>
+        <comps>
+            <li Class="Logistics.CompProperties_InputInterface"/>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>200</basePowerConsumption>
+                <shortCircuitInRain>true</shortCircuitInRain>
+            </li>
+        </comps>
+        <researchPrerequisites>
+            <li>RemoteInterface</li>
+        </researchPrerequisites>
+        <statBases>
+            <WorkToBuild>2000</WorkToBuild>
+        </statBases>
+        <costList>
+            <Steel>30</Steel>
+            <LogisticsComponent>1</LogisticsComponent>
+            <ConveyorBelt>1</ConveyorBelt>
+            <NetworkComponent>1</NetworkComponent>
+        </costList>
+        <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    </ThingDef>
+
+    <ThingDef ParentName="LogisticsInnerInterfaceBase">
+        <defName>RemoteOutputInterface</defName>
+        <thingClass>Logistics.Building_RemoteInterface</thingClass>
+        <label>remote output interface</label>
+        <description>An output interface that can connect to the logistics network. Provides immediate access to logistics systems linked via a network linker.</description>
+        <graphicData>
+            <texPath>Things/Building/RemoteOutputInterface</texPath>
+        </graphicData>
+        <uiOrder>203</uiOrder>
+        <comps>
+            <li Class="Logistics.CompProperties_OutputInterface"/>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>200</basePowerConsumption>
+                <shortCircuitInRain>true</shortCircuitInRain>
+            </li>
+        </comps>
+        <researchPrerequisites>
+            <li>RemoteInterface</li>
+        </researchPrerequisites>
+        <statBases>
+            <WorkToBuild>2000</WorkToBuild>
+        </statBases>
+        <costList>
+            <Steel>30</Steel>
+            <LogisticsComponent>1</LogisticsComponent>
+            <ConveyorBelt>1</ConveyorBelt>
+            <NetworkComponent>1</NetworkComponent>
+        </costList>
+        <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    </ThingDef>
+
+    <ThingDef ParentName="LogisticsInnerInterfaceBase">
+        <defName>RemoteIOInterface</defName>
+        <thingClass>Logistics.Building_RemoteInterface</thingClass>
+        <label>remote input/output interface</label>
+        <description>An input/output interface that can connect to the logistics network. Provides immediate access to logistics systems linked via a network linker.</description>
+        <graphicData>
+            <texPath>Things/Building/RemoteIOInterface</texPath>
+        </graphicData>
+        <uiOrder>205</uiOrder>
+        <comps>
+            <li Class="Logistics.CompProperties_InputInterface"/>
+            <li Class="Logistics.CompProperties_OutputInterface"/>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>200</basePowerConsumption>
+                <shortCircuitInRain>true</shortCircuitInRain>
+            </li>
+        </comps>
+        <researchPrerequisites>
+            <li>RemoteInterface</li>
+            <li>IntegratedInputOutput</li>
+        </researchPrerequisites>
+        <statBases>
+            <WorkToBuild>2000</WorkToBuild>
+        </statBases>
+        <costList>
+            <Steel>30</Steel>
+            <LogisticsComponent>1</LogisticsComponent>
+            <ConveyorBelt>2</ConveyorBelt>
+            <NetworkComponent>2</NetworkComponent>
+        </costList>
+        <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
     </ThingDef>
 </Defs>

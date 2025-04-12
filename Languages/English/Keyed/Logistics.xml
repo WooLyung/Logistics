@@ -3,19 +3,20 @@
     <ConveyorViewToggleLabel>Conveyor View Toggle</ConveyorViewToggleLabel>
     <ConveyorViewToggleDesc>Toggles the visibility of placed conveyor structures.</ConveyorViewToggleDesc>
     
-    <ControllerID>Controller ID</ControllerID>
+    <NetworkID>Network ID</NetworkID>
+    <LinkTargetID>Link target ID</LinkTargetID>
 
-    <ControllerRenameLabel>Change Controller ID</ControllerRenameLabel>
-    <ControllerRenameDesc>Edit the identifier for this logistics system controller.</ControllerRenameDesc>
-    <ControllerRenameEnter>Enter new controller ID:</ControllerRenameEnter>
-    <ControllerRenameConfirm>Confirm</ControllerRenameConfirm>
-    <ControllerRenameCancel>Cancel</ControllerRenameCancel>
-    <ControllerRenameMessage>Controller ID set.</ControllerRenameMessage>
+    <NetworkIDLabel>Set Network ID</NetworkIDLabel>
+    <NetworkIDDesc>Set Network ID for using in logistics network.</NetworkIDDesc>
+    <NetworkIDEnter>Set Network ID</NetworkIDEnter>
+    <NetworkIDConfirm>Confirm</NetworkIDConfirm>
+    <NetworkIDCancel>Cancel</NetworkIDCancel>
+    <NetworkIDMessage>Controller ID set.</NetworkIDMessage>
     
-    <LinkTargetLabel>Connect to controller</LinkTargetLabel>
-    <LinkTargetDesc>Set the ID of the controller to connect to.</LinkTargetDesc>
-    <LinkTargetEnter>Enter controller ID:</LinkTargetEnter>
+    <LinkTargetLabel>Set Link target</LinkTargetLabel>
+    <LinkTargetDesc>Set Link target's ID for connecting.</LinkTargetDesc>
+    <LinkTargetEnter>Set Link taret</LinkTargetEnter>
     <LinkTargetConfirm>Confirm</LinkTargetConfirm>
     <LinkTargetCancel>Cancel</LinkTargetCancel>
-    <LinkTargetMessage>Target controller ID set.</LinkTargetMessage>
+    <LinkTargetMessage>Link target set.</LinkTargetMessage>
 </LanguageData>

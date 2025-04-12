@@ -60,7 +60,7 @@
         <defName>LogisticsNetworkLinker</defName>
         <label>logistics network linker</label>
         <thingClass>Logistics.Building_LogisticsNetworkLinker</thingClass>
-        <description>A device used to connect two logistics systems via a network. Install the linker in one logistics system and input the controller ID of the target system to establish a connection. Through this link, the connected system can access containers in the target logistics network. To enable access in the opposite direction, an additional linker is required.</description>
+        <description>Allows the target logistics system to access containers in the system where this linker is installed. Access cannot be relayed through multiple linkers, and bidirectional communication requires two separate linkers.</description>
         <uiOrder>101</uiOrder>
         <graphicData>
             <texPath>Things/Building/LogisticsNetworkLinker</texPath>
@@ -102,7 +102,7 @@
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>
                 <shortCircuitInRain>true</shortCircuitInRain>
-                <basePowerConsumption>400</basePowerConsumption>
+                <basePowerConsumption>2000</basePowerConsumption>
             </li>
             <li Class="CompProperties_Flickable" />
             <li Class="CompProperties_Breakdownable" />

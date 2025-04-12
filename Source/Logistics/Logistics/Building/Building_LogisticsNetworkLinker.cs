@@ -43,14 +43,11 @@ namespace Logistics
             }
         }
 
-        private string target = null;
+        private string target = "None";
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look(ref target, "LinkTargetID", null);
-
-            if (Scribe.mode == LoadSaveMode.PostLoadInit && target == null)
-                target = "";
+            Scribe_Values.Look(ref target, "LinkTargetID", "None");
         }
 
         public override IEnumerable<Gizmo> GetGizmos()
@@ -82,7 +79,7 @@ namespace Logistics
             if (!baseStr.NullOrEmpty())
                 sb.AppendLine(baseStr);
 
-            sb.AppendLine($"{"ControllerID".Translate()}: {target}");
+            sb.AppendLine($"{"LinkTargetID".Translate()}: {target}");
             return sb.ToString().TrimEndNewlines();
         }
     }

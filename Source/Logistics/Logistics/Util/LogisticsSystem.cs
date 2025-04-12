@@ -34,34 +34,61 @@ namespace Logistics
             return room.ContainedAndAdjacentThings.Any(t => t is Building_LogisticsSystemController controller && controller.IsOperational());
         }
 
-        public static IEnumerable<Thing> FindAvailableInterfaces<IO>(Room room, Pawn actor = null, bool network = true) where IO : Comp_Interface
+        private static IEnumerable<Thing> FindAvailableInterfacesInSystem<IO>(Room room, Pawn actor) where IO : Comp_Interface
         {
-            if (!IsAvailableSystem(room))
-                yield break;
-
             foreach (Thing t in room.ContainedAndAdjacentThings)
             {
                 if (t.HasComp<IO>() && IsAvailableInterface(t, actor))
                     yield return t;
-                if (network && t is Building_LogisticsNetworkLinker linker && linker.IsOperational())
+            }
+        }
+
+        private static IEnumerable<Thing> FindAvailableInterfacesWithLinker<IO>(Room room, Pawn actor) where IO : Comp_Interface
+        {
+            foreach (Thing t in room.ContainedAndAdjacentThings)
+            {
+                if (t is Building_LogisticsNetworkLinker linker && linker.IsOperational())
                 {
                     string target = linker.Target;
                     var ls = linker.Map.listerThings.ThingsOfDef(ThingDef.Named("LogisticsSystemController"));
-                    
+
                     foreach (var t2 in ls)
                     {
-                        if (t2 is Building_LogisticsSystemController controller)
+                        if (t2 is NetworkDevice device)
                         {
-                            if (controller.ControllerID == target)
+                            if (device.NetworkID == target)
                             {
-                                var ls2 = FindAvailableInterfaces<IO>(controller.GetRoom(), actor, false);
+                                var ls2 = FindAvailableInterfaces<IO>(device.GetRoom(), actor, false);
                                 foreach (var itf in ls2)
                                     yield return itf;
-                                break;
+                                yield break;
+                            }
+                        }
+                    }
+
+                    var ls3 = linker.Map.listerThings.ThingsOfDef(ThingDef.Named(typeof(IO) == typeof(Comp_InputInterface) ? "RemoteInputInterface" : "RemoteOutputInterface"));
+                    var ls4 = linker.Map.listerThings.ThingsOfDef(ThingDef.Named("RemoteIOInterface"));
+                    ls3.AddRange(ls4);
+
+                    foreach (var t3 in ls3)
+                    {
+                        if (t3 is NetworkDevice device)
+                        {
+                            if (device.NetworkID == target && IsAvailableInterface(device, actor))
+                            {
+                                yield return t3;
+                                yield break;
                             }
                         }
                     }
                 }
+            }
+        }
+
+        private static IEnumerable<Thing> FindAvailableInterfacesWithConveyor<IO>(Room room, Pawn actor) where IO : Comp_Interface
+        {
+            foreach (Thing t in room.ContainedAndAdjacentThings)
+            {
                 if (t is Building_ConveyorInterface && IsAvailableInterface(t, actor, area: false))
                 {
                     Stack<IntVec3> stack = new Stack<IntVec3>();
@@ -91,7 +118,7 @@ namespace Logistics
                     {
                         IntVec3 current = stack.Pop();
                         Thing conveyor = current.GetThingList(t.Map).FirstOrDefault(t2 => t2.HasComp<Comp_Conveyor>());
-    
+
                         if (typeof(IO) == typeof(Comp_OutputInterface))
                         {
                             IntVec3 d = conveyor.Rotation.FacingCell;
@@ -133,6 +160,20 @@ namespace Logistics
                     }
                 }
             }
+        }
+
+        public static IEnumerable<Thing> FindAvailableInterfaces<IO>(Room room, Pawn actor, bool network = true) where IO : Comp_Interface
+        {
+            if (!IsAvailableSystem(room))
+                yield break;
+
+            foreach (Thing itf in FindAvailableInterfacesInSystem<IO>(room, actor))
+                yield return itf;
+            foreach (Thing itf in FindAvailableInterfacesWithConveyor<IO>(room, actor))
+                yield return itf;
+             if (network)
+                foreach (Thing itf in FindAvailableInterfacesWithLinker<IO>(room, actor))
+                    yield return itf;
         }
         public static Thing FindAvailableClosestInterface<IO>(Room room, Pawn actor, IntVec3? from = null) where IO : Comp_Interface
         {
