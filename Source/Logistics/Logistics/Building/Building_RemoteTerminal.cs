@@ -5,11 +5,11 @@ using Verse;
 
 namespace Logistics
 {
-    public class Building_RemoteInterface : Building_Interface, NetworkDevice
+    public class Building_RemoteTerminal : Building_Terminal, INetworkDevice
     {
         private string networkID;
 
-        public string DefaultID => "Interface_" + Rand.Range(1000, 9999);
+        public string DefaultID => "Terminal_" + Rand.Range(1000, 9999);
 
         public string NetworkID
         {
@@ -17,7 +17,7 @@ namespace Logistics
             set => networkID = value;
         }
 
-        public Building_RemoteInterface()
+        public Building_RemoteTerminal()
         {
             networkID = DefaultID;
         }

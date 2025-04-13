@@ -1,6 +1,6 @@
 ﻿namespace Logistics
 {
-    public interface NetworkDevice
+    public interface INetworkDevice
     {
         string DefaultID {
             get;

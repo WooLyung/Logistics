@@ -7,11 +7,11 @@ namespace Logistics
     public class Dialog_RenameController : Window
     {
         private string curName;
-        private readonly NetworkDevice device;
+        private readonly INetworkDevice device;
 
         public override Vector2 InitialSize => new Vector2(400f, 150f);
 
-        public Dialog_RenameController(NetworkDevice device)
+        public Dialog_RenameController(INetworkDevice device)
         {
             this.device = device;
             curName = device.NetworkID;

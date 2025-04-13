@@ -2,7 +2,7 @@
 
 namespace Logistics
 {
-    public abstract class Comp_Interface : ThingComp
+    public class Comp_OutputTerminal : Comp_Terminal
     {
     }
 }

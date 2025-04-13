@@ -118,8 +118,8 @@
     </ResearchProjectDef>
 
     <ResearchProjectDef>
-        <defName>ConveyorInterface</defName>
-        <label>conveyor interface</label>
+        <defName>ConveyorPort</defName>
+        <label>conveyor port</label>
         <description>Expands the logistics system through conveyor-based connections.</description>
         <baseCost>1000</baseCost>
         <tab>Logistics</tab>
@@ -170,8 +170,8 @@
     </ResearchProjectDef>
 
     <ResearchProjectDef>
-        <defName>RemoteInterface</defName>
-        <label>remote interface</label>
+        <defName>RemoteTerminal</defName>
+        <label>remote terminal</label>
         <description>An interface that operates within a logistics network completely separate from the primary logistics system.</description>
         <baseCost>4000</baseCost>
         <tab>Logistics</tab>
@@ -183,7 +183,7 @@
             <li>MultiAnalyzer</li>
         </requiredResearchFacilities>
         <prerequisites>
-            <li>ConveyorInterface</li>
+            <li>ConveyorPort</li>
             <li>LogisticsNetwork</li>
         </prerequisites>
     </ResearchProjectDef>

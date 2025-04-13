@@ -10,7 +10,7 @@ namespace Logistics
     {
         private static IntVec3[] allDirs = { IntVec3.North, IntVec3.South, IntVec3.East, IntVec3.West };
 
-        public static bool IsAvailableInterface(Thing t, Pawn actor = null, bool area = true)
+        public static bool IsAvailableTerminal(Thing t, Pawn actor = null, bool area = true)
         {
             if ((actor == null || (!t.IsForbidden(actor)
                 && actor.Map.reachability.CanReach(actor.Position, t.Position, PathEndMode.Touch, TraverseParms.For(actor, Danger.Some, TraverseMode.ByPawn))))
@@ -36,16 +36,16 @@ namespace Logistics
                 .Any(controller => controller.GetRoom() == room && controller.IsOperational());
         }
 
-        private static IEnumerable<Thing> FindAvailableInterfacesInRoom<IO>(Room room, Pawn actor) where IO : Comp_Interface
+        private static IEnumerable<Thing> FindAvailableTerminalsInRoom<IO>(Room room, Pawn actor) where IO : Comp_Terminal
         {
-            foreach (Thing thing in typeof(IO) == typeof(Comp_InputInterface)
-                ? room.GetAllInputInterfaces()
-                : room.GetAllOutputInterfaces())
-                if (thing.HasComp<IO>() && IsAvailableInterface(thing, actor))
+            foreach (Thing thing in typeof(IO) == typeof(Comp_InputTerminal)
+                ? room.GetAllInputTerminals()
+                : room.GetAllOutputTerminals())
+                if (thing.HasComp<IO>() && IsAvailableTerminal(thing, actor))
                     yield return thing;
         }
 
-        private static IEnumerable<Thing> FindAvailableInterfacesWithLinker<IO>(Room room, Pawn actor) where IO : Comp_Interface
+        private static IEnumerable<Thing> FindAvailableTerminalsWithLinker<IO>(Room room, Pawn actor) where IO : Comp_Terminal
         {
             foreach (var linker in room.GetAllOperationalLinkers())
             {
@@ -53,55 +53,55 @@ namespace Logistics
                 var controller = room.Map.GetControllerWithID(target);
                 if (controller != null && controller.IsOperational())
                 {
-                    foreach (var itf in FindAvailableInterfaces<IO>(controller.GetRoom(), actor, false))
-                        yield return itf;
+                    foreach (var terminal in FindAvailableTerminals<IO>(controller.GetRoom(), actor, false))
+                        yield return terminal;
                     yield break;
                 }
 
-                foreach (var itf in typeof(IO) == typeof(Comp_InputInterface) 
-                    ? room.Map.GetAllRemoteInputInterface()
-                    : room.Map.GetAllRemoteOutputInterface())
+                foreach (var terminal in typeof(IO) == typeof(Comp_InputTerminal) 
+                    ? room.Map.GetAllRemoteInputTerminals()
+                    : room.Map.GetAllRemoteOutputTerminals())
                 {
-                    if (itf.NetworkID == target && IsAvailableInterface(itf, actor))
+                    if (terminal.NetworkID == target && IsAvailableTerminal(terminal, actor))
                     {
-                        yield return itf;
+                        yield return terminal;
                         yield break;
                     }
                 }
             }
         }
 
-        private static IEnumerable<Thing> FindAvailableInterfacesWithConveyor<IO>(Room room, Pawn actor) where IO : Comp_Interface
+        private static IEnumerable<Thing> FindAvailableTerminalsWithConveyor<IO>(Room room, Pawn actor) where IO : Comp_Terminal
         {
-            foreach (Building_ConveyorInterface convItf in room.GetAllConveyorInterfaces())
+            foreach (Building_ConveyorPort convterminal in room.GetAllConveyorPorts())
             {
-                foreach (var itf in typeof(IO) == typeof(Comp_InputInterface)
-                    ? ConveyorSystem.GetInputs(convItf)
-                    : ConveyorSystem.GetOutputs(convItf))
-                    if (itf.HasComp<IO>() && IsAvailableInterface(itf, actor))
-                        yield return itf;
+                foreach (var terminal in typeof(IO) == typeof(Comp_InputTerminal)
+                    ? ConveyorSystem.GetInputs(convterminal)
+                    : ConveyorSystem.GetOutputs(convterminal))
+                    if (terminal.HasComp<IO>() && IsAvailableTerminal(terminal, actor))
+                        yield return terminal;
             }
         }
 
-        public static IEnumerable<Thing> FindAvailableInterfaces<IO>(Room room, Pawn actor, bool network = true) where IO : Comp_Interface
+        public static IEnumerable<Thing> FindAvailableTerminals<IO>(Room room, Pawn actor, bool network = true) where IO : Comp_Terminal
         {
             if (!IsAvailableSystem(room))
                 yield break;
 
-            foreach (Thing itf in FindAvailableInterfacesInRoom<IO>(room, actor))
-                yield return itf;
-            foreach (Thing itf in FindAvailableInterfacesWithConveyor<IO>(room, actor))
-                yield return itf;
+            foreach (Thing terminal in FindAvailableTerminalsInRoom<IO>(room, actor))
+                yield return terminal;
+            foreach (Thing terminal in FindAvailableTerminalsWithConveyor<IO>(room, actor))
+                yield return terminal;
              if (network)
-                foreach (Thing itf in FindAvailableInterfacesWithLinker<IO>(room, actor))
-                    yield return itf;
+                foreach (Thing terminal in FindAvailableTerminalsWithLinker<IO>(room, actor))
+                    yield return terminal;
         }
-        public static Thing FindAvailableClosestInterface<IO>(Room room, Pawn actor, IntVec3? from = null) where IO : Comp_Interface
+        public static Thing FindAvailableClosestTerminals<IO>(Room room, Pawn actor, IntVec3? from = null) where IO : Comp_Terminal
         {
-            var interfaces = FindAvailableInterfaces<IO>(room, actor);
-            if (interfaces.Count() == 0)
+            var terminals = FindAvailableTerminals<IO>(room, actor);
+            if (terminals.Count() == 0)
                 return null;
-            return interfaces.MinBy(t =>
+            return terminals.MinBy(t =>
             {
                 PawnPath path = FindPath(actor, from ?? actor.Position, t.Position);
                 float totalCost = path.TotalCost;

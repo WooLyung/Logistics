@@ -3,32 +3,32 @@
     <LogisticsSystemController.label>물류 시스템 제어기</LogisticsSystemController.label>
     <LogisticsSystemController.description>중앙의 코어를 이용해 물류 창고의 물류 시스템을 제어합니다. 하나의 물류 창고는 하나의 제어기가 필요하며, 제어기가 가동하지 않는다면 물류 시스템은 정지합니다. \n\n제어기는 물류 창고의 크기에 비례하여 막대한 전력을 소비합니다. 안정적인 물류 시스템을 위해선 전력 공급을 신경써야 합니다.</LogisticsSystemController.description>
 
-    <LogisticsInputInterface.label>물류 입력 인터페이스</LogisticsInputInterface.label>
-    <LogisticsInputInterface.description>물류 컨테이너로 물건을 넣을 수 있는 인터페이스입니다. 물류 시스템 컨트롤러가 포함된 물류 창고에서 사용할 수 있습니다.</LogisticsInputInterface.description>
+    <LogisticsInputTerminal.label>물류 입력 인터페이스</LogisticsInputTerminal.label>
+    <LogisticsInputTerminal.description>물류 컨테이너로 물건을 넣을 수 있는 인터페이스입니다. 물류 시스템 컨트롤러가 포함된 물류 창고에서 사용할 수 있습니다.</LogisticsInputTerminal.description>
 
-    <LogisticsOutputInterface.label>물류 출력 인터페이스</LogisticsOutputInterface.label>
-    <LogisticsOutputInterface.description>물류 컨테이너에서 물건을 빼낼 수 있는 인터페이스입니다. 물류 시스템 컨트롤러가 포함된 물류 창고에서 사용할 수 있습니다.</LogisticsOutputInterface.description>
+    <LogisticsOutputTerminal.label>물류 출력 인터페이스</LogisticsOutputTerminal.label>
+    <LogisticsOutputTerminal.description>물류 컨테이너에서 물건을 빼낼 수 있는 인터페이스입니다. 물류 시스템 컨트롤러가 포함된 물류 창고에서 사용할 수 있습니다.</LogisticsOutputTerminal.description>
 
-    <LogisticsIOInterface.label>물류 입출력 인터페이스</LogisticsIOInterface.label>
-    <LogisticsIOInterface.description>물건을 빼거나 넣을 수 있는 인터페이스입니다. 물류 시스템 컨트롤러가 포함된 물류 창고에서 사용할 수 있습니다.</LogisticsIOInterface.description>
+    <LogisticsIOTerminal.label>물류 입출력 인터페이스</LogisticsIOTerminal.label>
+    <LogisticsIOTerminal.description>물건을 빼거나 넣을 수 있는 인터페이스입니다. 물류 시스템 컨트롤러가 포함된 물류 창고에서 사용할 수 있습니다.</LogisticsIOTerminal.description>
 
-    <RemoteInputInterface.label>원격 입력 인터페이스</RemoteInputInterface.label>
-    <RemoteInputInterface.description>네트워크로 연결될 수 있는 입력 인터페이스입니다. 링커로 연결된 물류 시스템에 즉시 접근할 수 있습니다.</RemoteInputInterface.description>
+    <RemoteInputTerminal.label>원격 입력 인터페이스</RemoteInputTerminal.label>
+    <RemoteInputTerminal.description>네트워크로 연결될 수 있는 입력 인터페이스입니다. 링커로 연결된 물류 시스템에 즉시 접근할 수 있습니다.</RemoteInputTerminal.description>
     
-    <RemoteOutputInterface.label>원격 출력 인터페이스</RemoteOutputInterface.label>
-    <RemoteOutputInterface.description>네트워크로 연결될 수 있는 출력 인터페이스입니다. 링커로 연결된 물류 시스템에 즉시 접근할 수 있습니다.</RemoteOutputInterface.description>
+    <RemoteOutputTerminal.label>원격 출력 인터페이스</RemoteOutputTerminal.label>
+    <RemoteOutputTerminal.description>네트워크로 연결될 수 있는 출력 인터페이스입니다. 링커로 연결된 물류 시스템에 즉시 접근할 수 있습니다.</RemoteOutputTerminal.description>
 
-    <RemoteIOInterface.label>원격 입출력 인터페이스</RemoteIOInterface.label>
-    <RemoteIOInterface.description>네트워크로 연결될 수 있는 입출력 인터페이스입니다. 링커로 연결된 물류 시스템에 즉시 접근할 수 있습니다.</RemoteIOInterface.description>
+    <RemoteIOTerminal.label>원격 입출력 인터페이스</RemoteIOTerminal.label>
+    <RemoteIOTerminal.description>네트워크로 연결될 수 있는 입출력 인터페이스입니다. 링커로 연결된 물류 시스템에 즉시 접근할 수 있습니다.</RemoteIOTerminal.description>
 
-    <LogisticsInputWallInterface.label>물류 입력 벽 인터페이스</LogisticsInputWallInterface.label>
-    <LogisticsInputWallInterface.description>인접한 물류 시스템으로 아이템을 넣는 벽 인터페이스입니다. 벽을 통과하여 물품을 운송할 수 있습니다.</LogisticsInputWallInterface.description>
+    <LogisticsInputWallTerminal.label>물류 입력 벽 인터페이스</LogisticsInputWallTerminal.label>
+    <LogisticsInputWallTerminal.description>인접한 물류 시스템으로 아이템을 넣는 벽 인터페이스입니다. 벽을 통과하여 물품을 운송할 수 있습니다.</LogisticsInputWallTerminal.description>
 
-    <LogisticsOutputWallInterface.label>물류 출력 벽 인터페이스</LogisticsOutputWallInterface.label>
-    <LogisticsOutputWallInterface.description>인접한 물류 시스템으로부터 아이템을 빼내는 벽 인터페이스입니다. 벽을 통과하여 물품을 운송할 수 있습니다.</LogisticsOutputWallInterface.description>
+    <LogisticsOutputWallTerminal.label>물류 출력 벽 인터페이스</LogisticsOutputWallTerminal.label>
+    <LogisticsOutputWallTerminal.description>인접한 물류 시스템으로부터 아이템을 빼내는 벽 인터페이스입니다. 벽을 통과하여 물품을 운송할 수 있습니다.</LogisticsOutputWallTerminal.description>
 
-    <LogisticsIOWallInterface.label>물류 입출력 벽 인터페이스</LogisticsIOWallInterface.label>
-    <LogisticsIOWallInterface.description>아이템을 빼내거나 넣을 수 있는 벽 인터페이스입니다. 벽을 통과하여 물품을 운송할 수 있습니다.</LogisticsIOWallInterface.description>
+    <LogisticsIOWallTerminal.label>물류 입출력 벽 인터페이스</LogisticsIOWallTerminal.label>
+    <LogisticsIOWallTerminal.description>아이템을 빼내거나 넣을 수 있는 벽 인터페이스입니다. 벽을 통과하여 물품을 운송할 수 있습니다.</LogisticsIOWallTerminal.description>
 
     <SmallLogisticsContainer.label>소형 물류 컨테이너</SmallLogisticsContainer.label>
     <SmallLogisticsContainer.description>물류 시스템에 연결되어 물품을 보관하는 컨테이너입니다. 물류 컨테이너에 보관된 물품은 같은 물류 시스템의 물류 인터페이스를 비롯한 장치를 통해 입출력됩니다. 최대 2개의 스택을 보관할 수 있습니다.</SmallLogisticsContainer.description>
@@ -42,8 +42,8 @@
     <IntegratedLogisticsContainer.label>통합 물류 컨테이너</IntegratedLogisticsContainer.label>
     <IntegratedLogisticsContainer.description>모든 종류의 물류를 저장할 수 있는 물류 컨테이너입니다. 최대 2개의 스택을 보관할 수 있습니다.</IntegratedLogisticsContainer.description>
 
-    <ConveyorInterface.label>컨베이어 인터페이스</ConveyorInterface.label>
-    <ConveyorInterface.description>물류 창고 밖으로 물류 시스템을 확장시키기 위한 인터페이스입니다. 인터페이스와 물류 장치를 컨베이어로 연결하여 사용합니다.</ConveyorInterface.description>
+    <ConveyorPort.label>컨베이어 인터페이스</ConveyorPort.label>
+    <ConveyorPort.description>물류 창고 밖으로 물류 시스템을 확장시키기 위한 인터페이스입니다. 인터페이스와 물류 장치를 컨베이어로 연결하여 사용합니다.</ConveyorPort.description>
 
     <Conveyor.label>컨베이어</Conveyor.label>
     <Conveyor.description>물류 창고 밖으로 물류 시스템을 확장시키기 위한 컨베이어입니다. 물류 시스템에 연결된 컨베이어 인터페이스와 다른 물류 장치를 컨베이어로 연결하여 사용합니다. 컨베이어는 방향에 영향을 받습니다.</Conveyor.description>

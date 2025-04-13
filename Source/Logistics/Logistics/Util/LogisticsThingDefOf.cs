@@ -5,29 +5,33 @@ namespace Logistics
     public static class LogisticsThingDefOf
     {
         private static ThingDef logisticsSystemController = null;
-        private static ThingDef conveyorInterface = null;
-        private static ThingDef logisticsInputInterface = null;
-        private static ThingDef logisticsOutputInterface = null;
-        private static ThingDef logisticsIOInterface = null;
-        private static ThingDef logisticsInputWallInterface = null;
-        private static ThingDef logisticsOutputWallInterface = null;
-        private static ThingDef logisticsIOWallInterface = null;
-        private static ThingDef remoteInputInterface = null;
-        private static ThingDef remoteOutputInterface = null;
-        private static ThingDef remoteIOInterface = null;
+        private static ThingDef conveyorPort = null;
+
+        private static ThingDef logisticsInputTerminal = null;
+        private static ThingDef logisticsOutputTerminal = null;
+        private static ThingDef logisticsIOTerminal = null;
+
+        private static ThingDef logisticsInputWallTerminal = null;
+        private static ThingDef logisticsOutputWallTerminal = null;
+        private static ThingDef logisticsIOWallTerminal = null;
+
+        private static ThingDef remoteInputTerminal = null;
+        private static ThingDef remoteOutputTerminal = null;
+        private static ThingDef remoteIOTerminal = null;
+
         private static ThingDef logisticsNetworkLinker = null;
 
         public static ThingDef LogisticsSystemController => logisticsSystemController = logisticsSystemController ?? ThingDef.Named("LogisticsSystemController");
-        public static ThingDef LogisticsInputInterface => logisticsInputInterface = logisticsInputInterface ?? ThingDef.Named("LogisticsInputInterface");
-        public static ThingDef LogisticsOutputInterface => logisticsOutputInterface = logisticsOutputInterface ?? ThingDef.Named("LogisticsOutputInterface");
-        public static ThingDef LogisticsIOInterface => logisticsIOInterface = logisticsIOInterface ?? ThingDef.Named("LogisticsIOInterface");
-        public static ThingDef LogisticsInputWallInterface => logisticsInputWallInterface = logisticsInputWallInterface ?? ThingDef.Named("LogisticsInputWallInterface");
-        public static ThingDef LogisticsOutputWallInterface => logisticsOutputWallInterface = logisticsOutputWallInterface ?? ThingDef.Named("LogisticsOutputWallInterface");
-        public static ThingDef LogisticsIOWallInterface => logisticsIOWallInterface = logisticsIOWallInterface ?? ThingDef.Named("LogisticsIOWallInterface");
-        public static ThingDef RemoteInputInterface => remoteInputInterface = remoteInputInterface ?? ThingDef.Named("RemoteInputInterface");
-        public static ThingDef RemoteOutputInterface => remoteOutputInterface = remoteOutputInterface ?? ThingDef.Named("RemoteOutputInterface");
-        public static ThingDef RemoteIOInterface => remoteIOInterface = remoteIOInterface ?? ThingDef.Named("RemoteIOInterface");
+        public static ThingDef LogisticsInputTerminal => logisticsInputTerminal = logisticsInputTerminal ?? ThingDef.Named("LogisticsInputTerminal");
+        public static ThingDef LogisticsOutputTerminal => logisticsOutputTerminal = logisticsOutputTerminal ?? ThingDef.Named("LogisticsOutputTerminal");
+        public static ThingDef LogisticsIOTerminal => logisticsIOTerminal = logisticsIOTerminal ?? ThingDef.Named("LogisticsIOTerminal");
+        public static ThingDef LogisticsInputWallTerminal => logisticsInputWallTerminal = logisticsInputWallTerminal ?? ThingDef.Named("LogisticsInputWallTerminal");
+        public static ThingDef LogisticsOutputWallTerminal => logisticsOutputWallTerminal = logisticsOutputWallTerminal ?? ThingDef.Named("LogisticsOutputWallTerminal");
+        public static ThingDef LogisticsIOWallTerminal => logisticsIOWallTerminal = logisticsIOWallTerminal ?? ThingDef.Named("LogisticsIOWallTerminal");
+        public static ThingDef RemoteInputTerminal => remoteInputTerminal = remoteInputTerminal ?? ThingDef.Named("RemoteInputTerminal");
+        public static ThingDef RemoteOutputTerminal => remoteOutputTerminal = remoteOutputTerminal ?? ThingDef.Named("RemoteOutputTerminal");
+        public static ThingDef RemoteIOTerminal => remoteIOTerminal = remoteIOTerminal ?? ThingDef.Named("RemoteIOTerminal");
         public static ThingDef LogisticsNetworkLinker => logisticsNetworkLinker = logisticsNetworkLinker ?? ThingDef.Named("LogisticsNetworkLinker");
-        public static ThingDef ConveyorInterface => conveyorInterface = conveyorInterface ?? ThingDef.Named("ConveyorInterface");
+        public static ThingDef ConveyorPort => conveyorPort = conveyorPort ?? ThingDef.Named("ConveyorPort");
     }
 }

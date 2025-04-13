@@ -23,75 +23,75 @@ namespace Logistics
                     yield return thing;
         }
 
-        public static IEnumerable<Building_ConveyorInterface> GetAllConveyorInterfaces(this Room room)
+        public static IEnumerable<Building_ConveyorPort> GetAllConveyorPorts(this Room room)
         {
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.ConveyorInterface))
-                if (thing is Building_ConveyorInterface itf)
-                    yield return itf;
+            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.ConveyorPort))
+                if (thing is Building_ConveyorPort terminal)
+                    yield return terminal;
         }
 
-        public static IEnumerable<Building_Interface> GetAllInputInterfaces(this Room room)
+        public static IEnumerable<Building_Terminal> GetAllInputTerminals(this Room room)
         {
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsInputInterface))
-                if (thing is Building_Interface itf)
-                    yield return itf;
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsInputWallInterface))
-                if (thing is Building_Interface itf)
-                    yield return itf;
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.RemoteInputInterface))
-                if (thing is Building_Interface itf)
-                    yield return itf;
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsIOInterface))
-                if (thing is Building_Interface itf)
-                    yield return itf;
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsIOWallInterface))
-                if (thing is Building_Interface itf)
-                    yield return itf;
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.RemoteIOInterface))
-                if (thing is Building_Interface itf)
-                    yield return itf;
+            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsInputTerminal))
+                if (thing is Building_Terminal terminal)
+                    yield return terminal;
+            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsInputWallTerminal))
+                if (thing is Building_Terminal terminal)
+                    yield return terminal;
+            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.RemoteInputTerminal))
+                if (thing is Building_Terminal terminal)
+                    yield return terminal;
+            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsIOTerminal))
+                if (thing is Building_Terminal terminal)
+                    yield return terminal;
+            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsIOWallTerminal))
+                if (thing is Building_Terminal terminal)
+                    yield return terminal;
+            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.RemoteIOTerminal))
+                if (thing is Building_Terminal terminal)
+                    yield return terminal;
         }
 
-        public static IEnumerable<Building_Interface> GetAllOutputInterfaces(this Room room)
+        public static IEnumerable<Building_Terminal> GetAllOutputTerminals(this Room room)
         {
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsOutputInterface))
-                if (thing is Building_Interface itf)
-                    yield return itf;
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsOutputWallInterface))
-                if (thing is Building_Interface itf)
-                    yield return itf;
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.RemoteOutputInterface))
-                if (thing is Building_Interface itf)
-                    yield return itf;
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsIOInterface))
-                if (thing is Building_Interface itf)
-                    yield return itf;
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsIOWallInterface))
-                if (thing is Building_Interface itf)
-                    yield return itf;
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.RemoteIOInterface))
-                if (thing is Building_Interface itf)
-                    yield return itf;
+            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsOutputTerminal))
+                if (thing is Building_Terminal terminal)
+                    yield return terminal;
+            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsOutputWallTerminal))
+                if (thing is Building_Terminal terminal)
+                    yield return terminal;
+            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.RemoteOutputTerminal))
+                if (thing is Building_Terminal terminal)
+                    yield return terminal;
+            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsIOTerminal))
+                if (thing is Building_Terminal terminal)
+                    yield return terminal;
+            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsIOWallTerminal))
+                if (thing is Building_Terminal terminal)
+                    yield return terminal;
+            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.RemoteIOTerminal))
+                if (thing is Building_Terminal terminal)
+                    yield return terminal;
         }
 
-        public static IEnumerable<Building_RemoteInterface> GetAllRemoteInputInterface(this Map map)
+        public static IEnumerable<Building_RemoteTerminal> GetAllRemoteInputTerminals(this Map map)
         {
-            foreach (var thing in map.listerThings.ThingsOfDef(LogisticsThingDefOf.RemoteInputInterface))
-                if (thing is Building_RemoteInterface itf)
-                    yield return itf;
-            foreach (var thing in map.listerThings.ThingsOfDef(LogisticsThingDefOf.RemoteIOInterface))
-                if (thing is Building_RemoteInterface itf)
-                    yield return itf;
+            foreach (var thing in map.listerThings.ThingsOfDef(LogisticsThingDefOf.RemoteInputTerminal))
+                if (thing is Building_RemoteTerminal terminal)
+                    yield return terminal;
+            foreach (var thing in map.listerThings.ThingsOfDef(LogisticsThingDefOf.RemoteIOTerminal))
+                if (thing is Building_RemoteTerminal terminal)
+                    yield return terminal;
         }
 
-        public static IEnumerable<Building_RemoteInterface> GetAllRemoteOutputInterface(this Map map)
+        public static IEnumerable<Building_RemoteTerminal> GetAllRemoteOutputTerminals(this Map map)
         {
-            foreach (var thing in map.listerThings.ThingsOfDef(LogisticsThingDefOf.RemoteOutputInterface))
-                if (thing is Building_RemoteInterface itf)
-                    yield return itf;
-            foreach (var thing in map.listerThings.ThingsOfDef(LogisticsThingDefOf.RemoteIOInterface))
-                if (thing is Building_RemoteInterface itf)
-                    yield return itf;
+            foreach (var thing in map.listerThings.ThingsOfDef(LogisticsThingDefOf.RemoteOutputTerminal))
+                if (thing is Building_RemoteTerminal terminal)
+                    yield return terminal;
+            foreach (var thing in map.listerThings.ThingsOfDef(LogisticsThingDefOf.RemoteIOTerminal))
+                if (thing is Building_RemoteTerminal terminal)
+                    yield return terminal;
         }
 
         public static IEnumerable<Building_LogisticsNetworkLinker> GetAllOperationalLinkers(this Room room)

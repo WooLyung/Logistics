@@ -1,5 +1,4 @@
 ﻿using Verse;
-using Verse.Noise;
 
 namespace Logistics
 {
@@ -15,7 +14,7 @@ namespace Logistics
             NORTH, SOUTH, WEST, EAST, ALL
         }
 
-        public abstract DeviceType Type { get; }
+        public virtual DeviceType Type { get; }
         public virtual Dir InputDir => Dir.ALL;
         public virtual Dir OutputDir => Dir.ALL;
 

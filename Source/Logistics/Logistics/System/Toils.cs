@@ -7,12 +7,12 @@ namespace Logistics
 {
     public static class Toils
     {
-        public static Toil CarryHauledThingToInterface(Thing itf, TargetIndex squareIndex, PathEndMode pathEndMode = PathEndMode.ClosestTouch)
+        public static Toil CarryHauledThingToTerminal(Thing terminal, TargetIndex squareIndex, PathEndMode pathEndMode = PathEndMode.ClosestTouch)
         {
-            Toil toil = ToilMaker.MakeToil("CarryHauledThingToInterface");
+            Toil toil = ToilMaker.MakeToil("CarryHauledThingToTerminal");
             toil.initAction = delegate
             {
-                toil.actor.pather.StartPath(itf, pathEndMode);
+                toil.actor.pather.StartPath(terminal, pathEndMode);
             };
             toil.defaultCompleteMode = ToilCompleteMode.PatherArrival;
             toil.AddEndCondition(delegate

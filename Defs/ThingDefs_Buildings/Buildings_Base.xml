@@ -6,9 +6,9 @@
         <order>24</order>
     </DesignationCategoryDef>
 
-    <ThingDef ParentName="BuildingBase" Name="LogisticsInterfaceBase" Abstract="True">
+    <ThingDef ParentName="BuildingBase" Name="LogisticsTerminalBase" Abstract="True">
         <designationCategory>LogisticsCategory</designationCategory>
-        <thingClass>Logistics.Building_Interface</thingClass>
+        <thingClass>Logistics.Building_Terminal</thingClass>
         <useHitPoints>true</useHitPoints>
         <selectable>true</selectable>
         <altitudeLayer>Building</altitudeLayer>
@@ -24,7 +24,7 @@
         </building>
     </ThingDef>
 
-    <ThingDef ParentName="LogisticsInterfaceBase" Name="LogisticsInnerInterfaceBase" Abstract="True">
+    <ThingDef ParentName="LogisticsTerminalBase" Name="LogisticsInnerTerminalBase" Abstract="True">
         <graphicData>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>(1.0, 1.0)</drawSize>
@@ -42,7 +42,7 @@
         </statBases>
     </ThingDef>
 
-    <ThingDef ParentName="LogisticsInterfaceBase" Name="LogisticsWallInterfaceBase" Abstract="True">
+    <ThingDef ParentName="LogisticsTerminalBase" Name="LogisticsWallTerminalBase" Abstract="True">
         <graphicData>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>(1.0, 1.0)</drawSize>

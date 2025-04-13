@@ -27,8 +27,8 @@
     <IntegratedInputOutput.label>통합 입출력</IntegratedInputOutput.label>
     <IntegratedInputOutput.description>입출력이 하나로 통합된 인터페이스를 연구합니다.</IntegratedInputOutput.description>
     
-    <RemoteInterface.label>원격 인터페이스</RemoteInterface.label>
-    <RemoteInterface.description>물류 시스템으로부터 완전히 독립된 물류 네트워크의 인터페이스입니다.</RemoteInterface.description>
+    <RemoteTerminal.label>원격 인터페이스</RemoteTerminal.label>
+    <RemoteTerminal.description>물류 시스템으로부터 완전히 독립된 물류 네트워크의 인터페이스입니다.</RemoteTerminal.description>
 
     <LogisticsRemoteExporter.label>물류 원격 출하기</LogisticsRemoteExporter.label>
     <LogisticsRemoteExporter.description>물류 시스템으로부터 완전히 독립된 물류 출하기입니다.</LogisticsRemoteExporter.description>
@@ -42,8 +42,8 @@
     <LogisticsInputPort.label>물류 투입구</LogisticsInputPort.label>
     <LogisticsInputPort.description>인접한 물류 시스템으로 물건을 투입시키는 장치를 연구합니다.</LogisticsInputPort.description>
     
-    <ConveyorInterface.label>컨베이어 인터페이스</ConveyorInterface.label>
-    <ConveyorInterface.description>컨베이어를 통해 물류 시스템을 확장합니다.</ConveyorInterface.description>
+    <ConveyorPort.label>컨베이어 인터페이스</ConveyorPort.label>
+    <ConveyorPort.description>컨베이어를 통해 물류 시스템을 확장합니다.</ConveyorPort.description>
     
     <IntegratedLogisticsContainer.label>통합 물류 컨테이너</IntegratedLogisticsContainer.label>
     <IntegratedLogisticsContainer.description>시체와 폐기물을 포함한 모든 물품을 보관할 수 있는 컨테이너를 연구합니다.</IntegratedLogisticsContainer.description>
