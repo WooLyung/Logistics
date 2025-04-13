@@ -3,7 +3,7 @@ using Verse;
 
 namespace Logistics
 {
-    static class Electronics
+    static class Power
     {
         public static bool IsOperational(this Thing thing)
         {

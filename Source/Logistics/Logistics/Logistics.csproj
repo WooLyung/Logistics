@@ -83,10 +83,14 @@
     <Compile Include="Patch\Toils_Goto\GotoThing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoomRoleWorker\RoomRoleWorker_Warehouse.cs" />
-    <Compile Include="Util\Electronics.cs" />
-    <Compile Include="Util\LogisticsSystem.cs" />
-    <Compile Include="Util\Toils.cs" />
+    <Compile Include="Util\LogisticsThingDefOf.cs" />
+    <Compile Include="Util\Power.cs" />
+    <Compile Include="System\LogisticsSystem.cs" />
+    <Compile Include="System\Toils.cs" />
+    <Compile Include="Util\ThingFinder.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="System\Cache\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -31,55 +31,41 @@ namespace Logistics
         {
             if (room.PsychologicallyOutdoors)
                 return false;
-            return room.ContainedAndAdjacentThings.Any(t => t is Building_LogisticsSystemController controller && controller.IsOperational());
+
+            return room.ThingsOfDef(LogisticsThingDefOf.LogisticsSystemController)
+                .Any(controller => controller.GetRoom() == room && controller.IsOperational());
         }
 
-        private static IEnumerable<Thing> FindAvailableInterfacesInSystem<IO>(Room room, Pawn actor) where IO : Comp_Interface
+        private static IEnumerable<Thing> FindAvailableInterfacesInRoom<IO>(Room room, Pawn actor) where IO : Comp_Interface
         {
-            foreach (Thing t in room.ContainedAndAdjacentThings)
-            {
-                if (t.HasComp<IO>() && IsAvailableInterface(t, actor))
-                    yield return t;
-            }
+            foreach (Thing thing in typeof(IO) == typeof(Comp_InputInterface)
+                ? room.GetAllInputInterfaces()
+                : room.GetAllOutputInterfaces())
+                if (thing.HasComp<IO>() && IsAvailableInterface(thing, actor))
+                    yield return thing;
         }
 
         private static IEnumerable<Thing> FindAvailableInterfacesWithLinker<IO>(Room room, Pawn actor) where IO : Comp_Interface
         {
-            foreach (Thing t in room.ContainedAndAdjacentThings)
+            foreach (var linker in room.GetAllOperationalLinkers())
             {
-                if (t is Building_LogisticsNetworkLinker linker && linker.IsOperational())
+                string target = linker.Target;
+                var controller = room.Map.GetControllerWithID(target);
+                if (controller != null && controller.IsOperational())
                 {
-                    string target = linker.Target;
-                    var ls = linker.Map.listerThings.ThingsOfDef(ThingDef.Named("LogisticsSystemController"));
+                    foreach (var itf in FindAvailableInterfaces<IO>(controller.GetRoom(), actor, false))
+                        yield return itf;
+                    yield break;
+                }
 
-                    foreach (var t2 in ls)
+                foreach (var itf in typeof(IO) == typeof(Comp_InputInterface) 
+                    ? room.Map.GetAllRemoteInputInterface()
+                    : room.Map.GetAllRemoteOutputInterface())
+                {
+                    if (itf.NetworkID == target && IsAvailableInterface(itf, actor))
                     {
-                        if (t2 is NetworkDevice device)
-                        {
-                            if (device.NetworkID == target)
-                            {
-                                var ls2 = FindAvailableInterfaces<IO>(device.GetRoom(), actor, false);
-                                foreach (var itf in ls2)
-                                    yield return itf;
-                                yield break;
-                            }
-                        }
-                    }
-
-                    var ls3 = linker.Map.listerThings.ThingsOfDef(ThingDef.Named(typeof(IO) == typeof(Comp_InputInterface) ? "RemoteInputInterface" : "RemoteOutputInterface"));
-                    var ls4 = linker.Map.listerThings.ThingsOfDef(ThingDef.Named("RemoteIOInterface"));
-                    ls3.AddRange(ls4);
-
-                    foreach (var t3 in ls3)
-                    {
-                        if (t3 is NetworkDevice device)
-                        {
-                            if (device.NetworkID == target && IsAvailableInterface(device, actor))
-                            {
-                                yield return t3;
-                                yield break;
-                            }
-                        }
+                        yield return itf;
+                        yield break;
                     }
                 }
             }
@@ -167,7 +153,7 @@ namespace Logistics
             if (!IsAvailableSystem(room))
                 yield break;
 
-            foreach (Thing itf in FindAvailableInterfacesInSystem<IO>(room, actor))
+            foreach (Thing itf in FindAvailableInterfacesInRoom<IO>(room, actor))
                 yield return itf;
             foreach (Thing itf in FindAvailableInterfacesWithConveyor<IO>(room, actor))
                 yield return itf;
