@@ -66,6 +66,7 @@
     <Compile Include="Building\Building_LogisticsNetworkLinker.cs" />
     <Compile Include="Building\Building_RemoteInterface.cs" />
     <Compile Include="Building\Building_LogisticsSystemController.cs" />
+    <Compile Include="Building\Interface\ConveyorDevice.cs" />
     <Compile Include="Building\NetworkDevice\Dialog_RenameController.cs" />
     <Compile Include="Building\NetworkDevice\NetworkDevice.cs" />
     <Compile Include="CompProperties\CompProperties_Conveyor.cs" />
