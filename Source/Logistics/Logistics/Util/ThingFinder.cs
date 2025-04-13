@@ -23,36 +23,55 @@ namespace Logistics
                     yield return thing;
         }
 
-        public static IEnumerable<Thing> GetAllInputInterfaces(this Room room)
+        public static IEnumerable<Building_ConveyorInterface> GetAllConveyorInterfaces(this Room room)
         {
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsInputInterface))
-                yield return thing;
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsInputWallInterface))
-                yield return thing;
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.RemoteInputInterface))
-                yield return thing;
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsIOInterface))
-                yield return thing;
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsIOWallInterface))
-                yield return thing;
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.RemoteIOInterface))
-                yield return thing;
+            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.ConveyorInterface))
+                if (thing is Building_ConveyorInterface itf)
+                    yield return itf;
         }
 
-        public static IEnumerable<Thing> GetAllOutputInterfaces(this Room room)
+        public static IEnumerable<Building_Interface> GetAllInputInterfaces(this Room room)
+        {
+            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsInputInterface))
+                if (thing is Building_Interface itf)
+                    yield return itf;
+            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsInputWallInterface))
+                if (thing is Building_Interface itf)
+                    yield return itf;
+            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.RemoteInputInterface))
+                if (thing is Building_Interface itf)
+                    yield return itf;
+            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsIOInterface))
+                if (thing is Building_Interface itf)
+                    yield return itf;
+            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsIOWallInterface))
+                if (thing is Building_Interface itf)
+                    yield return itf;
+            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.RemoteIOInterface))
+                if (thing is Building_Interface itf)
+                    yield return itf;
+        }
+
+        public static IEnumerable<Building_Interface> GetAllOutputInterfaces(this Room room)
         {
             foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsOutputInterface))
-                yield return thing;
+                if (thing is Building_Interface itf)
+                    yield return itf;
             foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsOutputWallInterface))
-                yield return thing;
+                if (thing is Building_Interface itf)
+                    yield return itf;
             foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.RemoteOutputInterface))
-                yield return thing;
+                if (thing is Building_Interface itf)
+                    yield return itf;
             foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsIOInterface))
-                yield return thing;
+                if (thing is Building_Interface itf)
+                    yield return itf;
             foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsIOWallInterface))
-                yield return thing;
+                if (thing is Building_Interface itf)
+                    yield return itf;
             foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.RemoteIOInterface))
-                yield return thing;
+                if (thing is Building_Interface itf)
+                    yield return itf;
         }
 
         public static IEnumerable<Building_RemoteInterface> GetAllRemoteInputInterface(this Map map)

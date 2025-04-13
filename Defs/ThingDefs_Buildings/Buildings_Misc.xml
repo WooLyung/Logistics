@@ -123,6 +123,9 @@
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <uiOrder>500</uiOrder>
+        <placeWorkers>
+            <li>Logistics.PlaceWorker_Conveyor</li>
+        </placeWorkers>
         <building>
             <isEdifice>false</isEdifice>
         </building>
@@ -145,14 +148,12 @@
         <costList>
             <ConveyorBelt>1</ConveyorBelt>
         </costList>
-        <comps>
-            <li Class="Logistics.CompProperties_Conveyor" />
-        </comps>
         <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
     </ThingDef>
 
     <ThingDef ParentName="BuildingBase">
         <defName>WallConveyor</defName>
+        <thingClass>Logistics.Building_WallConveyor</thingClass>
         <label>wall conveyor</label>
         <description>A wall with an underground conveyor system buried beneath it.</description>
         <designationCategory>LogisticsCategory</designationCategory>
@@ -174,9 +175,6 @@
             <graphicClass>Graphic_Multi</graphicClass>
             <texPath>Things/Building/WallConveyor</texPath>
         </graphicData>
-        <comps>
-            <li Class="Logistics.CompProperties_Conveyor"/>
-        </comps>
         <researchPrerequisites>
             <li>ConveyorInterface</li>
         </researchPrerequisites>

@@ -5,6 +5,7 @@ namespace Logistics
     public static class LogisticsThingDefOf
     {
         private static ThingDef logisticsSystemController = null;
+        private static ThingDef conveyorInterface = null;
         private static ThingDef logisticsInputInterface = null;
         private static ThingDef logisticsOutputInterface = null;
         private static ThingDef logisticsIOInterface = null;
@@ -27,5 +28,6 @@ namespace Logistics
         public static ThingDef RemoteOutputInterface => remoteOutputInterface = remoteOutputInterface ?? ThingDef.Named("RemoteOutputInterface");
         public static ThingDef RemoteIOInterface => remoteIOInterface = remoteIOInterface ?? ThingDef.Named("RemoteIOInterface");
         public static ThingDef LogisticsNetworkLinker => logisticsNetworkLinker = logisticsNetworkLinker ?? ThingDef.Named("LogisticsNetworkLinker");
+        public static ThingDef ConveyorInterface => conveyorInterface = conveyorInterface ?? ThingDef.Named("ConveyorInterface");
     }
 }

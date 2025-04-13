@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using Verse;
+using Verse.Noise;
 
 namespace Logistics
 {
     public class Building_Conveyor : Building
     {
+        public virtual bool Toggleable => true;
+
         public class Designator_ToggleConveyor : Designator
         {
             public Designator_ToggleConveyor()
@@ -44,8 +47,21 @@ namespace Logistics
 
         protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
-            if (GameComponent_ConveyorView.ShowConveyors)
+            if (!Toggleable || GameComponent_ConveyorView.ShowConveyors)
                 base.DrawAt(drawLoc, flip);
+        }
+
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
+        {
+            base.SpawnSetup(map, respawningAfterLoad);
+            if (!respawningAfterLoad)
+                ConveyorSystem.AddConveyor(map, this, !respawningAfterLoad);
+        }
+
+        public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
+        {
+            ConveyorSystem.RemoveConveyor(Map, this);
+            base.DeSpawn(mode);
         }
     }
 }

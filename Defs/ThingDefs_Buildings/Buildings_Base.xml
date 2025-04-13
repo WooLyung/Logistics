@@ -8,6 +8,7 @@
 
     <ThingDef ParentName="BuildingBase" Name="LogisticsInterfaceBase" Abstract="True">
         <designationCategory>LogisticsCategory</designationCategory>
+        <thingClass>Logistics.Building_Interface</thingClass>
         <useHitPoints>true</useHitPoints>
         <selectable>true</selectable>
         <altitudeLayer>Building</altitudeLayer>

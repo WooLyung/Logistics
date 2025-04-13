@@ -61,21 +61,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Building\Building_WallConveyor.cs" />
     <Compile Include="Building\Building_Conveyor.cs" />
     <Compile Include="Building\Building_ConveyorInterface.cs" />
+    <Compile Include="Building\Building_Interface.cs" />
     <Compile Include="Building\Building_LogisticsNetworkLinker.cs" />
     <Compile Include="Building\Building_RemoteInterface.cs" />
     <Compile Include="Building\Building_LogisticsSystemController.cs" />
-    <Compile Include="Building\Interface\ConveyorDevice.cs" />
+    <Compile Include="Building\ConveyorDevice\Building_ConveyorDevice.cs" />
     <Compile Include="Building\NetworkDevice\Dialog_RenameController.cs" />
     <Compile Include="Building\NetworkDevice\NetworkDevice.cs" />
-    <Compile Include="CompProperties\CompProperties_Conveyor.cs" />
     <Compile Include="CompProperties\CompProperties_InputInterface.cs" />
     <Compile Include="CompProperties\CompProperties_LogisticsContainer.cs" />
     <Compile Include="CompProperties\CompProperties_OutputInterface.cs" />
     <Compile Include="GameComponent\GameComponent_ConveyorView .cs" />
     <Compile Include="Patch\JobDriver_HaulToCell\MakeNewToils.cs" />
-    <Compile Include="ThingComp\Comp_Conveyor.cs" />
+    <Compile Include="PlaceWorker\PlaceWorker_Conveyor.cs" />
+    <Compile Include="System\ConveyorSystem.cs" />
     <Compile Include="ThingComp\Comp_Interface.cs" />
     <Compile Include="ThingComp\Comp_LogisticsContainer.cs" />
     <Compile Include="ThingComp\Comp_OutputInterface.cs" />
@@ -90,8 +92,6 @@
     <Compile Include="System\Toils.cs" />
     <Compile Include="Util\ThingFinder.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="System\Cache\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

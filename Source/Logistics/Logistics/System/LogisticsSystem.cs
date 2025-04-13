@@ -73,78 +73,13 @@ namespace Logistics
 
         private static IEnumerable<Thing> FindAvailableInterfacesWithConveyor<IO>(Room room, Pawn actor) where IO : Comp_Interface
         {
-            foreach (Thing t in room.ContainedAndAdjacentThings)
+            foreach (Building_ConveyorInterface convItf in room.GetAllConveyorInterfaces())
             {
-                if (t is Building_ConveyorInterface && IsAvailableInterface(t, actor, area: false))
-                {
-                    Stack<IntVec3> stack = new Stack<IntVec3>();
-                    HashSet<IntVec3> visited = new HashSet<IntVec3>();
-
-                    foreach (IntVec3 d in allDirs)
-                    {
-                        IntVec3 v = t.Position + d;
-
-                        Thing itf = v.GetThingList(t.Map).FirstOrDefault(t2 => t2.HasComp<IO>());
-                        if (itf != null && IsAvailableInterface(itf))
-                            yield return itf;
-
-                        Thing conveyor = v.GetThingList(t.Map).FirstOrDefault(t2 => t2.HasComp<Comp_Conveyor>());
-                        if (conveyor != null)
-                        {
-                            if (typeof(IO) == typeof(Comp_OutputInterface) && d == conveyor.Rotation.FacingCell
-                                || typeof(IO) == typeof(Comp_InputInterface) && -d == conveyor.Rotation.FacingCell)
-                            {
-                                visited.Add(v);
-                                stack.Push(v);
-                            }
-                        }
-                    }
-
-                    while (stack.Count > 0)
-                    {
-                        IntVec3 current = stack.Pop();
-                        Thing conveyor = current.GetThingList(t.Map).FirstOrDefault(t2 => t2.HasComp<Comp_Conveyor>());
-
-                        if (typeof(IO) == typeof(Comp_OutputInterface))
-                        {
-                            IntVec3 d = conveyor.Rotation.FacingCell;
-                            IntVec3 v = current + d;
-                            if (!visited.Contains(v))
-                            {
-                                Thing itf = v.GetThingList(t.Map).FirstOrDefault(t2 => t2.HasComp<IO>());
-                                if (itf != null && IsAvailableInterface(itf))
-                                    yield return itf;
-
-                                Thing conveyor2 = v.GetThingList(t.Map).FirstOrDefault(t2 => t2.HasComp<Comp_Conveyor>());
-                                if (conveyor2 != null)
-                                {
-                                    visited.Add(v);
-                                    stack.Push(v);
-                                }
-                            }
-                        }
-                        else if (typeof(IO) == typeof(Comp_InputInterface))
-                        {
-                            foreach (IntVec3 d in allDirs)
-                            {
-                                IntVec3 v = current + d;
-                                if (!visited.Contains(v))
-                                {
-                                    Thing itf = v.GetThingList(t.Map).FirstOrDefault(t2 => t2.HasComp<IO>());
-                                    if (itf != null && IsAvailableInterface(itf))
-                                        yield return itf;
-
-                                    Thing conveyor2 = v.GetThingList(t.Map).FirstOrDefault(t2 => t2.HasComp<Comp_Conveyor>());
-                                    if (conveyor2 != null && -d == conveyor2.Rotation.FacingCell)
-                                    {
-                                        visited.Add(v);
-                                        stack.Push(v);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                foreach (var itf in typeof(IO) == typeof(Comp_InputInterface)
+                    ? ConveyorSystem.GetInputs(convItf)
+                    : ConveyorSystem.GetOutputs(convItf))
+                    if (itf.HasComp<IO>() && IsAvailableInterface(itf, actor))
+                        yield return itf;
             }
         }
 
