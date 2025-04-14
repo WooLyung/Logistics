@@ -8,4 +8,13 @@
             <li>Space</li>
         </relatedStats>
     </RoomRoleDef>
+    
+    <RoomRoleDef>
+        <defName>LogisticsIncinerationFacility</defName>
+        <label>logistics incineration facility</label>
+        <workerClass>Logistics.RoomRoleWorker_LogisticsIncinerationFacility</workerClass>
+        <relatedStats>
+            <li>Space</li>
+        </relatedStats>
+    </RoomRoleDef>
 </Defs>

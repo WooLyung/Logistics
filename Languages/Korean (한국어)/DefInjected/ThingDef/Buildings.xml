@@ -47,7 +47,10 @@
 
     <Conveyor.label>컨베이어</Conveyor.label>
     <Conveyor.description>물류 창고 밖으로 물류 시스템을 확장시키기 위한 컨베이어입니다. 물류 창고와 컨베이어로 연결된 장치는 같은 물류 시스템을 공유합니다. 컨베이어는 방향에 영향을 받습니다.</Conveyor.description>
-
+    
+    <LogisticsIncinerator.label>물류 소각기</LogisticsIncinerator.label>
+    <LogisticsIncinerator.description>주기적으로 물류 창고의 컨테이너에 있는 모든 물류를 소각합니다. 소각 후에는 아무것도 남지 않습니다.</LogisticsIncinerator.description>
+    
     <WallConveyor.label>벽 컨베이어</WallConveyor.label>
     <WallConveyor.description>지하에 컨베이어가 매설된 벽입니다.</WallConveyor.description>
     

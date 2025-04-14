@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Building\Building_LogisticsIncinerator.cs" />
     <Compile Include="Building\Building_WallConveyor.cs" />
     <Compile Include="Building\Building_Conveyor.cs" />
     <Compile Include="Building\Building_ConveyorPort.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="GameComponent\GameComponent_ConveyorView .cs" />
     <Compile Include="Patch\JobDriver_HaulToCell\MakeNewToils.cs" />
     <Compile Include="PlaceWorker\PlaceWorker_Conveyor.cs" />
+    <Compile Include="RoomRoleWorker\RoomRoleWorker_LogisticsIncinerationFacility.cs" />
     <Compile Include="System\ConveyorSystem.cs" />
     <Compile Include="ThingComp\Comp_Terminal.cs" />
     <Compile Include="ThingComp\Comp_LogisticsContainer.cs" />

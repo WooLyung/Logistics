@@ -213,9 +213,7 @@
             <destroySound>BuildingDestroyed_Metal_Small</destroySound>
         </building>
         <passability>Impassable</passability>
-        <staticSunShadowHeight>1.0</staticSunShadowHeight>
         <blockWind>true</blockWind>
-        <coversFloor>true</coversFloor>
         <blockLight>true</blockLight>
         <blockWeather>true</blockWeather>
         <castEdgeShadows>true</castEdgeShadows>
@@ -247,6 +245,66 @@
             <Steel>60</Steel>
             <ConveyorBelt>1</ConveyorBelt>
             <LogisticsComponent>1</LogisticsComponent>
+        </costList>
+        <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    </ThingDef>
+
+    <ThingDef ParentName="BuildingBase">
+        <thingClass>Logistics.Building_LogisticsIncinerator</thingClass>
+        <designationCategory>LogisticsCategory</designationCategory>
+        <defName>LogisticsIncinerator</defName>
+        <label>logistics incinerator</label>
+        <description>Periodically incinerates all contents of logistics containers in the connected warehouse. Nothing remains after incineration.</description>
+        <graphicData>
+            <texPath>Things/Building/LogisticsIncinerator</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(3.0, 3.0)</drawSize>
+        </graphicData>
+        <tickerType>Normal</tickerType>
+        <fillPercent>0.5</fillPercent>
+        <building>
+            <canPlaceOverWall>false</canPlaceOverWall>
+            <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+        </building>
+        <passability>PassThroughOnly</passability>
+        <staticSunShadowHeight>1.0</staticSunShadowHeight>
+        <blockWind>true</blockWind>
+        <coversFloor>true</coversFloor>
+        <blockLight>true</blockLight>
+        <blockWeather>true</blockWeather>
+        <castEdgeShadows>true</castEdgeShadows>
+        <canOverlapZones>false</canOverlapZones>
+        <useHitPoints>true</useHitPoints>
+        <selectable>true</selectable>
+        <altitudeLayer>Building</altitudeLayer>
+        <rotatable>false</rotatable>
+        <uiOrder>600</uiOrder>
+        <size>(3,3)</size>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>1400</basePowerConsumption>
+                <shortCircuitInRain>true</shortCircuitInRain>
+            </li>
+            <li Class="CompProperties_Flickable" />
+            <li Class="CompProperties_Breakdownable" />
+            <li Class="CompProperties_HeatPusher">
+                <compClass>CompHeatPusherPowered</compClass>
+                <heatPerSecond>15</heatPerSecond>
+            </li>
+        </comps>
+        <researchPrerequisites>
+            <li>LogisticsIncinerator</li>
+        </researchPrerequisites>
+        <statBases>
+            <WorkToBuild>8000</WorkToBuild>
+            <MaxHitPoints>800</MaxHitPoints>
+            <Flammability>0</Flammability>
+        </statBases>
+        <costList>
+            <Steel>400</Steel>
+            <ComponentIndustrial>6</ComponentIndustrial>
+            <ConveyorBelt>4</ConveyorBelt>
         </costList>
         <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
     </ThingDef>
