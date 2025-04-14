@@ -3,7 +3,7 @@
     <ThingDef ParentName="LogisticsContainerNormalBase">
         <defName>SmallLogisticsContainer</defName>
         <label>small logistics container</label>
-        <description>A container connected to the logistics system for item storage. Items stored in the logistics container can be input and output through devices such as logistics interfaces within the same logistics system. Can store up to 2 stacks of items.</description>
+        <description>Items stored in this container can be accessed by various parts of the logistics system. Can store up to 2 stacks of items.</description>
         <graphicData>
             <texPath>Things/Building/SmallLogisticsContainer</texPath>
         </graphicData>
@@ -29,7 +29,7 @@
     <ThingDef ParentName="LogisticsContainerNormalBase">
         <defName>MediumLogisticsContainer</defName>
         <label>medium logistics container</label>
-        <description>A container connected to the logistics system for item storage. Items stored in the logistics container can be input and output through devices such as logistics interfaces within the same logistics system. Can store up to 3 stacks of items.</description>
+        <description>Items stored in this container can be accessed by various parts of the logistics system. Can store up to 3 stacks of items.</description>
         <graphicData>
             <texPath>Things/Building/MediumLogisticsContainer</texPath>
         </graphicData>
@@ -56,7 +56,7 @@
     <ThingDef ParentName="LogisticsContainerNormalBase">
         <defName>LargeLogisticsContainer</defName>
         <label>large logistics container</label>
-        <description>A container connected to the logistics system for item storage. Items stored in the logistics container can be input and output through devices such as logistics interfaces within the same logistics system. Can store up to 4 stacks of items.</description>
+        <description>Items stored in this container can be accessed by various parts of the logistics system. Can store up to 4 stacks of items.</description>
         <graphicData>
             <texPath>Things/Building/LargeLogisticsContainer</texPath>
         </graphicData>

@@ -4,7 +4,7 @@
         <defName>LogisticsSystemController</defName>
         <label>logistics system controller</label>
         <thingClass>Logistics.Building_LogisticsSystemController</thingClass>
-        <description>Controls the logistics system of a warehouse using a central core. Each logistics warehouse requires a single controller, and without it, the system cannot function.\n\nThe controller consumes a large amount of power based on the size of the warehouse. To ensure stable operation, maintaining a reliable power supply is essential.</description>
+        <description>A room with a logistics controller is treated as a logistics warehouse, activating the logistics system. Consumes a large amount of power based on room size.</description>
         <uiOrder>100</uiOrder>
         <graphicData>
             <texPath>Things/Building/LogisticsSystemController</texPath>
@@ -60,7 +60,7 @@
         <defName>LogisticsNetworkLinker</defName>
         <label>logistics network linker</label>
         <thingClass>Logistics.Building_LogisticsNetworkLinker</thingClass>
-        <description>Allows the target logistics system to access containers in the system where this linker is installed. Access cannot be relayed through multiple linkers, and bidirectional communication requires two separate linkers.</description>
+        <description>Allows access to containers in the logistics warehouse where the linker is installed. Cannot be chained through multiple linkers.</description>
         <uiOrder>101</uiOrder>
         <graphicData>
             <texPath>Things/Building/LogisticsNetworkLinker</texPath>
@@ -117,7 +117,7 @@
         <thingClass>Logistics.Building_Conveyor</thingClass>
         <designationCategory>LogisticsCategory</designationCategory>
         <label>conveyor</label>
-        <description>A conveyor used to extend the logistics system beyond the logistics warehouse. Connects conveyor interfaces and other logistics devices that are part of the system. Conveyors are directional and their orientation affects functionality.</description>
+        <description>A conveyor used to extend logistics systems beyond warehouse boundaries. Devices connected via conveyors are treated as part of the same logistics system. Conveyor direction matters.</description>
         <graphicData>
             <texPath>Things/Building/Conveyor</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -200,7 +200,7 @@
         <designationCategory>LogisticsCategory</designationCategory>
         <defName>ConveyorPort</defName>
         <label>conveyor port</label>
-        <description>An terminal used to extend the logistics system beyond the logistics warehouse. It connects to logistics devices via conveyors for external integration.</description>
+        <description>A port used to extend logistics systems beyond warehouse boundaries. Devices connected to warehouse-linked ports via conveyors share the same logistics system.</description>
         <graphicData>
             <texPath>Things/Building/ConveyorPort</texPath>
             <graphicClass>Graphic_Single</graphicClass>

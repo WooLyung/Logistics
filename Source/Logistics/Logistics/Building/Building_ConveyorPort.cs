@@ -5,7 +5,7 @@ namespace Logistics
 {
     public class Building_ConveyorPort : Building_ConveyorDevice
     {
-        public override DeviceType Type => DeviceType.IO;
+        public override ConveyorDeviceType Type => ConveyorDeviceType.IO;
 
     }
 }

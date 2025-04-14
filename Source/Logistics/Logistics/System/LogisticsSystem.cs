@@ -75,11 +75,17 @@ namespace Logistics
         {
             foreach (Building_ConveyorPort convterminal in room.GetAllConveyorPorts())
             {
-                foreach (var terminal in typeof(IO) == typeof(Comp_InputTerminal)
+                foreach (var _terminal in typeof(IO) == typeof(Comp_InputTerminal)
                     ? ConveyorSystem.GetInputs(convterminal)
                     : ConveyorSystem.GetOutputs(convterminal))
+                {
+                    if (!(_terminal is Thing))
+                        continue;
+
+                    Thing terminal = (Thing)_terminal;
                     if (terminal.HasComp<IO>() && IsAvailableTerminal(terminal, actor))
                         yield return terminal;
+                }    
             }
         }
 

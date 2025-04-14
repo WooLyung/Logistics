@@ -3,7 +3,7 @@
     <ThingDef ParentName="LogisticsInnerTerminalBase">
         <defName>LogisticsInputTerminal</defName>
         <label>logistics input terminal</label>
-        <description>An terminal for inserting items into logistics containers. It can be used in logistics warehouses that include a logistics system controller.</description>
+        <description>Quickly insert items through a terminal within the same logistics system, without moving to the container. The terminal itself must be physically reachable.</description>
         <graphicData>
             <texPath>Things/Building/LogisticsInputTerminal</texPath>
         </graphicData>
@@ -33,7 +33,7 @@
     <ThingDef ParentName="LogisticsInnerTerminalBase">
         <defName>LogisticsOutputTerminal</defName>
         <label>logistics output terminal</label>
-        <description>An terminal for extracting items from logistics containers. It can be used in logistics warehouses that include a logistics system controller.</description>
+        <description>Quickly retrieve items through a terminal within the same logistics system, without moving to the container. The terminal itself must be physically reachable.</description>
         <graphicData>
             <texPath>Things/Building/LogisticsOutputTerminal</texPath>
         </graphicData>
@@ -63,7 +63,7 @@
     <ThingDef ParentName="LogisticsInnerTerminalBase">
         <defName>LogisticsIOTerminal</defName>
         <label>logistics input/output terminal</label>
-        <description>An terminal for extracting and inserting items. It can be used in logistics warehouses that include a logistics system controller.</description>
+        <description>A terminal with integrated input and output. More efficient than separate units.</description>
         <graphicData>
             <texPath>Things/Building/LogisticsIOTerminal</texPath>
         </graphicData>
@@ -94,7 +94,7 @@
     <ThingDef ParentName="LogisticsWallTerminalBase">
         <defName>LogisticsInputWallTerminal</defName>
         <label>logistics input wall terminal</label>
-        <description>A wall-mounted terminal that inserts items into an adjacent logistics system. It allows materials to be transported through walls.</description>
+        <description>A wall-integrated terminal. Can be placed as part of a warehouse wall to allow external access.</description>
         <graphicData>
             <texPath>Things/Building/LogisticsInputWallTerminal</texPath>
         </graphicData>
@@ -124,7 +124,7 @@
     <ThingDef ParentName="LogisticsWallTerminalBase">
         <defName>LogisticsOutputWallTerminal</defName>
         <label>logistics output wall terminal</label>
-        <description>A wall-mounted terminal that extracts items from an adjacent logistics system. It allows materials to be transported through walls.</description>
+        <description>A wall-integrated terminal. Can be placed as part of a warehouse wall to allow external access.</description>
         <graphicData>
             <texPath>Things/Building/LogisticsOutputWallTerminal</texPath>
         </graphicData>
@@ -154,7 +154,7 @@
     <ThingDef ParentName="LogisticsWallTerminalBase">
         <defName>LogisticsIOWallTerminal</defName>
         <label>logistics input/output wall terminal</label>
-        <description>A wall-mounted terminal that inserts and extracts items. It allows materials to be transported through walls.</description>
+        <description>A wall-integrated terminal. Can be placed as part of a warehouse wall to allow external access.</description>
         <graphicData>
             <texPath>Things/Building/LogisticsIOWallTerminal</texPath>
         </graphicData>
@@ -187,7 +187,7 @@
         <defName>RemoteInputTerminal</defName>
         <thingClass>Logistics.Building_RemoteTerminal</thingClass>
         <label>remote input terminal</label>
-        <description>An input terminal that can connect to the logistics network. Provides immediate access to logistics systems linked via a network linker.</description>
+        <description>A network-connected terminal. Always provides access to logistics warehouses linked by a linker."</description>
         <graphicData>
             <texPath>Things/Building/RemoteInputTerminal</texPath>
         </graphicData>
@@ -219,7 +219,7 @@
         <defName>RemoteOutputTerminal</defName>
         <thingClass>Logistics.Building_RemoteTerminal</thingClass>
         <label>remote output terminal</label>
-        <description>An output terminal that can connect to the logistics network. Provides immediate access to logistics systems linked via a network linker.</description>
+        <description>A network-connected terminal. Always provides access to logistics warehouses linked by a linker."</description>
         <graphicData>
             <texPath>Things/Building/RemoteOutputTerminal</texPath>
         </graphicData>
@@ -251,7 +251,7 @@
         <defName>RemoteIOTerminal</defName>
         <thingClass>Logistics.Building_RemoteTerminal</thingClass>
         <label>remote input/output terminal</label>
-        <description>An input/output terminal that can connect to the logistics network. Provides immediate access to logistics systems linked via a network linker.</description>
+        <description>A network-connected terminal. Always provides access to logistics warehouses linked by a linker."</description>
         <graphicData>
             <texPath>Things/Building/RemoteIOTerminal</texPath>
         </graphicData>

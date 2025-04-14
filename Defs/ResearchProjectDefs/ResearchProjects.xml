@@ -3,9 +3,7 @@
     <ResearchProjectDef>
         <defName>BasicLogistics</defName>
         <label>basic logistics</label>
-        <description>Research basic devices for the logistics system. The logistics system is
-            composed of containers and interfaces connected underground, centered around the
-            logistics system controller</description>
+        <description>Establish a basic logistics system to automate supply and storage.</description>
         <baseCost>2000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>0.00</researchViewX>
@@ -20,7 +18,7 @@
     <ResearchProjectDef>
         <defName>AdvancedLogistics</defName>
         <label>advanced logistics</label>
-        <description>Build a more efficient and improved logistics system.</description>
+        <description>Develop a more efficient and advanced logistics system for smarter automation.</description>
         <baseCost>3000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>2.00</researchViewX>
@@ -38,7 +36,7 @@
     <ResearchProjectDef>
         <defName>LogisticsNetwork</defName>
         <label>logistics network</label>
-        <description>Connect multiple logistics systems to form a large-scale network.</description>
+        <description>Link logistics systems together to form a vast, unified network.</description>
         <baseCost>5000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>4.00</researchViewX>
@@ -56,7 +54,7 @@
     <ResearchProjectDef>
         <defName>LargeLogisticsSystem</defName>
         <label>large logistics system</label>
-        <description>Expand containers to build a more densely packed logistics system.</description>
+        <description>Expand containers to build a more compact and efficient logistics system.</description>
         <baseCost>1000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>1.00</researchViewX>
@@ -71,7 +69,7 @@
     <ResearchProjectDef>
         <defName>MassiveLogisticsSystem</defName>
         <label>massive logistics system</label>
-        <description>Further expand containers to construct a highly compact logistics system.</description>
+        <description>Further expand containers to build an ultra-dense logistics system.</description>
         <baseCost>2000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>3.00</researchViewX>
@@ -90,7 +88,7 @@
     <ResearchProjectDef>
         <defName>LogisticsAutoExporter</defName>
         <label>logistics auto exporter</label>
-        <description>Develop an auto-exporter that automatically retrieves items from the logistics system.</description>
+        <description>Build a device that automatically exports items from logistics storage.</description>
         <baseCost>1200</baseCost>
         <tab>Logistics</tab>
         <researchViewX>1.00</researchViewX>
@@ -105,7 +103,7 @@
     <ResearchProjectDef>
         <defName>LogisticsInputPort</defName>
         <label>logistics input port</label>
-        <description>Research a device that allows items to be fed into an adjacent logistics system.</description>
+        <description>Build an input port that feeds items into connected logistics warehouses.</description>
         <baseCost>1200</baseCost>
         <tab>Logistics</tab>
         <researchViewX>1.00</researchViewX>
@@ -120,7 +118,7 @@
     <ResearchProjectDef>
         <defName>ConveyorPort</defName>
         <label>conveyor port</label>
-        <description>Expands the logistics system through conveyor-based connections.</description>
+        <description>Use conveyors to extend the logistics system beyond the warehouse.</description>
         <baseCost>1000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>3.00</researchViewX>
@@ -138,7 +136,7 @@
     <ResearchProjectDef>
         <defName>IntegratedInputOutput</defName>
         <label>integrated input/output</label>
-        <description>Researches an interface that combines both input and output into a single unit.</description>
+        <description>Build a terminal that integrates both input and output in a single device.</description>
         <baseCost>1500</baseCost>
         <tab>Logistics</tab>
         <researchViewX>1.00</researchViewX>
@@ -151,29 +149,10 @@
     </ResearchProjectDef>
 
     <ResearchProjectDef>
-        <defName>LogisticsSmartExporter</defName>
-        <label>logistics smart exporter</label>
-        <description>Determines the export amount based on the state of the logistics system.</description>
-        <baseCost>2200</baseCost>
-        <tab>Logistics</tab>
-        <researchViewX>3.00</researchViewX>
-        <researchViewY>0.70</researchViewY>
-        <techLevel>Industrial</techLevel>
-        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
-        <requiredResearchFacilities>
-            <li>MultiAnalyzer</li>
-        </requiredResearchFacilities>
-        <prerequisites>
-            <li>LogisticsAutoExporter</li>
-            <li>AdvancedLogistics</li>
-        </prerequisites>
-    </ResearchProjectDef>
-
-    <ResearchProjectDef>
         <defName>RemoteTerminal</defName>
         <label>remote terminal</label>
-        <description>An interface that operates within a logistics network completely separate from the primary logistics system.</description>
-        <baseCost>4000</baseCost>
+        <description>Build a terminal that operates independently from logistics warehouses.</description>
+        <baseCost>3000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>5.00</researchViewX>
         <researchViewY>2.10</researchViewY>
@@ -183,7 +162,6 @@
             <li>MultiAnalyzer</li>
         </requiredResearchFacilities>
         <prerequisites>
-            <li>ConveyorPort</li>
             <li>LogisticsNetwork</li>
         </prerequisites>
     </ResearchProjectDef>
@@ -191,7 +169,7 @@
     <ResearchProjectDef>
         <defName>LogisticsRemoteExporter</defName>
         <label>logistics remote exporter</label>
-        <description>An export unit that operates independently from the main logistics system.</description>
+        <description>Build a logistics outlet that operates entirely independently from logistics warehouses.</description>
         <baseCost>4000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>5.00</researchViewX>
@@ -202,7 +180,7 @@
             <li>MultiAnalyzer</li>
         </requiredResearchFacilities>
         <prerequisites>
-            <li>LogisticsSmartExporter</li>
+            <li>LogisticsAutoExporter</li>
             <li>LogisticsNetwork</li>
         </prerequisites>
     </ResearchProjectDef>
@@ -210,7 +188,7 @@
     <ResearchProjectDef>
         <defName>AutoTransferNode</defName>
         <label>auto transfer node</label>
-        <description>Automatically transfers nearby items into the connected logistics system.</description>
+        <description>Build a node that automatically sends nearby items to connected logistics warehouses.</description>
         <baseCost>4000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>5.00</researchViewX>
@@ -221,6 +199,7 @@
             <li>MultiAnalyzer</li>
         </requiredResearchFacilities>
         <prerequisites>
+            <li>LogisticsInputPort</li>
             <li>LogisticsNetwork</li>
         </prerequisites>
     </ResearchProjectDef>
@@ -228,28 +207,28 @@
     <ResearchProjectDef>
         <defName>LogisticsIncinerator</defName>
         <label>logistics incinerator</label>
-        <description>Automatically disposes of designated items from the logistics system by incineration.</description>
+        <description>Build an incinerator that automatically disposes of items from logistics warehouses.</description>
         <baseCost>2500</baseCost>
         <tab>Logistics</tab>
-        <researchViewX>3.00</researchViewX>
-        <researchViewY>0.00</researchViewY>
+        <researchViewX>1.00</researchViewX>
+        <researchViewY>3.50</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
             <li>MultiAnalyzer</li>
         </requiredResearchFacilities>
         <prerequisites>
-            <li>AdvancedLogistics</li>
+            <li>BasicLogistics</li>
         </prerequisites>
     </ResearchProjectDef>
 
     <ResearchProjectDef>
         <defName>IntegratedLogisticsContainer</defName>
         <label>integrated logistics container</label>
-        <description>Research a container capable of storing all items, including corpses and waste.</description>
-        <baseCost>4000</baseCost>
+        <description>Build containers capable of storing all items, including corpses and waste.</description>
+        <baseCost>2500</baseCost>
         <tab>Logistics</tab>
-        <researchViewX>5.00</researchViewX>
+        <researchViewX>4.00</researchViewX>
         <researchViewY>2.80</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -257,8 +236,44 @@
             <li>MultiAnalyzer</li>
         </requiredResearchFacilities>
         <prerequisites>
-            <li>LogisticsNetwork</li>
             <li>MassiveLogisticsSystem</li>
+        </prerequisites>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
+        <defName>VerticalLogisticsLift</defName>
+        <label>vertical logistics lift</label>
+        <description>Use elevators to store large quantities of items. Direct access via terminals is not possible.</description>
+        <baseCost>3000</baseCost>
+        <tab>Logistics</tab>
+        <researchViewX>4.00</researchViewX>
+        <researchViewY>2.10</researchViewY>
+        <techLevel>Industrial</techLevel>
+        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+        <requiredResearchFacilities>
+            <li>MultiAnalyzer</li>
+        </requiredResearchFacilities>
+        <prerequisites>
+            <li>MassiveLogisticsSystem</li>
+        </prerequisites>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
+        <defName>MatterCondenser</defName>
+        <label>matter condenser</label>
+        <description>Build a condenser that compresses items in logistics warehouses into Matter Cores.</description>
+        <baseCost>3000</baseCost>
+        <tab>Logistics</tab>
+        <researchViewX>3.00</researchViewX>
+        <researchViewY>3.50</researchViewY>
+        <techLevel>Industrial</techLevel>
+        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+        <requiredResearchFacilities>
+            <li>MultiAnalyzer</li>
+        </requiredResearchFacilities>
+        <prerequisites>
+            <li>AdvancedLogistics</li>
+            <li>LogisticsIncinerator</li>
         </prerequisites>
     </ResearchProjectDef>
 </Defs>

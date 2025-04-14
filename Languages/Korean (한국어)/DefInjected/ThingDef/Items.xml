@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
     <ConveyorBelt.label>컨베이어 벨트</ConveyorBelt.label>
-    <ConveyorBelt.description>물류 수송을 위한 컨베이어 벨트입니다. 여러 물류 장치 제작에 사용됩니다. 컨베이어 인터페이스를 연구했다면 컨베이어를 설치하여 인터페이스 확장에 사용할 수 있습니다.</ConveyorBelt.description>
+    <ConveyorBelt.description>여러 물류 장치 제작에 사용되는 컨베이어 벨트입니다. 컨베이어 포트를 연구했다면 물류 시스템 확장에 사용할 수 있습니다.</ConveyorBelt.description>
 
     <LogisticsComponent.label>물류 부품</LogisticsComponent.label>
     <LogisticsComponent.description>물류 장치를 제작하기 위한 고도화된 부품 모음입니다.</LogisticsComponent.description>

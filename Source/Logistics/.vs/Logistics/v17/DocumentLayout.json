@@ -3,48 +3,24 @@
   "WorkspaceRootPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\logistics\\source\\logistics\\logistics\\building\\conveyordevice\\building_conveyordevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|solutionrelative:logistics\\building\\conveyordevice\\building_conveyordevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\logistics\\source\\logistics\\logistics\\system\\logisticssystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|solutionrelative:logistics\\system\\logisticssystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\logistics\\source\\logistics\\logistics\\building\\networkdevice\\dialog_renamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|solutionrelative:logistics\\building\\networkdevice\\dialog_renamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\logistics\\source\\logistics\\logistics\\building\\building_conveyor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|solutionrelative:logistics\\building\\building_conveyor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\logistics\\source\\logistics\\logistics\\system\\conveyorsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|solutionrelative:logistics\\system\\conveyorsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\logistics\\source\\logistics\\logistics\\building\\building_conveyorport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|solutionrelative:logistics\\building\\building_conveyorport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\logistics\\source\\logistics\\logistics\\building\\building_logisticsnetworklinker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|solutionrelative:logistics\\building\\building_logisticsnetworklinker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\logistics\\source\\logistics\\logistics\\building\\conveyordevice\\building_conveyordevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|solutionrelative:logistics\\building\\conveyordevice\\building_conveyordevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\logistics\\source\\logistics\\logistics\\building\\building_logisticssystemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|solutionrelative:logistics\\building\\building_logisticssystemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\logistics\\source\\logistics\\logistics\\compproperties\\compproperties_inputterminal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|solutionrelative:logistics\\compproperties\\compproperties_inputterminal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\logistics\\source\\logistics\\logistics\\compproperties\\compproperties_outputterminal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|solutionrelative:logistics\\compproperties\\compproperties_outputterminal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\logistics\\source\\logistics\\logistics\\gamecomponent\\gamecomponent_conveyorview .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|solutionrelative:logistics\\gamecomponent\\gamecomponent_conveyorview .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\logistics\\source\\logistics\\logistics\\patch\\toils_goto\\gotothing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|solutionrelative:logistics\\patch\\toils_goto\\gotothing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\logistics\\source\\logistics\\logistics\\patch\\jobdriver_haultocell\\makenewtoils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|solutionrelative:logistics\\patch\\jobdriver_haultocell\\makenewtoils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\logistics\\source\\logistics\\logistics\\building\\conveyordevice\\iconveyordevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|solutionrelative:logistics\\building\\conveyordevice\\iconveyordevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -59,45 +35,45 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Building_ConveyorDevice.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Building\\ConveyorDevice\\Building_ConveyorDevice.cs",
-              "RelativeDocumentMoniker": "Logistics\\Building\\ConveyorDevice\\Building_ConveyorDevice.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Building\\ConveyorDevice\\Building_ConveyorDevice.cs",
-              "RelativeToolTip": "Logistics\\Building\\ConveyorDevice\\Building_ConveyorDevice.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAApAAAA",
+              "Title": "LogisticsSystem.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\System\\LogisticsSystem.cs",
+              "RelativeDocumentMoniker": "Logistics\\System\\LogisticsSystem.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\System\\LogisticsSystem.cs",
+              "RelativeToolTip": "Logistics\\System\\LogisticsSystem.cs",
+              "ViewState": "AQIAAEcAAAAAAAAAAAAswFMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T07:26:12.008Z",
+              "WhenOpened": "2025-04-13T10:51:04.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IConveyorDevice.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Building\\ConveyorDevice\\IConveyorDevice.cs",
+              "RelativeDocumentMoniker": "Logistics\\Building\\ConveyorDevice\\IConveyorDevice.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Building\\ConveyorDevice\\IConveyorDevice.cs",
+              "RelativeToolTip": "Logistics\\Building\\ConveyorDevice\\IConveyorDevice.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAzwBAAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T10:47:31.098Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Dialog_RenameController.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Building\\NetworkDevice\\Dialog_RenameController.cs",
-              "RelativeDocumentMoniker": "Logistics\\Building\\NetworkDevice\\Dialog_RenameController.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Building\\NetworkDevice\\Dialog_RenameController.cs",
-              "RelativeToolTip": "Logistics\\Building\\NetworkDevice\\Dialog_RenameController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "ConveyorSystem.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\System\\ConveyorSystem.cs",
+              "RelativeDocumentMoniker": "Logistics\\System\\ConveyorSystem.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\System\\ConveyorSystem.cs",
+              "RelativeToolTip": "Logistics\\System\\ConveyorSystem.cs",
+              "ViewState": "AQIAAOMAAAAAAAAAAAAmwOcAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T07:26:08.05Z",
+              "WhenOpened": "2025-04-13T10:46:54.826Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Building_Conveyor.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Building\\Building_Conveyor.cs",
-              "RelativeDocumentMoniker": "Logistics\\Building\\Building_Conveyor.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Building\\Building_Conveyor.cs",
-              "RelativeToolTip": "Logistics\\Building\\Building_Conveyor.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T07:26:01.433Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "Building_ConveyorPort.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Building\\Building_ConveyorPort.cs",
               "RelativeDocumentMoniker": "Logistics\\Building\\Building_ConveyorPort.cs",
@@ -105,98 +81,20 @@
               "RelativeToolTip": "Logistics\\Building\\Building_ConveyorPort.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T07:26:00.414Z",
+              "WhenOpened": "2025-04-13T10:46:26.581Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Building_LogisticsNetworkLinker.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Building\\Building_LogisticsNetworkLinker.cs",
-              "RelativeDocumentMoniker": "Logistics\\Building\\Building_LogisticsNetworkLinker.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Building\\Building_LogisticsNetworkLinker.cs",
-              "RelativeToolTip": "Logistics\\Building\\Building_LogisticsNetworkLinker.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 3,
+              "Title": "Building_ConveyorDevice.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Building\\ConveyorDevice\\Building_ConveyorDevice.cs",
+              "RelativeDocumentMoniker": "Logistics\\Building\\ConveyorDevice\\Building_ConveyorDevice.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Building\\ConveyorDevice\\Building_ConveyorDevice.cs",
+              "RelativeToolTip": "Logistics\\Building\\ConveyorDevice\\Building_ConveyorDevice.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T07:25:59.167Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Building_LogisticsSystemController.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Building\\Building_LogisticsSystemController.cs",
-              "RelativeDocumentMoniker": "Logistics\\Building\\Building_LogisticsSystemController.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Building\\Building_LogisticsSystemController.cs",
-              "RelativeToolTip": "Logistics\\Building\\Building_LogisticsSystemController.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAkwAQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T07:25:52.158Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CompProperties_OutputTerminal.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\CompProperties\\CompProperties_OutputTerminal.cs",
-              "RelativeDocumentMoniker": "Logistics\\CompProperties\\CompProperties_OutputTerminal.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\CompProperties\\CompProperties_OutputTerminal.cs",
-              "RelativeToolTip": "Logistics\\CompProperties\\CompProperties_OutputTerminal.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T07:25:02.755Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CompProperties_InputTerminal.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\CompProperties\\CompProperties_InputTerminal.cs",
-              "RelativeDocumentMoniker": "Logistics\\CompProperties\\CompProperties_InputTerminal.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\CompProperties\\CompProperties_InputTerminal.cs",
-              "RelativeToolTip": "Logistics\\CompProperties\\CompProperties_InputTerminal.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T07:25:03.533Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "GameComponent_ConveyorView .cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\GameComponent\\GameComponent_ConveyorView .cs",
-              "RelativeDocumentMoniker": "Logistics\\GameComponent\\GameComponent_ConveyorView .cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\GameComponent\\GameComponent_ConveyorView .cs",
-              "RelativeToolTip": "Logistics\\GameComponent\\GameComponent_ConveyorView .cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAQwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T07:24:58.474Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "GotoThing.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Patch\\Toils_Goto\\GotoThing.cs",
-              "RelativeDocumentMoniker": "Logistics\\Patch\\Toils_Goto\\GotoThing.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Patch\\Toils_Goto\\GotoThing.cs",
-              "RelativeToolTip": "Logistics\\Patch\\Toils_Goto\\GotoThing.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAWwBoAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T07:24:50.645Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "MakeNewToils.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Patch\\JobDriver_HaulToCell\\MakeNewToils.cs",
-              "RelativeDocumentMoniker": "Logistics\\Patch\\JobDriver_HaulToCell\\MakeNewToils.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Patch\\JobDriver_HaulToCell\\MakeNewToils.cs",
-              "RelativeToolTip": "Logistics\\Patch\\JobDriver_HaulToCell\\MakeNewToils.cs",
-              "ViewState": "AQIAADIAAAAAAAAAAAAewDsAAACNAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T07:24:44.84Z",
+              "WhenOpened": "2025-04-13T10:46:12.866Z",
               "EditorCaption": ""
             }
           ]

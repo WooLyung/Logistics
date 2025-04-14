@@ -69,6 +69,7 @@
     <Compile Include="Building\Building_RemoteTerminal.cs" />
     <Compile Include="Building\Building_LogisticsSystemController.cs" />
     <Compile Include="Building\ConveyorDevice\Building_ConveyorDevice.cs" />
+    <Compile Include="Building\ConveyorDevice\IConveyorDevice.cs" />
     <Compile Include="Building\NetworkDevice\Dialog_RenameController.cs" />
     <Compile Include="Building\NetworkDevice\INetworkDevice.cs" />
     <Compile Include="CompProperties\CompProperties_InputTerminal.cs" />

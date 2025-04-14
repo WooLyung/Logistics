@@ -1,50 +1,50 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
     <BasicLogistics.label>기초 물류</BasicLogistics.label>
-    <BasicLogistics.description>물류 시스템을 위한 기초적인 장치를 연구합니다. 물류 시스템은 물류 시스템 제어기를 중심으로 컨테이너와 인터페이스가 지하로 연결되어 구성됩니다.</BasicLogistics.description>
+    <BasicLogistics.description>기초적인 물류 시스템을 구축할 수 있습니다.</BasicLogistics.description>
 
     <AdvancedLogistics.label>심화 물류</AdvancedLogistics.label>
-    <AdvancedLogistics.description>더 효율적이고 개선된 물류 시스템을 구축합니다.</AdvancedLogistics.description>
+    <AdvancedLogistics.description>더 효율적이고 개선된 물류 시스템을 구축할 수 있습니다.</AdvancedLogistics.description>
 
     <LogisticsNetwork.label>물류 네트워크</LogisticsNetwork.label>
-    <LogisticsNetwork.description>여러 물류 시스템을 연결하여 거대한 네트워크를 구성합니다.</LogisticsNetwork.description>
+    <LogisticsNetwork.description>물류 시스템을 연결하여 거대한 네트워크를 구성할 수 있습니다.</LogisticsNetwork.description>
     
     <LargeLogisticsSystem.label>큰 물류 시스템</LargeLogisticsSystem.label>
-    <LargeLogisticsSystem.description>컨테이너를 확장하여 더 밀집된 물류 시스템을 구성합니다.</LargeLogisticsSystem.description>
+    <LargeLogisticsSystem.description>컨테이너를 확장하여 더 밀집된 시스템을 구성할 수 있습니다.</LargeLogisticsSystem.description>
     
     <MassiveLogisticsSystem.label>거대 물류 시스템</MassiveLogisticsSystem.label>
-    <MassiveLogisticsSystem.description>컨테이너를 더욱 확장하여 매우 밀집된 물류 시스템을 구성합니다.</MassiveLogisticsSystem.description>
+    <MassiveLogisticsSystem.description>컨테이너를 더욱 확장하여 매우 밀집된 물류 시스템을 구성할 수 있습니다.</MassiveLogisticsSystem.description>
     
     <LogisticsAutoExporter.label>물류 자동 출하기</LogisticsAutoExporter.label>
-    <LogisticsAutoExporter.description>물류 시스템에서 자동으로 물건을 빼내는 출하기를 개발합니다.</LogisticsAutoExporter.description>
+    <LogisticsAutoExporter.description>물류 창고의 물품을 자동으로 출하하는 장치를 만들 수 있습니다.</LogisticsAutoExporter.description>
 
-    <LogisticsSmartExporter.label>물류 스마트 출하기</LogisticsSmartExporter.label>
-    <LogisticsSmartExporter.description>물류 시스템의 상태를 고려하여 출하량을 결정합니다.</LogisticsSmartExporter.description>
-
-    <FastInputOutput.label>빠른 입출력</FastInputOutput.label>
-    <FastInputOutput.description>더 빠른 속도의 인터페이스를 개발합니다.</FastInputOutput.description>
-    
     <IntegratedInputOutput.label>통합 입출력</IntegratedInputOutput.label>
-    <IntegratedInputOutput.description>입출력이 하나로 통합된 인터페이스를 연구합니다.</IntegratedInputOutput.description>
+    <IntegratedInputOutput.description>입출력이 하나로 통합된 터미널을 만들 수 있습니다.</IntegratedInputOutput.description>
     
-    <RemoteTerminal.label>원격 인터페이스</RemoteTerminal.label>
-    <RemoteTerminal.description>물류 시스템으로부터 완전히 독립된 물류 네트워크의 인터페이스입니다.</RemoteTerminal.description>
+    <RemoteTerminal.label>원격 터미널</RemoteTerminal.label>
+    <RemoteTerminal.description>물류 창고로부터 완전히 독립된 터미널을 만들 수 있습니다.</RemoteTerminal.description>
 
     <LogisticsRemoteExporter.label>물류 원격 출하기</LogisticsRemoteExporter.label>
-    <LogisticsRemoteExporter.description>물류 시스템으로부터 완전히 독립된 물류 출하기입니다.</LogisticsRemoteExporter.description>
+    <LogisticsRemoteExporter.description>물류 창고로부터 완전히 독립된 물류 출하기를 만들 수 있습니다.</LogisticsRemoteExporter.description>
 
     <AutoTransferNode.label>자동 전송 노드</AutoTransferNode.label>
-    <AutoTransferNode.description>주변 물품을 자동으로 연결된 물류 시스템으로 전송합니다.</AutoTransferNode.description>
+    <AutoTransferNode.description>주변 물품을 자동으로 연결된 물류 창고로 전송하는 노드를 만들 수 있습니다.</AutoTransferNode.description>
     
-    <LogisticsIncinerator.label>물류 소각로</LogisticsIncinerator.label>
-    <LogisticsIncinerator.description>물류 시스템 내 특정 물품을 자동으로 소각하여 제거합니다.</LogisticsIncinerator.description>
+    <LogisticsIncinerator.label>물류 소각기</LogisticsIncinerator.label>
+    <LogisticsIncinerator.description>물류 창고의 물품을 자동으로 소각하여 제거하는 소각기를 만들 수 있습니다.</LogisticsIncinerator.description>
     
     <LogisticsInputPort.label>물류 투입구</LogisticsInputPort.label>
-    <LogisticsInputPort.description>인접한 물류 시스템으로 물건을 투입시키는 장치를 연구합니다.</LogisticsInputPort.description>
+    <LogisticsInputPort.description>연결된 물류 창고로 물품을 집어넣는 투입구를 만들 수 있습니다.</LogisticsInputPort.description>
     
-    <ConveyorPort.label>컨베이어 인터페이스</ConveyorPort.label>
-    <ConveyorPort.description>컨베이어를 통해 물류 시스템을 확장합니다.</ConveyorPort.description>
+    <ConveyorPort.label>컨베이어 포트</ConveyorPort.label>
+    <ConveyorPort.description>컨베이어를 이용해 물류 시스템을 물류 창고 밖으로 확장할 수 있습니다.</ConveyorPort.description>
     
     <IntegratedLogisticsContainer.label>통합 물류 컨테이너</IntegratedLogisticsContainer.label>
-    <IntegratedLogisticsContainer.description>시체와 폐기물을 포함한 모든 물품을 보관할 수 있는 컨테이너를 연구합니다.</IntegratedLogisticsContainer.description>
+    <IntegratedLogisticsContainer.description>시체와 폐기물을 포함한 모든 물품을 보관할 수 있는 컨테이너를 만들 수 있습니다.</IntegratedLogisticsContainer.description>
+
+    <MatterCondenser.label>물질 응축기</MatterCondenser.label>
+    <MatterCondenser.description>물류 창고 내의 물품을 응축하여 물질핵을 만드는 응축기를 만들 수 있습니다.</MatterCondenser.description>
+
+    <VerticalLogisticsLift.label>수직 물류 승강기</VerticalLogisticsLift.label>
+    <VerticalLogisticsLift.description>승강기를 이용해 대량의 물품을 보관할 수 있습니다. 터미널과 직접 접근은 불가능합니다.</VerticalLogisticsLift.description>
 </LanguageData>
