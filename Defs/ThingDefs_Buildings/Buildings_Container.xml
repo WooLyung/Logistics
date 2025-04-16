@@ -10,7 +10,6 @@
         <uiOrder>400</uiOrder>
         <statBases>
             <MaxHitPoints>200</MaxHitPoints>
-            <Flammability>0.5</Flammability>
             <WorkToBuild>1800</WorkToBuild>
         </statBases>
         <researchPrerequisites>
@@ -36,7 +35,6 @@
         <uiOrder>401</uiOrder>
         <statBases>
             <MaxHitPoints>300</MaxHitPoints>
-            <Flammability>0.5</Flammability>
             <WorkToBuild>3600</WorkToBuild>
         </statBases>
         <researchPrerequisites>
@@ -63,7 +61,6 @@
         <uiOrder>402</uiOrder>
         <statBases>
             <MaxHitPoints>400</MaxHitPoints>
-            <Flammability>0.5</Flammability>
             <WorkToBuild>5000</WorkToBuild>
         </statBases>
         <researchPrerequisites>
@@ -91,7 +88,6 @@
         <uiOrder>403</uiOrder>
         <statBases>
             <MaxHitPoints>800</MaxHitPoints>
-            <Flammability>0</Flammability>
             <WorkToBuild>6000</WorkToBuild>
         </statBases>
         <researchPrerequisites>

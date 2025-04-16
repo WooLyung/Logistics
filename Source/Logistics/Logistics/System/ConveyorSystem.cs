@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Verse;
 
 namespace Logistics
@@ -19,7 +20,8 @@ namespace Logistics
 
         private static void ResetMaps(Map map)
         {
-            foreach (Map map0 in i2o.Keys)
+            var maps = i2o.Keys.ToList();
+            foreach (Map map0 in maps)
             {
                 if (map0.Disposed)
                 {

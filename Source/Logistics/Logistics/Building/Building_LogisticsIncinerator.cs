@@ -12,7 +12,7 @@ namespace Logistics
         {
             base.Tick();
 
-            if (this.IsHashIntervalTick(1000))
+            if (this.IsHashIntervalTick(1000) && this.IsOperational())
                 Incinerate();
         }
 
@@ -26,9 +26,11 @@ namespace Logistics
                 if (thing.IsInContainer())
                     things.Add(thing);
 
-            Thing target = things.RandomElement();
-            if (target != null)
-                target.Destroy(DestroyMode.Deconstruct);
+            if (!things.Empty())
+            {
+                Thing target = things.RandomElement();
+                target.TakeDamage(new DamageInfo(DamageDefOf.Flame, 1000f));
+            }
         }
     }
 }

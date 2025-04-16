@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ThingDef ParentName="BuildingBase">
+        <thingClass>Logistics.Building_LogisticsInputPort</thingClass>
+        <designationCategory>LogisticsCategory</designationCategory>
+        <defName>LogisticsInputPort</defName>
+        <label>logistics input port</label>
+        <description>Periodically transfers adjacent items into the connected logistics warehouse. Can send items over long distances via conveyors.</description>
+        <graphicData>
+            <texPath>Things/Building/LogisticsInputPort</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(1.0, 1.0)</drawSize>
+        </graphicData>
+        <fillPercent>1.0</fillPercent>
+        <building>
+            <canPlaceOverWall>true</canPlaceOverWall>
+            <isEdifice>true</isEdifice>
+            <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+        </building>
+        <passability>Impassable</passability>
+        <blockWind>true</blockWind>
+        <blockLight>true</blockLight>
+        <blockWeather>true</blockWeather>
+        <castEdgeShadows>true</castEdgeShadows>
+        <canOverlapZones>false</canOverlapZones>
+        <useHitPoints>true</useHitPoints>
+        <tickerType>Normal</tickerType>
+        <selectable>true</selectable>
+        <altitudeLayer>Building</altitudeLayer>
+        <rotatable>true</rotatable>
+        <uiOrder>700</uiOrder>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>100</basePowerConsumption>
+                <shortCircuitInRain>true</shortCircuitInRain>
+            </li>
+            <li Class="CompProperties_Flickable" />
+            <li Class="CompProperties_Breakdownable" />
+        </comps>
+        <researchPrerequisites>
+            <li>LogisticsInputPort</li>
+        </researchPrerequisites>
+        <statBases>
+            <WorkToBuild>2500</WorkToBuild>
+            <MaxHitPoints>300</MaxHitPoints>
+            <Flammability>0.5</Flammability>
+        </statBases>
+        <costList>
+            <Steel>60</Steel>
+            <ConveyorBelt>2</ConveyorBelt>
+            <ComponentIndustrial>2</ComponentIndustrial>
+        </costList>
+        <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    </ThingDef>
+</Defs>

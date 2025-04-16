@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using RimWorld.QuestGen;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -27,6 +28,27 @@ namespace Logistics
             return false;
         }
 
+        public static Room GetAvailableSystemRoomWithConveyorPort(Building_ConveyorPort port)
+        {
+            Map map = port.Map;
+            IntVec3 pos = port.Position;
+
+            Room north = (pos + IntVec3.North).GetRoom(map);
+            Room south = (pos + IntVec3.South).GetRoom(map);
+            Room east = (pos + IntVec3.East).GetRoom(map);
+            Room west = (pos + IntVec3.West).GetRoom(map);
+
+            if (north != null && IsAvailableSystem(north))
+                return north;
+            if (south != null && IsAvailableSystem(south))
+                return south;
+            if (east != null && IsAvailableSystem(east))
+                return east;
+            if (west != null && IsAvailableSystem(west))
+                return west;
+            return null;
+        }
+        
         public static bool IsAvailableSystem(Room room)
         {
             if (room.PsychologicallyOutdoors)
@@ -123,7 +145,7 @@ namespace Logistics
 
         public static bool IsInContainer(this Thing thing)
         {
-            if (!thing.def.EverHaulable)
+            if (!thing.def.EverStorable(true))
                 return false;
             List<Thing> thingsAtCell = thing.Map.thingGrid.ThingsListAt(thing.Position);
             foreach (Thing t in thingsAtCell)

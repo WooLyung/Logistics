@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Building\Building_LogisticsInputPort.cs" />
     <Compile Include="Building\Building_LogisticsIncinerator.cs" />
     <Compile Include="Building\Building_WallConveyor.cs" />
     <Compile Include="Building\Building_Conveyor.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="System\LogisticsSystem.cs" />
     <Compile Include="System\Toils.cs" />
     <Compile Include="Util\ThingFinder.cs" />
+    <Compile Include="Util\Translator.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

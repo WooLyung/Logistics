@@ -39,7 +39,7 @@
         <description>Link logistics systems together to form a vast, unified network.</description>
         <baseCost>5000</baseCost>
         <tab>Logistics</tab>
-        <researchViewX>4.00</researchViewX>
+        <researchViewX>5.00</researchViewX>
         <researchViewY>1.40</researchViewY>
         <techLevel>Spacer</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -47,6 +47,7 @@
             <li>MultiAnalyzer</li>
         </requiredResearchFacilities>
         <prerequisites>
+            <li>MatterCondenser</li>
             <li>AdvancedLogistics</li>
         </prerequisites>
     </ResearchProjectDef>
@@ -58,7 +59,7 @@
         <baseCost>1000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>1.00</researchViewX>
-        <researchViewY>2.80</researchViewY>
+        <researchViewY>3.50</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <prerequisites>
@@ -73,7 +74,7 @@
         <baseCost>2000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>3.00</researchViewX>
-        <researchViewY>2.80</researchViewY>
+        <researchViewY>3.50</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
@@ -98,6 +99,25 @@
         <prerequisites>
             <li>BasicLogistics</li>
         </prerequisites>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
+        <defName>LogisticsAutoExtractor</defName>
+        <label>logistics auto extractor</label>
+        <description>Build a unit that pulls products from buildings and delivers them into the warehouses.</description>
+        <baseCost>2000</baseCost>
+        <tab>Logistics</tab>
+        <researchViewX>4.00</researchViewX>
+        <researchViewY>0.70</researchViewY>
+        <techLevel>Industrial</techLevel>
+        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+        <prerequisites>
+            <li>LogisticsAutoExporter</li>
+            <li>ConveyorPort</li>
+        </prerequisites>
+        <requiredResearchFacilities>
+            <li>MultiAnalyzer</li>
+        </requiredResearchFacilities>
     </ResearchProjectDef>
 
     <ResearchProjectDef>
@@ -154,7 +174,7 @@
         <description>Build a terminal that operates independently from logistics warehouses.</description>
         <baseCost>3000</baseCost>
         <tab>Logistics</tab>
-        <researchViewX>5.00</researchViewX>
+        <researchViewX>6.00</researchViewX>
         <researchViewY>2.10</researchViewY>
         <techLevel>Spacer</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -167,12 +187,12 @@
     </ResearchProjectDef>
 
     <ResearchProjectDef>
-        <defName>LogisticsRemoteExporter</defName>
-        <label>logistics remote exporter</label>
-        <description>Build a logistics outlet that operates entirely independently from logistics warehouses.</description>
+        <defName>LogisticsRemoteInterface</defName>
+        <label>logistics remote interface</label>
+        <description>Build an interface that supports item flow to and from standalone devices.</description>
         <baseCost>4000</baseCost>
         <tab>Logistics</tab>
-        <researchViewX>5.00</researchViewX>
+        <researchViewX>6.00</researchViewX>
         <researchViewY>0.70</researchViewY>
         <techLevel>Spacer</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -180,7 +200,7 @@
             <li>MultiAnalyzer</li>
         </requiredResearchFacilities>
         <prerequisites>
-            <li>LogisticsAutoExporter</li>
+            <li>LogisticsAutoExtractor</li>
             <li>LogisticsNetwork</li>
         </prerequisites>
     </ResearchProjectDef>
@@ -191,7 +211,7 @@
         <description>Build a node that automatically sends nearby items to connected logistics warehouses.</description>
         <baseCost>4000</baseCost>
         <tab>Logistics</tab>
-        <researchViewX>5.00</researchViewX>
+        <researchViewX>6.00</researchViewX>
         <researchViewY>0.00</researchViewY>
         <techLevel>Spacer</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -211,7 +231,7 @@
         <baseCost>2500</baseCost>
         <tab>Logistics</tab>
         <researchViewX>1.00</researchViewX>
-        <researchViewY>3.50</researchViewY>
+        <researchViewY>2.80</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
@@ -229,7 +249,7 @@
         <baseCost>2500</baseCost>
         <tab>Logistics</tab>
         <researchViewX>4.00</researchViewX>
-        <researchViewY>2.80</researchViewY>
+        <researchViewY>3.50</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
@@ -247,7 +267,7 @@
         <baseCost>3000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>4.00</researchViewX>
-        <researchViewY>2.10</researchViewY>
+        <researchViewY>4.20</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
@@ -264,15 +284,15 @@
         <description>Build a condenser that compresses items in logistics warehouses into Matter Cores.</description>
         <baseCost>3000</baseCost>
         <tab>Logistics</tab>
-        <researchViewX>3.00</researchViewX>
-        <researchViewY>3.50</researchViewY>
+        <researchViewX>4.00</researchViewX>
+        <researchViewY>2.80</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
             <li>MultiAnalyzer</li>
         </requiredResearchFacilities>
         <prerequisites>
-            <li>AdvancedLogistics</li>
+            <li>ConveyorPort</li>
             <li>LogisticsIncinerator</li>
         </prerequisites>
     </ResearchProjectDef>

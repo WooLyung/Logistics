@@ -18,14 +18,17 @@
     <LogisticsAutoExporter.label>물류 자동 출하기</LogisticsAutoExporter.label>
     <LogisticsAutoExporter.description>물류 창고의 물품을 자동으로 출하하는 장치를 만들 수 있습니다.</LogisticsAutoExporter.description>
 
+    <LogisticsAutoExtractor.label>물류 자동 추출기</LogisticsAutoExtractor.label>
+    <LogisticsAutoExtractor.description>다른 장치로부터 물품을 추출해 물류 창고로 운송하는 장치를 만들 수 있습니다.</LogisticsAutoExtractor.description>
+
     <IntegratedInputOutput.label>통합 입출력</IntegratedInputOutput.label>
     <IntegratedInputOutput.description>입출력이 하나로 통합된 터미널을 만들 수 있습니다.</IntegratedInputOutput.description>
     
     <RemoteTerminal.label>원격 터미널</RemoteTerminal.label>
     <RemoteTerminal.description>물류 창고로부터 완전히 독립된 터미널을 만들 수 있습니다.</RemoteTerminal.description>
 
-    <LogisticsRemoteExporter.label>물류 원격 출하기</LogisticsRemoteExporter.label>
-    <LogisticsRemoteExporter.description>물류 창고로부터 완전히 독립된 물류 출하기를 만들 수 있습니다.</LogisticsRemoteExporter.description>
+    <LogisticsRemoteInterface.label>물류 원격 인터페이스</LogisticsRemoteInterface.label>
+    <LogisticsRemoteInterface.description>물류 창고와 독립된 장치의 입출력이 가능한 인터페이스를 만들 수 있습니다.</LogisticsRemoteInterface.description>
 
     <AutoTransferNode.label>자동 전송 노드</AutoTransferNode.label>
     <AutoTransferNode.description>주변 물품을 자동으로 연결된 물류 창고로 전송하는 노드를 만들 수 있습니다.</AutoTransferNode.description>

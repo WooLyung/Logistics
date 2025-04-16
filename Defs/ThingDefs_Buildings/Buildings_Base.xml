@@ -78,6 +78,9 @@
         <passability>PassThroughOnly</passability>
         <pathCost>30</pathCost>
         <fillPercent>0.4</fillPercent>
+        <statBases>
+            <Flammability>0</Flammability>  
+        </statBases>
         <inspectorTabs>
             <li>ITab_Storage</li>
         </inspectorTabs>
@@ -88,20 +91,6 @@
             <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
             <storageGroupTag>LogisticsContainer</storageGroupTag>
             <blueprintClass>Blueprint_Storage</blueprintClass>
-            <defaultStorageSettings>
-                <priority>Preferred</priority>
-                <filter>
-                    <categories>
-                        <li>Foods</li>
-                        <li>Manufactured</li>
-                        <li>ResourcesRaw</li>
-                        <li>Items</li>
-                        <li>Weapons</li>
-                        <li>Apparel</li>
-                        <li>BodyParts</li>
-                    </categories>
-                </filter>
-            </defaultStorageSettings>
         </building>
         <graphicData>
             <graphicClass>Graphic_Single</graphicClass>
@@ -140,6 +129,20 @@
                     </specialFiltersToDisallow>
                 </filter>
             </fixedStorageSettings>
+            <defaultStorageSettings>
+                <priority>Preferred</priority>
+                <filter>
+                    <categories>
+                        <li>Foods</li>
+                        <li>Manufactured</li>
+                        <li>ResourcesRaw</li>
+                        <li>Items</li>
+                        <li>Weapons</li>
+                        <li>Apparel</li>
+                        <li>BodyParts</li>
+                    </categories>
+                </filter>
+            </defaultStorageSettings>
         </building>
     </ThingDef>
 
@@ -153,6 +156,9 @@
                     </categories>
                 </filter>
             </fixedStorageSettings>
+            <defaultStorageSettings>
+                <priority>Preferred</priority>
+            </defaultStorageSettings>
         </building>
     </ThingDef>
 </Defs>
