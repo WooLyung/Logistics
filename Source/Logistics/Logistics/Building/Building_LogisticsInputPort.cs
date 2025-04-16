@@ -14,7 +14,7 @@ namespace Logistics
         {
             base.Tick();
 
-            if (this.IsHashIntervalTick(100) && this.IsOperational())
+            if (this.IsHashIntervalTick(500) && this.IsOperational())
                 Translate();
         }
 
@@ -28,6 +28,7 @@ namespace Logistics
                     room = LogisticsSystem.GetAvailableSystemRoomWithConveyorPort(port);
                     if (room != null)
                         break;
+                    return;
                 }
             }
 

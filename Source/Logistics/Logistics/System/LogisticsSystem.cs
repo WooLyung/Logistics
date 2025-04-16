@@ -9,7 +9,12 @@ namespace Logistics
 {
     public static class LogisticsSystem
     {
-        private static IntVec3[] allDirs = { IntVec3.North, IntVec3.South, IntVec3.East, IntVec3.West };
+        public static IEnumerable<Thing> GetAllItemsInContainer(this Room room)
+        {
+            foreach (Thing thing in room.ContainedAndAdjacentThings)
+                if (thing.IsInContainer())
+                    yield return thing;
+        }
 
         public static bool IsAvailableTerminal(Thing t, Pawn actor = null, bool area = true)
         {

@@ -19,4 +19,6 @@
     <LinkTargetConfirm>Confirm</LinkTargetConfirm>
     <LinkTargetCancel>Cancel</LinkTargetCancel>
     <LinkTargetMessage>Link target set.</LinkTargetMessage>
+
+    <LogisticsFilter>Filter</LogisticsFilter>
 </LanguageData>

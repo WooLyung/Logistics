@@ -87,9 +87,9 @@
     </ResearchProjectDef>
 
     <ResearchProjectDef>
-        <defName>LogisticsAutoExporter</defName>
-        <label>logistics auto exporter</label>
-        <description>Build a device that automatically exports items from logistics storage.</description>
+        <defName>LogisticsRelay</defName>
+        <label>logistics relay</label>
+        <description>Build a relay that facilitates automated transport between two logistics storage systems.</description>
         <baseCost>1200</baseCost>
         <tab>Logistics</tab>
         <researchViewX>1.00</researchViewX>
@@ -102,9 +102,9 @@
     </ResearchProjectDef>
 
     <ResearchProjectDef>
-        <defName>LogisticsAutoExtractor</defName>
-        <label>logistics auto extractor</label>
-        <description>Build a unit that pulls products from buildings and delivers them into the warehouses.</description>
+        <defName>LogisticsInterface</defName>
+        <label>logistics interface</label>
+        <description>Build an interface for exchanging items with external devices.</description>
         <baseCost>2000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>4.00</researchViewX>
@@ -112,7 +112,7 @@
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <prerequisites>
-            <li>LogisticsAutoExporter</li>
+            <li>LogisticsRelay</li>
             <li>ConveyorPort</li>
         </prerequisites>
         <requiredResearchFacilities>
@@ -187,9 +187,9 @@
     </ResearchProjectDef>
 
     <ResearchProjectDef>
-        <defName>LogisticsRemoteInterface</defName>
-        <label>logistics remote interface</label>
-        <description>Build an interface that supports item flow to and from standalone devices.</description>
+        <defName>RemoteTransport</defName>
+        <label>remote transport</label>
+        <description>Builds a device that automates remote transport within the logistics network.</description>
         <baseCost>4000</baseCost>
         <tab>Logistics</tab>
         <researchViewX>6.00</researchViewX>
@@ -200,7 +200,7 @@
             <li>MultiAnalyzer</li>
         </requiredResearchFacilities>
         <prerequisites>
-            <li>LogisticsAutoExtractor</li>
+            <li>LogisticsInterface</li>
             <li>LogisticsNetwork</li>
         </prerequisites>
     </ResearchProjectDef>

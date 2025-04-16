@@ -59,4 +59,7 @@
 
     <LogisticsInputPort.label>물류 투입구</LogisticsInputPort.label>
     <LogisticsInputPort.description>주기적으로 인접한 물품을 연결된 물류 창고로 투입합니다. 컨베이어로 먼 거리를 이동할 수 있습니다.</LogisticsInputPort.description>
+    
+    <LogisticsRelay.label>물류 중계기</LogisticsRelay.label>
+    <LogisticsRelay.description>인접한 벽 또는 컨베이어로 연결된 물류 창고의 운송을 중계합니다. 설정된 물품이 입력 창고에서 출력 창고로 주기적으로 이동합니다.</LogisticsRelay.description>
 </LanguageData>

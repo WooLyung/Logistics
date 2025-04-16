@@ -154,6 +154,10 @@
                     <categories>
                         <li>Root</li>
                     </categories>
+                    <disallowedCategories>
+                        <li>Plants</li>
+                        <li>Buildings</li>
+                    </disallowedCategories>
                 </filter>
             </fixedStorageSettings>
             <defaultStorageSettings>

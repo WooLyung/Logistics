@@ -19,4 +19,6 @@
     <LinkTargetConfirm>확인</LinkTargetConfirm>
     <LinkTargetCancel>취소</LinkTargetCancel>
     <LinkTargetMessage>링크 대상을 설정했습니다.</LinkTargetMessage>
+
+    <LogisticsFilter>필터</LogisticsFilter>
 </LanguageData>

@@ -53,4 +53,73 @@
         </costList>
         <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
     </ThingDef>
+
+    <ThingDef ParentName="BuildingBase">
+        <thingClass>Logistics.Building_LogisticsRelay</thingClass>
+        <designationCategory>LogisticsCategory</designationCategory>
+        <defName>LogisticsRelay</defName>
+        <label>logistics relay</label>
+        <description>Relays transport between logistics warehouses connected via adjacent walls or conveyors. Assigned items are periodically transferred from the input warehouse to the output warehouse.</description>
+        <graphicData>
+            <texPath>Things/Building/LogisticsRelay</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(1.0, 1.0)</drawSize>
+        </graphicData>
+        <fillPercent>1.0</fillPercent>
+        <building>
+            <canPlaceOverWall>true</canPlaceOverWall>
+            <isEdifice>true</isEdifice>
+            <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+            <fixedStorageSettings>
+                <filter>
+                    <disallowNotEverStorable>true</disallowNotEverStorable>
+                    <categories>
+                        <li>Root</li>
+                    </categories>
+                    <disallowedCategories>
+                        <li>Plants</li>
+                        <li>Buildings</li>
+                    </disallowedCategories>
+                </filter>
+            </fixedStorageSettings>
+        </building>
+        <passability>Impassable</passability>
+        <blockWind>true</blockWind>
+        <blockLight>true</blockLight>
+        <blockWeather>true</blockWeather>
+        <castEdgeShadows>true</castEdgeShadows>
+        <canOverlapZones>false</canOverlapZones>
+        <useHitPoints>true</useHitPoints>
+        <tickerType>Normal</tickerType>
+        <selectable>true</selectable>
+        <altitudeLayer>Building</altitudeLayer>
+        <rotatable>true</rotatable>
+        <uiOrder>701</uiOrder>
+        <inspectorTabs>
+            <li>Logistics.ITab_LogisticsFilter</li>
+        </inspectorTabs>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>200</basePowerConsumption>
+                <shortCircuitInRain>true</shortCircuitInRain>
+            </li>
+            <li Class="CompProperties_Flickable" />
+            <li Class="CompProperties_Breakdownable" />
+        </comps>
+        <researchPrerequisites>
+            <li>LogisticsInputPort</li>
+        </researchPrerequisites>
+        <statBases>
+            <WorkToBuild>2500</WorkToBuild>
+            <MaxHitPoints>300</MaxHitPoints>
+            <Flammability>0.5</Flammability>
+        </statBases>
+        <costList>
+            <Steel>80</Steel>
+            <ConveyorBelt>2</ConveyorBelt>
+            <ComponentIndustrial>4</ComponentIndustrial>
+        </costList>
+        <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    </ThingDef>
 </Defs>
