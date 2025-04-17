@@ -44,7 +44,7 @@ namespace Logistics
             Room to = null;
             foreach (var device in ConveyorSystem.GetOutputs(this))
             {
-                if (device is Building_ConveyorPort port)
+                if (device is Building_ConveyorPort port && port.IsOperational())
                 {
                     to = LogisticsSystem.GetAvailableSystemRoomWithConveyorPort(port);
                     if (to != null)
@@ -62,7 +62,7 @@ namespace Logistics
             Room from = null;
             foreach (var device in ConveyorSystem.GetInputs(this))
             {
-                if (device is Building_ConveyorPort port)
+                if (device is Building_ConveyorPort port && port.IsOperational())
                 {
                     from = LogisticsSystem.GetAvailableSystemRoomWithConveyorPort(port);
                     if (from != null)
@@ -79,8 +79,6 @@ namespace Logistics
 
             foreach (Thing target in from.GetAllItemsInContainer())
             {
-                Log.Message(target.def.defName);
-
                 if (storageSettings.AllowedToAccept(target))
                     if (Translator.ToWarehouseAny(target, to))
                         return;

@@ -78,8 +78,10 @@
     <Compile Include="CompProperties\CompProperties_InputTerminal.cs" />
     <Compile Include="CompProperties\CompProperties_LogisticsContainer.cs" />
     <Compile Include="CompProperties\CompProperties_OutputTerminal.cs" />
+    <Compile Include="CompProperties\CompProperties_VerticalStorage.cs" />
     <Compile Include="GameComponent\GameComponent_ConveyorView .cs" />
     <Compile Include="ITab\ITab_LogisticsFilter.cs" />
+    <Compile Include="ITab\ITab_VerticalStorage.cs" />
     <Compile Include="Patch\JobDriver_HaulToCell\MakeNewToils.cs" />
     <Compile Include="PlaceWorker\PlaceWorker_Conveyor.cs" />
     <Compile Include="RoomRoleWorker\RoomRoleWorker_LogisticsIncinerationFacility.cs" />
@@ -92,6 +94,7 @@
     <Compile Include="Patch\Toils_Goto\GotoThing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoomRoleWorker\RoomRoleWorker_Warehouse.cs" />
+    <Compile Include="ThingComp\Comp_VerticalStorage.cs" />
     <Compile Include="Util\LogisticsThingDefOf.cs" />
     <Compile Include="Util\Power.cs" />
     <Compile Include="System\LogisticsSystem.cs" />

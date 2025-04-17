@@ -23,7 +23,7 @@ namespace Logistics
             Room room = null;
             foreach (var device in ConveyorSystem.GetOutputs(this))
             {
-                if (device is Building_ConveyorPort port)
+                if (device is Building_ConveyorPort port && port.IsOperational())
                 {
                     room = LogisticsSystem.GetAvailableSystemRoomWithConveyorPort(port);
                     if (room != null)

@@ -12,6 +12,7 @@ namespace Logistics
         public static bool ToWarehouseAny(Thing thing, Room room)
         {
             var containers = new List<Building_Storage>();
+            var verticalStorages = new List<Comp_VerticalStorage>();
             bool flag = false;
 
             foreach (var t in room.ContainedAndAdjacentThings)
@@ -19,6 +20,21 @@ namespace Logistics
                 var comp = t.TryGetComp<Comp_LogisticsContainer>();
                 if (comp != null && comp.parent != null && comp.parent.Spawned && comp.parent is Building_Storage container)
                     containers.Add(container);
+
+                var comp2 = t.TryGetComp<Comp_VerticalStorage>();
+                if (comp2 != null && comp2.parent != null && comp2.parent.Spawned)
+                    verticalStorages.Add(comp2);
+            }
+
+            foreach (var storage in verticalStorages)
+            {
+                int before = thing.stackCount;
+                int after = storage.AddItemAny(thing);
+
+                if (after == 0)
+                    return true;
+                if (before != after)
+                    flag = true;
             }
 
             foreach (var container in containers)

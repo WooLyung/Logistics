@@ -26,8 +26,8 @@ namespace Logistics
         public static IEnumerable<Building_ConveyorPort> GetAllConveyorPorts(this Room room)
         {
             foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.ConveyorPort))
-                if (thing is Building_ConveyorPort terminal)
-                    yield return terminal;
+                if (thing is Building_ConveyorPort port)
+                    yield return port;
         }
 
         public static IEnumerable<Building_Terminal> GetAllInputTerminals(this Room room)

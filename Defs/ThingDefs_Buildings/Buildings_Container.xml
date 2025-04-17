@@ -104,4 +104,88 @@
             <maxItemsInCell>2</maxItemsInCell>
         </building>
     </ThingDef>
+
+    <ThingDef ParentName="BuildingBase">
+        <defName>DeepLogisticsDepot</defName>
+        <label>deep logistics depot</label>
+        <description>A massive storage unit that uses a vertical logistics lift to store items deep underground. Can hold up to 10 stacks of a single item type.</description>
+        <graphicData>
+            <texPath>Things/Building/DeepLogisticsDepot</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(1.0, 1.0)</drawSize>
+        </graphicData>
+        <category>Building</category>
+        <designationCategory>LogisticsCategory</designationCategory>
+        <useHitPoints>true</useHitPoints>
+        <selectable>true</selectable>
+        <altitudeLayer>Building</altitudeLayer>
+        <blockWind>true</blockWind>
+        <passability>PassThroughOnly</passability>
+        <pathCost>30</pathCost>
+        <fillPercent>0.4</fillPercent>
+        <uiOrder>450</uiOrder>
+        <statBases>
+            <MaxHitPoints>1000</MaxHitPoints>
+            <WorkToBuild>8000</WorkToBuild>
+            <Flammability>0</Flammability>  
+        </statBases>
+        <rotatable>false</rotatable>
+        <researchPrerequisites>
+            <li>VerticalLogisticsLift</li>
+        </researchPrerequisites>
+        <costList>
+            <Steel>200</Steel>
+            <Plasteel>20</Plasteel>
+            <ComponentIndustrial>4</ComponentIndustrial>
+            <LogisticsComponent>4</LogisticsComponent>
+            <ConveyorBelt>12</ConveyorBelt>
+        </costList>
+        <building>
+            <blueprintClass>Blueprint_Storage</blueprintClass>
+            <fixedStorageSettings>
+                <filter>
+                    <disallowNotEverStorable>true</disallowNotEverStorable>
+                    <categories>
+                        <li>Root</li>
+                    </categories>
+                    <disallowedCategories>
+                        <li>Chunks</li>
+                        <li>Plants</li>
+                        <li>Buildings</li>
+                    </disallowedCategories>
+                    <disallowedThingDefs MayRequire="Ludeon.RimWorld.Biotech">
+                        <li MayRequire="Ludeon.RimWorld.Biotech">Wastepack</li>
+                    </disallowedThingDefs>
+                    <specialFiltersToDisallow>
+                        <li>AllowLargeCorpses</li>
+                    </specialFiltersToDisallow>
+                </filter>
+            </fixedStorageSettings>
+            <defaultStorageSettings>
+                <priority>Preferred</priority>
+                <filter>
+                    <categories>
+                        <li>Foods</li>
+                        <li>Manufactured</li>
+                        <li>ResourcesRaw</li>
+                        <li>Items</li>
+                        <li>Weapons</li>
+                        <li>Apparel</li>
+                        <li>BodyParts</li>
+                    </categories>
+                </filter>
+            </defaultStorageSettings>
+        </building>
+        <tickerType>Normal</tickerType>
+        <inspectorTabs>
+            <li>logistics.ITab_VerticalStorage</li>
+        </inspectorTabs>
+        <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+        <canOverlapZones>false</canOverlapZones>
+        <comps>
+            <li Class="Logistics.CompProperties_VerticalStorage">
+                <maxStack>10</maxStack>
+            </li>
+        </comps>
+    </ThingDef>
 </Defs>

@@ -229,7 +229,6 @@
                 <basePowerConsumption>100</basePowerConsumption>
                 <shortCircuitInRain>true</shortCircuitInRain>
             </li>
-            <li Class="CompProperties_Flickable" />
             <li Class="CompProperties_Breakdownable" />
                 <li Class="CompProperties_Forbiddable" />
         </comps>

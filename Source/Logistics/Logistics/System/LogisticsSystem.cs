@@ -98,13 +98,16 @@ namespace Logistics
             }
         }
 
-        private static IEnumerable<Thing> FindAvailableTerminalsWithConveyor<IO>(Room room, Pawn actor) where IO : Comp_Terminal
+        private static IEnumerable<Thing> FindAvailableTerminalsWithConveyorPort<IO>(Room room, Pawn actor) where IO : Comp_Terminal
         {
-            foreach (Building_ConveyorPort convterminal in room.GetAllConveyorPorts())
+            foreach (Building_ConveyorPort port in room.GetAllConveyorPorts())
             {
+                if (!port.IsOperational())
+                    continue;
+
                 foreach (var _terminal in typeof(IO) == typeof(Comp_InputTerminal)
-                    ? ConveyorSystem.GetInputs(convterminal)
-                    : ConveyorSystem.GetOutputs(convterminal))
+                    ? ConveyorSystem.GetInputs(port)
+                    : ConveyorSystem.GetOutputs(port))
                 {
                     if (!(_terminal is Thing))
                         continue;
@@ -123,7 +126,7 @@ namespace Logistics
 
             foreach (Thing terminal in FindAvailableTerminalsInRoom<IO>(room, actor))
                 yield return terminal;
-            foreach (Thing terminal in FindAvailableTerminalsWithConveyor<IO>(room, actor))
+            foreach (Thing terminal in FindAvailableTerminalsWithConveyorPort<IO>(room, actor))
                 yield return terminal;
              if (network)
                 foreach (Thing terminal in FindAvailableTerminalsWithLinker<IO>(room, actor))

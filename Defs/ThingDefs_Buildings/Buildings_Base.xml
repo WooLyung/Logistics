@@ -75,6 +75,7 @@
         <selectable>true</selectable>
         <altitudeLayer>Building</altitudeLayer>
         <blockWind>true</blockWind>
+        <rotatable>false</rotatable>
         <passability>PassThroughOnly</passability>
         <pathCost>30</pathCost>
         <fillPercent>0.4</fillPercent>

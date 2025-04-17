@@ -108,7 +108,7 @@
             <li Class="CompProperties_Breakdownable" />
         </comps>
         <researchPrerequisites>
-            <li>LogisticsInputPort</li>
+            <li>LogisticsRelay</li>
         </researchPrerequisites>
         <statBases>
             <WorkToBuild>2500</WorkToBuild>
