@@ -16,95 +16,73 @@ namespace Logistics
             return false;
         }
 
-        public static IEnumerable<Thing> ThingsOfDef(this Room room, ThingDef def)
+        public static IEnumerable<IController> GetControllers(this Room room)
         {
-            foreach (var thing in room.Map.listerThings.ThingsOfDef(def))
-                if (thing.IsInRoom(room))
-                    yield return thing;
+            foreach (var controller in LCache.GetLCache(room.Map).GetControllers())
+                if (controller.Thing.IsInRoom(room))
+                    yield return controller;
         }
 
-        public static IEnumerable<Building_ConveyorPort> GetAllConveyorPorts(this Room room)
+        public static IEnumerable<INetworkDevice> GetNetworkDevices(this Room room)
         {
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.ConveyorPort))
-                if (thing is Building_ConveyorPort port)
-                    yield return port;
+            foreach (var device in LCache.GetLCache(room.Map).GetNetworkDevices())
+                if (device.Thing.IsInRoom(room))
+                    yield return device;
         }
 
-        public static IEnumerable<Building_Terminal> GetAllInputTerminals(this Room room)
+        public static IEnumerable<INetworkLinker> GetNetworkLinkers(this Room room)
         {
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsInputTerminal))
-                if (thing is Building_Terminal terminal)
-                    yield return terminal;
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsInputWallTerminal))
-                if (thing is Building_Terminal terminal)
-                    yield return terminal;
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.RemoteInputTerminal))
-                if (thing is Building_Terminal terminal)
-                    yield return terminal;
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsIOTerminal))
-                if (thing is Building_Terminal terminal)
-                    yield return terminal;
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsIOWallTerminal))
-                if (thing is Building_Terminal terminal)
-                    yield return terminal;
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.RemoteIOTerminal))
-                if (thing is Building_Terminal terminal)
-                    yield return terminal;
-        }
-
-        public static IEnumerable<Building_Terminal> GetAllOutputTerminals(this Room room)
-        {
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsOutputTerminal))
-                if (thing is Building_Terminal terminal)
-                    yield return terminal;
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsOutputWallTerminal))
-                if (thing is Building_Terminal terminal)
-                    yield return terminal;
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.RemoteOutputTerminal))
-                if (thing is Building_Terminal terminal)
-                    yield return terminal;
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsIOTerminal))
-                if (thing is Building_Terminal terminal)
-                    yield return terminal;
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsIOWallTerminal))
-                if (thing is Building_Terminal terminal)
-                    yield return terminal;
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.RemoteIOTerminal))
-                if (thing is Building_Terminal terminal)
-                    yield return terminal;
-        }
-
-        public static IEnumerable<Building_RemoteTerminal> GetAllRemoteInputTerminals(this Map map)
-        {
-            foreach (var thing in map.listerThings.ThingsOfDef(LogisticsThingDefOf.RemoteInputTerminal))
-                if (thing is Building_RemoteTerminal terminal)
-                    yield return terminal;
-            foreach (var thing in map.listerThings.ThingsOfDef(LogisticsThingDefOf.RemoteIOTerminal))
-                if (thing is Building_RemoteTerminal terminal)
-                    yield return terminal;
-        }
-
-        public static IEnumerable<Building_RemoteTerminal> GetAllRemoteOutputTerminals(this Map map)
-        {
-            foreach (var thing in map.listerThings.ThingsOfDef(LogisticsThingDefOf.RemoteOutputTerminal))
-                if (thing is Building_RemoteTerminal terminal)
-                    yield return terminal;
-            foreach (var thing in map.listerThings.ThingsOfDef(LogisticsThingDefOf.RemoteIOTerminal))
-                if (thing is Building_RemoteTerminal terminal)
-                    yield return terminal;
-        }
-
-        public static IEnumerable<Building_LogisticsNetworkLinker> GetAllOperationalLinkers(this Room room)
-        {
-            foreach (var thing in room.ThingsOfDef(LogisticsThingDefOf.LogisticsNetworkLinker))
-                if (thing is Building_LogisticsNetworkLinker linker && linker.IsOperational())
+            foreach (var linker in LCache.GetLCache(room.Map).GetNetworkLinkers())
+                if (linker.Thing.IsInRoom(room))
                     yield return linker;
         }
 
-        public static Building_LogisticsSystemController GetControllerWithID(this Map map, string ID)
+        public static IEnumerable<ITerminal> GetInputTerminals(this Room room)
         {
-            foreach (var thing in map.listerThings.ThingsOfDef(LogisticsThingDefOf.LogisticsSystemController))
-                if (thing is Building_LogisticsSystemController controller && controller.NetworkID == ID)
+            foreach (var terminal in LCache.GetLCache(room.Map).GetInputTerminals())
+                if (terminal.Thing.IsInRoom(room))
+                    yield return terminal;
+        }
+
+        public static IEnumerable<ITerminal> GetOutputTerminals(this Room room)
+        {
+            foreach (var terminal in LCache.GetLCache(room.Map).GetOutputTerminals())
+                if (terminal.Thing.IsInRoom(room))
+                    yield return terminal;
+        }
+
+        public static IEnumerable<IConveyorPort> GetConveyorPorts(this Room room)
+        {
+            foreach (var port in LCache.GetLCache(room.Map).GetConveyorPorts())
+                if (port.Thing.IsInRoom(room))
+                    yield return port;
+        }
+
+        public static IEnumerable<Building_RemoteTerminal> GetRemoteInputTerminals(this Map map)
+        {
+            foreach (var terminal in map.GetRemoteInputTerminals())
+                if (terminal is INetworkDevice)
+                    yield return terminal;
+        }
+
+        public static IEnumerable<Building_RemoteTerminal> GetRemoteOutputTerminals(this Map map)
+        {
+            foreach (var terminal in map.GetRemoteOutputTerminals())
+                if (terminal is INetworkDevice)
+                    yield return terminal;
+        }
+
+        public static IEnumerable<INetworkLinker> GetAllActiveLinkers(this Room room)
+        {
+            foreach (var linker in room.GetNetworkLinkers())
+                if (linker.Thing.IsActive())
+                    yield return linker;
+        }
+
+        public static IController GetControllerWithID(this Map map, string ID)
+        {
+            foreach (var controller in LCache.GetLCache(map).GetControllers())
+                if (controller is INetworkDevice device && device.NetworkID == ID)
                     return controller;
             return null;
         }

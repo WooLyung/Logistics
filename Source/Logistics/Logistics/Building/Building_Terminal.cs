@@ -2,7 +2,7 @@
 
 namespace Logistics
 {
-    public class Building_Terminal : Building_ConveyorDevice
+    public class Building_Terminal : Building_ConveyorDevice, ITerminal
     {
         public override ConveyorDeviceType Type
         {
@@ -18,6 +18,20 @@ namespace Logistics
                     return ConveyorDeviceType.OUTPUT;
                 return ConveyorDeviceType.NONE;
             }
+        }
+
+        TerminalType ITerminal.Type => TerminalType.IO;
+
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
+        {
+            base.SpawnSetup(map, respawningAfterLoad);
+            LCache.GetLCache(map).AddTerminal(this);
+        }
+
+        public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
+        {
+            LCache.GetLCache(Map).AddTerminal(this);
+            base.DeSpawn(mode);
         }
     }
 }

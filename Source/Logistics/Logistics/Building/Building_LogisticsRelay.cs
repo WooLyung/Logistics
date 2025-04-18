@@ -3,7 +3,7 @@ using Verse;
 
 namespace Logistics
 {
-    public class Building_LogisticsRelay : Building_ConveyorDevice, IStoreSettingsParent
+    public class Building_LogisticsRelay : Building_ConveyorDevice, IStorage, IStoreSettingsParent
     {
         private StorageSettings storageSettings;
 
@@ -20,13 +20,6 @@ namespace Logistics
             Scribe_Deep.Look(ref storageSettings, "storageSettings", this);
         }
 
-        public override void SpawnSetup(Map map, bool respawningAfterLoad)
-        {
-            base.SpawnSetup(map, respawningAfterLoad);
-            if (storageSettings == null)
-                storageSettings = new StorageSettings(this);
-        }
-
         public void Notify_SettingsChanged()
         {
         }
@@ -35,7 +28,7 @@ namespace Logistics
         {
             base.Tick();
 
-            if (this.IsHashIntervalTick(500) && this.IsOperational())
+            if (this.IsHashIntervalTick(500) && this.IsActive())
                 Translate();
         }
 
@@ -44,7 +37,7 @@ namespace Logistics
             Room to = null;
             foreach (var device in ConveyorSystem.GetOutputs(this))
             {
-                if (device is Building_ConveyorPort port && port.IsOperational())
+                if (device is Building_ConveyorPort port && port.IsActive())
                 {
                     to = LogisticsSystem.GetAvailableSystemRoomWithConveyorPort(port);
                     if (to != null)
@@ -62,7 +55,7 @@ namespace Logistics
             Room from = null;
             foreach (var device in ConveyorSystem.GetInputs(this))
             {
-                if (device is Building_ConveyorPort port && port.IsOperational())
+                if (device is Building_ConveyorPort port && port.IsActive())
                 {
                     from = LogisticsSystem.GetAvailableSystemRoomWithConveyorPort(port);
                     if (from != null)
@@ -83,6 +76,20 @@ namespace Logistics
                     if (Translator.ToWarehouseAny(target, to))
                         return;
             }
+        }
+
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
+        {
+            base.SpawnSetup(map, respawningAfterLoad);
+            if (storageSettings == null)
+                storageSettings = new StorageSettings(this);
+            LCache.GetLCache(map).AddStorage(this);
+        }
+
+        public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
+        {
+            LCache.GetLCache(Map).RemoveStorage(this);
+            base.DeSpawn(mode);
         }
     }
 }

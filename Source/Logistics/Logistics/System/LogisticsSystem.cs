@@ -1,5 +1,4 @@
 ﻿using RimWorld;
-using RimWorld.QuestGen;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -20,7 +19,7 @@ namespace Logistics
         {
             if ((actor == null || (!t.IsForbidden(actor)
                 && actor.Map.reachability.CanReach(actor.Position, t.Position, PathEndMode.Touch, TraverseParms.For(actor, Danger.Some, TraverseMode.ByPawn))))
-                && t.IsOperational())
+                && t.IsActive())
             {
                 if (area && actor != null && actor.playerSettings != null && actor.playerSettings.RespectsAllowedArea && !actor.Drafted)
                 {
@@ -33,10 +32,10 @@ namespace Logistics
             return false;
         }
 
-        public static Room GetAvailableSystemRoomWithConveyorPort(Building_ConveyorPort port)
+        public static Room GetAvailableSystemRoomWithConveyorPort(IConveyorPort port)
         {
-            Map map = port.Map;
-            IntVec3 pos = port.Position;
+            Map map = port.Thing.Map;
+            IntVec3 pos = port.Thing.Position;
 
             Room north = (pos + IntVec3.North).GetRoom(map);
             Room south = (pos + IntVec3.South).GetRoom(map);
@@ -59,35 +58,34 @@ namespace Logistics
             if (room.PsychologicallyOutdoors)
                 return false;
 
-            return room.ThingsOfDef(LogisticsThingDefOf.LogisticsSystemController)
-                .Any(controller => controller.GetRoom() == room && controller.IsOperational());
+            return room.GetControllers().Any(controller => controller.Thing.IsActive());
         }
 
         private static IEnumerable<Thing> FindAvailableTerminalsInRoom<IO>(Room room, Pawn actor) where IO : Comp_Terminal
         {
             foreach (Thing thing in typeof(IO) == typeof(Comp_InputTerminal)
-                ? room.GetAllInputTerminals()
-                : room.GetAllOutputTerminals())
+                ? room.GetInputTerminals()
+                : room.GetOutputTerminals())
                 if (thing.HasComp<IO>() && IsAvailableTerminal(thing, actor))
                     yield return thing;
         }
 
         private static IEnumerable<Thing> FindAvailableTerminalsWithLinker<IO>(Room room, Pawn actor) where IO : Comp_Terminal
         {
-            foreach (var linker in room.GetAllOperationalLinkers())
+            foreach (var linker in room.GetAllActiveLinkers())
             {
-                string target = linker.Target;
+                string target = linker.LinkTargetID;
                 var controller = room.Map.GetControllerWithID(target);
-                if (controller != null && controller.IsOperational())
+                if (controller != null && controller.Thing.IsActive())
                 {
-                    foreach (var terminal in FindAvailableTerminals<IO>(controller.GetRoom(), actor, false))
+                    foreach (var terminal in FindAvailableTerminals<IO>(controller.Thing.GetRoom(), actor, false))
                         yield return terminal;
                     yield break;
                 }
 
                 foreach (var terminal in typeof(IO) == typeof(Comp_InputTerminal) 
-                    ? room.Map.GetAllRemoteInputTerminals()
-                    : room.Map.GetAllRemoteOutputTerminals())
+                    ? room.Map.GetRemoteInputTerminals()
+                    : room.Map.GetRemoteOutputTerminals())
                 {
                     if (terminal.NetworkID == target && IsAvailableTerminal(terminal, actor))
                     {
@@ -100,9 +98,9 @@ namespace Logistics
 
         private static IEnumerable<Thing> FindAvailableTerminalsWithConveyorPort<IO>(Room room, Pawn actor) where IO : Comp_Terminal
         {
-            foreach (Building_ConveyorPort port in room.GetAllConveyorPorts())
+            foreach (IConveyorPort port in room.GetConveyorPorts())
             {
-                if (!port.IsOperational())
+                if (!port.Thing.IsActive())
                     continue;
 
                 foreach (var _terminal in typeof(IO) == typeof(Comp_InputTerminal)

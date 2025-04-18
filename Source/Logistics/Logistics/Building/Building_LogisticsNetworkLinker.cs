@@ -6,8 +6,16 @@ using Verse;
 
 namespace Logistics
 {
-    public class Building_LogisticsNetworkLinker : Building
+    public class Building_LogisticsNetworkLinker : Building, INetworkLinker
     {
+        public Thing Thing => this;
+
+        public string LinkTargetID
+        {
+            get => target;
+            set => target = value;
+        }
+
         public class Dialog_RenameController : Window
         {
             private string curName;
@@ -18,7 +26,7 @@ namespace Logistics
             public Dialog_RenameController(Building_LogisticsNetworkLinker linker)
             {
                 this.linker = linker;
-                curName = linker.Target;
+                curName = linker.LinkTargetID;
                 forcePause = true;
                 absorbInputAroundWindow = true;
                 closeOnClickedOutside = true;
@@ -33,7 +41,7 @@ namespace Logistics
 
                 if (Widgets.ButtonText(new Rect(0f, 80f, 120f, 30f), "LinkTargetConfirm".Translate()))
                 {
-                    linker.Target = curName;
+                    linker.LinkTargetID = curName;
                     Messages.Message("LinkTargetMessage".Translate(), MessageTypeDefOf.NeutralEvent);
                     Close();
                 }
@@ -65,12 +73,6 @@ namespace Logistics
             };
         }
 
-        public string Target
-        {
-            get => target;
-            set => target = value;
-        }
-
         public override string GetInspectString()
         {
             StringBuilder sb = new StringBuilder();
@@ -79,8 +81,20 @@ namespace Logistics
             if (!baseStr.NullOrEmpty())
                 sb.AppendLine(baseStr);
 
-            sb.AppendLine($"{"LinkTargetID".Translate()}: {target}");
+            sb.AppendLine($"{"LinkTargetID".Translate()}: {LinkTargetID}");
             return sb.ToString().TrimEndNewlines();
+        }
+
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
+        {
+            base.SpawnSetup(map, respawningAfterLoad);
+            LCache.GetLCache(map).AddNetworkLinker(this);
+        }
+
+        public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
+        {
+            LCache.GetLCache(Map).RemoveNetworkLinker(this);
+            base.DeSpawn(mode);
         }
     }
 }

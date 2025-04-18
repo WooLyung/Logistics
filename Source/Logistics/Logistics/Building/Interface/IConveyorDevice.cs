@@ -1,4 +1,6 @@
-﻿namespace Logistics
+﻿using Verse;
+
+namespace Logistics
 {
     public enum ConveyorDeviceType
     {
@@ -12,6 +14,7 @@
 
     public interface IConveyorDevice
     {
+        Thing Thing { get; }
         ConveyorDeviceType Type { get; }
         ConveyorDeviceDir InputDir { get; }
         ConveyorDeviceDir OutputDir { get; }

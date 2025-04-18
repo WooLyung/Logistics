@@ -10,7 +10,7 @@ namespace Logistics
         {
             List<Thing> containedAndAdjacentThings = room.ContainedAndAdjacentThings;
             for (int i = 0; i < containedAndAdjacentThings.Count; i++)
-                if (containedAndAdjacentThings[i] is Building_LogisticsSystemController)
+                if (containedAndAdjacentThings[i] is IController)
                     return 10100f;
 
             return 0f;

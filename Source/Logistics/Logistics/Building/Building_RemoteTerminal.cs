@@ -54,5 +54,17 @@ namespace Logistics
             sb.AppendLine($"{"NetworkID".Translate()}: {networkID}");
             return sb.ToString().TrimEndNewlines();
         }
+
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
+        {
+            base.SpawnSetup(map, respawningAfterLoad);
+            LCache.GetLCache(map).AddNetworkDevice(this);
+        }
+
+        public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
+        {
+            LCache.GetLCache(Map).AddNetworkDevice(this);
+            base.DeSpawn(mode);
+        }
     }
 }

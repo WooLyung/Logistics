@@ -71,10 +71,16 @@
     <Compile Include="Building\Building_LogisticsNetworkLinker.cs" />
     <Compile Include="Building\Building_RemoteTerminal.cs" />
     <Compile Include="Building\Building_LogisticsSystemController.cs" />
-    <Compile Include="Building\ConveyorDevice\Building_ConveyorDevice.cs" />
-    <Compile Include="Building\ConveyorDevice\IConveyorDevice.cs" />
-    <Compile Include="Building\NetworkDevice\Dialog_RenameController.cs" />
-    <Compile Include="Building\NetworkDevice\INetworkDevice.cs" />
+    <Compile Include="Building\Interface\IController.cs" />
+    <Compile Include="Building\Interface\IConveyorPort.cs" />
+    <Compile Include="Building\Interface\INetworkLinker.cs" />
+    <Compile Include="Building\Interface\IStorage.cs" />
+    <Compile Include="Building\Interface\IConveyor.cs" />
+    <Compile Include="Building\Interface\Impl\Building_ConveyorDevice.cs" />
+    <Compile Include="Building\Interface\IConveyorDevice.cs" />
+    <Compile Include="Building\Interface\Impl\Dialog_RenameController.cs" />
+    <Compile Include="Building\Interface\INetworkDevice.cs" />
+    <Compile Include="Building\Interface\ITerminal.cs" />
     <Compile Include="CompProperties\CompProperties_InputTerminal.cs" />
     <Compile Include="CompProperties\CompProperties_LogisticsContainer.cs" />
     <Compile Include="CompProperties\CompProperties_OutputTerminal.cs" />
@@ -85,6 +91,7 @@
     <Compile Include="Patch\JobDriver_HaulToCell\MakeNewToils.cs" />
     <Compile Include="PlaceWorker\PlaceWorker_Conveyor.cs" />
     <Compile Include="RoomRoleWorker\RoomRoleWorker_LogisticsIncinerationFacility.cs" />
+    <Compile Include="System\LCache.cs" />
     <Compile Include="System\ConveyorSystem.cs" />
     <Compile Include="ThingComp\Comp_Terminal.cs" />
     <Compile Include="ThingComp\Comp_LogisticsContainer.cs" />
@@ -95,7 +102,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoomRoleWorker\RoomRoleWorker_Warehouse.cs" />
     <Compile Include="ThingComp\Comp_VerticalStorage.cs" />
-    <Compile Include="Util\LogisticsThingDefOf.cs" />
     <Compile Include="Util\Power.cs" />
     <Compile Include="System\LogisticsSystem.cs" />
     <Compile Include="System\Toils.cs" />

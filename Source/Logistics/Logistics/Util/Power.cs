@@ -5,7 +5,7 @@ namespace Logistics
 {
     static class Power
     {
-        public static bool IsOperational(this Thing thing)
+        public static bool IsActive(this Thing thing)
         {
             if (thing == null || thing.Destroyed || !thing.Spawned || thing.IsBurning())
                 return false;

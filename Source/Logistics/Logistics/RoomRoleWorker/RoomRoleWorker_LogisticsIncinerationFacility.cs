@@ -14,7 +14,7 @@ namespace Logistics
             for (int i = 0; i < containedAndAdjacentThings.Count; i++)
                 if (containedAndAdjacentThings[i] is Building_LogisticsIncinerator)
                     a = true;
-                else if (containedAndAdjacentThings[i] is Building_LogisticsSystemController)
+                else if (containedAndAdjacentThings[i] is IController)
                     b = true;
 
             if (a && b)

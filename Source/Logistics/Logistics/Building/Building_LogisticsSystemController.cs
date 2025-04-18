@@ -5,8 +5,10 @@ using Verse;
 
 namespace Logistics
 {
-    public class Building_LogisticsSystemController : Building, INetworkDevice
+    public class Building_LogisticsSystemController : Building, INetworkDevice, IController
     {
+        public Thing Thing => this;
+
         private string networkID;
 
         public string DefaultID => "Controller_" + Rand.Range(1000, 9999);
@@ -72,6 +74,18 @@ namespace Logistics
 
             sb.AppendLine($"{"NetworkID".Translate()}: {networkID}");
             return sb.ToString().TrimEndNewlines();
+        }
+
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
+        {
+            base.SpawnSetup(map, respawningAfterLoad);
+            LCache.GetLCache(map).AddController(this);
+        }
+
+        public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
+        {
+            LCache.GetLCache(Map).AddController(this);
+            base.DeSpawn(mode);
         }
     }
 }

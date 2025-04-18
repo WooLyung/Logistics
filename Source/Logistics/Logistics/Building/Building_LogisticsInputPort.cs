@@ -1,7 +1,4 @@
-﻿using RimWorld;
-using System.Collections.Generic;
-using System.Linq;
-using Verse;
+﻿using Verse;
 
 namespace Logistics
 {
@@ -14,7 +11,7 @@ namespace Logistics
         {
             base.Tick();
 
-            if (this.IsHashIntervalTick(500) && this.IsOperational())
+            if (this.IsHashIntervalTick(500) && this.IsActive())
                 Translate();
         }
 
@@ -23,7 +20,7 @@ namespace Logistics
             Room room = null;
             foreach (var device in ConveyorSystem.GetOutputs(this))
             {
-                if (device is Building_ConveyorPort port && port.IsOperational())
+                if (device is Building_ConveyorPort port && port.IsActive())
                 {
                     room = LogisticsSystem.GetAvailableSystemRoomWithConveyorPort(port);
                     if (room != null)

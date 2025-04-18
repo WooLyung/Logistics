@@ -1,7 +1,11 @@
-﻿namespace Logistics
+﻿using Verse;
+
+namespace Logistics
 {
     public interface INetworkDevice
     {
+        Thing Thing { get; }
+
         string DefaultID {
             get;
         }

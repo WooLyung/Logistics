@@ -25,6 +25,8 @@ namespace Logistics
             }
         }
 
+        public Thing Thing => this;
+
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);

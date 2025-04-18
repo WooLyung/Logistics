@@ -12,7 +12,7 @@ namespace Logistics
         {
             base.Tick();
 
-            if (this.IsHashIntervalTick(1000) && this.IsOperational())
+            if (this.IsHashIntervalTick(1000) && this.IsActive())
                 Incinerate();
         }
 
