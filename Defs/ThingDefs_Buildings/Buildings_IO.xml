@@ -76,6 +76,10 @@
                     <categories>
                         <li>Root</li>
                     </categories>
+                    <disallowedCategories>
+                        <li>Plants</li>
+                        <li>Buildings</li>
+                    </disallowedCategories>
                 </filter>
             </fixedStorageSettings>
         </building>
@@ -159,7 +163,7 @@
         <selectable>true</selectable>
         <altitudeLayer>Building</altitudeLayer>
         <rotatable>true</rotatable>
-        <uiOrder>702</uiOrder>
+        <uiOrder>703</uiOrder>
         <inspectorTabs>
             <li>Logistics.ITab_LogisticsFilter</li>
         </inspectorTabs>
@@ -186,5 +190,72 @@
             <ComponentIndustrial>4</ComponentIndustrial>
         </costList>
         <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    </ThingDef>
+
+    <ThingDef ParentName="BuildingBase">
+        <defName>AutoTransferNode</defName>
+        <label>logistics system controller</label>
+        <thingClass>Logistics.Building_AutoTransferNode</thingClass>
+        <description>Automatically transfers nearby items into the connected logistics network.</description>
+        <uiOrder>702</uiOrder>
+        <graphicData>
+            <texPath>Things/Building/AutoTransferNode</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(0.9,0.9)</drawSize>
+        </graphicData>
+        <rotatable>false</rotatable>
+        <altitudeLayer>Building</altitudeLayer>
+        <passability>PassThroughOnly</passability>
+        <pathCost>50</pathCost>
+        <blockWind>true</blockWind>
+        <castEdgeShadows>false</castEdgeShadows>
+        <fillPercent>0.5</fillPercent>
+        <canOverlapZones>false</canOverlapZones>
+        <statBases>
+            <MaxHitPoints>400</MaxHitPoints>
+            <WorkToBuild>8000</WorkToBuild>
+            <Flammability>0.6</Flammability>
+        </statBases>
+        <inspectorTabs>
+            <li>Logistics.ITab_LogisticsFilter</li>
+        </inspectorTabs>
+        <size>(1,1)</size>
+        <building>
+            <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+            <fixedStorageSettings>
+                <filter>
+                    <disallowNotEverStorable>true</disallowNotEverStorable>
+                    <categories>
+                        <li>Root</li>
+                    </categories>
+                    <disallowedCategories>
+                        <li>Plants</li>
+                        <li>Buildings</li>
+                    </disallowedCategories>
+                </filter>
+            </fixedStorageSettings>
+        </building>
+        <costList>
+            <Steel>40</Steel>
+            <Plasteel>30</Plasteel>
+            <NetworkComponent>1</NetworkComponent>
+            <ComponentSpacer>1</ComponentSpacer>
+        </costList>
+        <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+        <designationCategory>LogisticsCategory</designationCategory>
+        <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+        <tickerType>Normal</tickerType>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <shortCircuitInRain>true</shortCircuitInRain>
+                <basePowerConsumption>600</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Flickable" />
+            <li Class="CompProperties_Breakdownable" />
+        </comps>
+        <researchPrerequisites>
+            <li>AutoTransferNode</li>
+        </researchPrerequisites>
     </ThingDef>
 </Defs>

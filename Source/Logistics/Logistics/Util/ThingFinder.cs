@@ -119,5 +119,12 @@ namespace Logistics
                         return controller;
             return null;
         }
+        public static IEnumerable<INetworkLinker> GetActiveLinkers(this Map map, string ID)
+        {
+            foreach (var linker in LCache.GetLCache(map).GetActiveLinkers())
+                if (linker.LinkTargetID == ID)
+                    yield return linker;
+                    
+        }
     }
 }

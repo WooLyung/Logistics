@@ -12,7 +12,13 @@ namespace Logistics
         public override ConveyorDeviceDir OutputDir => RotDir;
         public bool StorageTabVisible => true;
         StorageSettings IStoreSettingsParent.GetStoreSettings() => storageSettings;
-        StorageSettings IStoreSettingsParent.GetParentStoreSettings() => null;
+        public StorageSettings GetParentStoreSettings()
+        {
+            StorageSettings fixedStorageSettings = def.building.fixedStorageSettings;
+            if (fixedStorageSettings != null)
+                return fixedStorageSettings;
+            return StorageSettings.EverStorableFixedSettings();
+        }
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {

@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Building\IO\Building_AutoTransferNode.cs" />
     <Compile Include="Building\IO\Building_LogisticsOutputPort.cs" />
     <Compile Include="Building\IO\Building_LogisticsRelay.cs" />
     <Compile Include="Building\IO\Building_LogisticsInputPort.cs" />
@@ -80,16 +81,16 @@
     <Compile Include="Building\Building_LogisticsNetworkLinker.cs" />
     <Compile Include="Building\Terminal\Building_RemoteTerminal.cs" />
     <Compile Include="Building\Building_LogisticsSystemController.cs" />
-    <Compile Include="Building\Interface\IController.cs" />
-    <Compile Include="Building\Interface\IConveyorPort.cs" />
-    <Compile Include="Building\Interface\INetworkLinker.cs" />
-    <Compile Include="Building\Interface\IStorage.cs" />
-    <Compile Include="Building\Interface\IConveyor.cs" />
-    <Compile Include="Building\Interface\Impl\Building_ConveyorDevice.cs" />
-    <Compile Include="Building\Interface\IConveyorDevice.cs" />
-    <Compile Include="Building\Interface\Impl\Dialog_RenameController.cs" />
-    <Compile Include="Building\Interface\INetworkDevice.cs" />
-    <Compile Include="Building\Interface\ITerminal.cs" />
+    <Compile Include="Building\BuildingInterface\IController.cs" />
+    <Compile Include="Building\BuildingInterface\IConveyorPort.cs" />
+    <Compile Include="Building\BuildingInterface\INetworkLinker.cs" />
+    <Compile Include="Building\BuildingInterface\IStorage.cs" />
+    <Compile Include="Building\BuildingInterface\IConveyor.cs" />
+    <Compile Include="Building\BuildingInterface\Impl\Building_ConveyorDevice.cs" />
+    <Compile Include="Building\BuildingInterface\IConveyorDevice.cs" />
+    <Compile Include="Building\BuildingInterface\Impl\Dialog_RenameController.cs" />
+    <Compile Include="Building\BuildingInterface\INetworkDevice.cs" />
+    <Compile Include="Building\BuildingInterface\ITerminal.cs" />
     <Compile Include="CompProperties\CompProperties_VerticalStorage.cs" />
     <Compile Include="GameComponent\GameComponent_ConveyorView .cs" />
     <Compile Include="ITab\ITab_LogisticsFilter.cs" />

@@ -245,7 +245,7 @@
 
     <ThingDef ParentName="LogisticsInnerTerminalBase">
         <defName>RemoteIOTerminal</defName>
-        <thingClass>Logistics.Building_IOTerminal</thingClass>
+        <thingClass>Logistics.Building_RemoteIOTerminal</thingClass>
         <label>remote input/output terminal</label>
         <description>A network-connected terminal. Always provides access to logistics warehouses linked by a linker."</description>
         <graphicData>
