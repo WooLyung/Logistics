@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Verse;
 
 namespace Logistics
@@ -19,8 +20,28 @@ namespace Logistics
             return false;
         }
 
-        public static IEnumerable<IStorage> GetStorages(this Room room)
+        public static IEnumerable<IStorage> GetStorages(this Room room, bool network = true)
         {
+            if (network)
+            {
+                var controllers = room.GetControllers();
+                foreach (var linker in LCache.GetLCache(room.Map).GetActiveLinkers())
+                {
+                    if (controllers.Any(controller => 
+                        controller is INetworkDevice device
+                        && linker.LinkTargetID == device.NetworkID
+                        && controller.Thing.IsActive()))
+                    {
+                        Room room2 = linker.Thing.GetRoom();
+                        if (LogisticsSystem.IsAvailableSystem(room2))
+                        {
+                            foreach (var storage in room2.GetStorages(false))
+                                yield return storage;
+                        }
+                    }
+                }
+            }
+
             foreach (var storage in LCache.GetLCache(room.Map).GetStorages())
                 if (storage.Thing.IsInRoom(room))
                     yield return storage;
@@ -87,6 +108,15 @@ namespace Logistics
             foreach (var controller in LCache.GetLCache(map).GetControllers())
                 if (controller is INetworkDevice device && device.NetworkID == ID)
                     return controller;
+            return null;
+        }
+
+        public static IController GetActiveControllerWithID(this Map map, string ID)
+        {
+            foreach (var controller in LCache.GetLCache(map).GetControllers())
+                if (controller is INetworkDevice device && device.NetworkID == ID)
+                    if (controller != null && !controller.Thing.GetRoom().PsychologicallyOutdoors && controller.Thing.IsActive())
+                        return controller;
             return null;
         }
     }

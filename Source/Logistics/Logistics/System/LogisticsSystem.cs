@@ -74,8 +74,9 @@ namespace Logistics
             foreach (var linker in room.GetActiveLinkers())
             {
                 string target = linker.LinkTargetID;
-                var controller = room.Map.GetControllerWithID(target);
-                if (controller != null && controller.Thing.IsActive())
+                var controller = room.Map.GetActiveControllerWithID(target);
+
+                if (controller != null)
                 {
                     foreach (var terminal in FindAvailableTerminals(controller.Thing.GetRoom(), actor, Type, false))
                         yield return terminal;

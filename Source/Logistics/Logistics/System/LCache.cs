@@ -59,6 +59,14 @@ namespace Logistics
                     yield return linker;
             }
 
+            public IEnumerable<INetworkLinker> GetActiveLinkers()
+            {
+                foreach (var linker in networkLinkers)
+                    if (linker.Thing.IsActive())
+                        yield return linker;
+            }
+
+
             public void AddNetworkDevice(INetworkDevice networkDevice)
             {
                 networkDevices.Add(networkDevice);
