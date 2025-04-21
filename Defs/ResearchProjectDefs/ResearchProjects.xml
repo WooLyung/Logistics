@@ -136,6 +136,21 @@
     </ResearchProjectDef>
 
     <ResearchProjectDef>
+        <defName>LogisticsOutputPort</defName>
+        <label>logistics output port</label>
+        <description>Build an output port that periodically transfers items from a linked logistics warehouse.</description>
+        <baseCost>800</baseCost>
+        <tab>Logistics</tab>
+        <researchViewX>2.00</researchViewX>
+        <researchViewY>0.00</researchViewY>
+        <techLevel>Industrial</techLevel>
+        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+        <prerequisites>
+            <li>LogisticsInputPort</li>
+        </prerequisites>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
         <defName>ConveyorPort</defName>
         <label>conveyor port</label>
         <description>Use conveyors to extend the logistics system beyond the warehouse.</description>
@@ -219,7 +234,7 @@
             <li>MultiAnalyzer</li>
         </requiredResearchFacilities>
         <prerequisites>
-            <li>LogisticsInputPort</li>
+            <li>LogisticsOutputPort</li>
             <li>LogisticsNetwork</li>
         </prerequisites>
     </ResearchProjectDef>

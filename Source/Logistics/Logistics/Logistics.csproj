@@ -61,8 +61,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Building\Building_LogisticsRelay.cs" />
-    <Compile Include="Building\Building_LogisticsInputPort.cs" />
+    <Compile Include="Building\IO\Building_LogisticsOutputPort.cs" />
+    <Compile Include="Building\IO\Building_LogisticsRelay.cs" />
+    <Compile Include="Building\IO\Building_LogisticsInputPort.cs" />
     <Compile Include="Building\Building_LogisticsIncinerator.cs" />
     <Compile Include="Building\Building_WallConveyor.cs" />
     <Compile Include="Building\Building_Conveyor.cs" />

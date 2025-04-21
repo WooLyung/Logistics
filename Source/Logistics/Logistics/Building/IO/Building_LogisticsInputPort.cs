@@ -38,7 +38,7 @@ namespace Logistics
 
             var thingList = (Position - Rotation.FacingCell).GetThingList(Map);
             foreach (Thing thing in thingList)
-                if (thing.def.EverStorable(true))
+                if (thing.def.EverHaulable)
                     if (Translator.ToStorageAny(thing, to))
                         return;
 

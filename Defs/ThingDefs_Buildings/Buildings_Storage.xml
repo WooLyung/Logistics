@@ -146,6 +146,7 @@
             <ConveyorBelt>6</ConveyorBelt>
         </costList>
         <building>
+            <maxItemsInCell>0</maxItemsInCell>
             <storageGroupTag>DeepLogisticsDepot</storageGroupTag>
             <blueprintClass>Blueprint_Storage</blueprintClass>
             <fixedStorageSettings>

@@ -68,7 +68,7 @@ namespace Logistics
 
             foreach (var cell in GetSlotGroup().CellsList)
             {
-                int cnt = cell.GetThingList(map).Count(item => item.def.EverStorable(true));
+                int cnt = cell.GetThingList(map).Count(item => item.def.EverHaulable);
                 if (def.building.maxItemsInCell > cnt)
                 {
                     if (thing.Spawned)

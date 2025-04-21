@@ -39,6 +39,9 @@
     <LogisticsInputPort.label>물류 투입구</LogisticsInputPort.label>
     <LogisticsInputPort.description>연결된 물류 창고로 물품을 집어넣는 투입구를 만들 수 있습니다.</LogisticsInputPort.description>
     
+    <LogisticsOutputPort.label>물류 배출구</LogisticsOutputPort.label>
+    <LogisticsOutputPort.description>연결된 물류 창고로부터 물품을 출하하는 배출구를 만들 수 있습니다.</LogisticsOutputPort.description>
+
     <ConveyorPort.label>컨베이어 포트</ConveyorPort.label>
     <ConveyorPort.description>컨베이어를 이용해 물류 시스템을 물류 창고 밖으로 확장할 수 있습니다.</ConveyorPort.description>
     

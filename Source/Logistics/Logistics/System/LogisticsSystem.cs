@@ -150,7 +150,7 @@ namespace Logistics
 
         public static bool IsInContainer(this Thing thing)
         {
-            if (!thing.def.EverStorable(true))
+            if (!thing.def.EverHaulable)
                 return false;
 
             List<Thing> thingsAtCell = thing.Map.thingGrid.ThingsListAt(thing.Position);
