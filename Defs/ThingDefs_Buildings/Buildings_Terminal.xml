@@ -3,13 +3,13 @@
     <ThingDef ParentName="LogisticsInnerTerminalBase">
         <defName>LogisticsInputTerminal</defName>
         <label>logistics input terminal</label>
+        <thingClass>Logistics.Building_InputTerminal</thingClass>
         <description>Quickly insert items through a terminal within the same logistics system, without moving to the container. The terminal itself must be physically reachable.</description>
         <graphicData>
             <texPath>Things/Building/LogisticsInputTerminal</texPath>
         </graphicData>
         <uiOrder>200</uiOrder>
         <comps>
-            <li Class="Logistics.CompProperties_InputTerminal"/>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>
                 <basePowerConsumption>100</basePowerConsumption>
@@ -33,13 +33,13 @@
     <ThingDef ParentName="LogisticsInnerTerminalBase">
         <defName>LogisticsOutputTerminal</defName>
         <label>logistics output terminal</label>
+        <thingClass>Logistics.Building_OutputTerminal</thingClass>
         <description>Quickly retrieve items through a terminal within the same logistics system, without moving to the container. The terminal itself must be physically reachable.</description>
         <graphicData>
             <texPath>Things/Building/LogisticsOutputTerminal</texPath>
         </graphicData>
         <uiOrder>201</uiOrder>
         <comps>
-            <li Class="Logistics.CompProperties_OutputTerminal"/>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>
                 <basePowerConsumption>100</basePowerConsumption>
@@ -63,14 +63,13 @@
     <ThingDef ParentName="LogisticsInnerTerminalBase">
         <defName>LogisticsIOTerminal</defName>
         <label>logistics input/output terminal</label>
+        <thingClass>Logistics.Building_IOTerminal</thingClass>
         <description>A terminal with integrated input and output. More efficient than separate units.</description>
         <graphicData>
             <texPath>Things/Building/LogisticsIOTerminal</texPath>
         </graphicData>
         <uiOrder>202</uiOrder>
         <comps>
-            <li Class="Logistics.CompProperties_InputTerminal"/>
-            <li Class="Logistics.CompProperties_OutputTerminal"/>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>
                 <basePowerConsumption>100</basePowerConsumption>
@@ -94,13 +93,13 @@
     <ThingDef ParentName="LogisticsWallTerminalBase">
         <defName>LogisticsInputWallTerminal</defName>
         <label>logistics input wall terminal</label>
+        <thingClass>Logistics.Building_InputTerminal</thingClass>
         <description>A wall-integrated terminal. Can be placed as part of a warehouse wall to allow external access.</description>
         <graphicData>
             <texPath>Things/Building/LogisticsInputWallTerminal</texPath>
         </graphicData>
         <uiOrder>300</uiOrder>
         <comps>
-            <li Class="Logistics.CompProperties_InputTerminal"/>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>
                 <basePowerConsumption>100</basePowerConsumption>
@@ -124,13 +123,13 @@
     <ThingDef ParentName="LogisticsWallTerminalBase">
         <defName>LogisticsOutputWallTerminal</defName>
         <label>logistics output wall terminal</label>
+        <thingClass>Logistics.Building_OutputTerminal</thingClass>
         <description>A wall-integrated terminal. Can be placed as part of a warehouse wall to allow external access.</description>
         <graphicData>
             <texPath>Things/Building/LogisticsOutputWallTerminal</texPath>
         </graphicData>
         <uiOrder>301</uiOrder>
         <comps>
-            <li Class="Logistics.CompProperties_OutputTerminal"/>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>
                 <basePowerConsumption>100</basePowerConsumption>
@@ -154,14 +153,13 @@
     <ThingDef ParentName="LogisticsWallTerminalBase">
         <defName>LogisticsIOWallTerminal</defName>
         <label>logistics input/output wall terminal</label>
+        <thingClass>Logistics.Building_IOTerminal</thingClass>
         <description>A wall-integrated terminal. Can be placed as part of a warehouse wall to allow external access.</description>
         <graphicData>
             <texPath>Things/Building/LogisticsIOWallTerminal</texPath>
         </graphicData>
         <uiOrder>302</uiOrder>
         <comps>
-            <li Class="Logistics.CompProperties_InputTerminal"/>
-            <li Class="Logistics.CompProperties_OutputTerminal"/>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>
                 <basePowerConsumption>100</basePowerConsumption>
@@ -185,7 +183,7 @@
 
     <ThingDef ParentName="LogisticsInnerTerminalBase">
         <defName>RemoteInputTerminal</defName>
-        <thingClass>Logistics.Building_RemoteTerminal</thingClass>
+        <thingClass>Logistics.Building_RemoteInputTerminal</thingClass>
         <label>remote input terminal</label>
         <description>A network-connected terminal. Always provides access to logistics warehouses linked by a linker."</description>
         <graphicData>
@@ -193,7 +191,6 @@
         </graphicData>
         <uiOrder>203</uiOrder>
         <comps>
-            <li Class="Logistics.CompProperties_InputTerminal"/>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>
                 <basePowerConsumption>200</basePowerConsumption>
@@ -217,7 +214,7 @@
 
     <ThingDef ParentName="LogisticsInnerTerminalBase">
         <defName>RemoteOutputTerminal</defName>
-        <thingClass>Logistics.Building_RemoteTerminal</thingClass>
+        <thingClass>Logistics.Building_RemoteOutputTerminal</thingClass>
         <label>remote output terminal</label>
         <description>A network-connected terminal. Always provides access to logistics warehouses linked by a linker."</description>
         <graphicData>
@@ -225,7 +222,6 @@
         </graphicData>
         <uiOrder>203</uiOrder>
         <comps>
-            <li Class="Logistics.CompProperties_OutputTerminal"/>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>
                 <basePowerConsumption>200</basePowerConsumption>
@@ -249,7 +245,7 @@
 
     <ThingDef ParentName="LogisticsInnerTerminalBase">
         <defName>RemoteIOTerminal</defName>
-        <thingClass>Logistics.Building_RemoteTerminal</thingClass>
+        <thingClass>Logistics.Building_IOTerminal</thingClass>
         <label>remote input/output terminal</label>
         <description>A network-connected terminal. Always provides access to logistics warehouses linked by a linker."</description>
         <graphicData>
@@ -257,8 +253,6 @@
         </graphicData>
         <uiOrder>205</uiOrder>
         <comps>
-            <li Class="Logistics.CompProperties_InputTerminal"/>
-            <li Class="Logistics.CompProperties_OutputTerminal"/>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>
                 <basePowerConsumption>200</basePowerConsumption>

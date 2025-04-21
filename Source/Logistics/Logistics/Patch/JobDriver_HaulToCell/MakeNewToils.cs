@@ -83,12 +83,12 @@ namespace Logistics
             Map map = actor2.Map;
             LocalTargetInfo cell = job.GetTarget(TargetIndex.B);
             Room room = RegionAndRoomQuery.RoomAt(cell.Cell, map);
-            var closest = LogisticsSystem.FindAvailableClosestTerminals<Comp_InputTerminal>(room, actor2);
+            var closest = LogisticsSystem.FindAvailableClosestTerminals(room, actor2, TerminalType.Input);
 
             float cost1 = 0, cost2 = 0;
             if (closest != null)
             {
-                PawnPath path1 = LogisticsSystem.FindPath(actor2, thing2.Position, closest.Position);
+                PawnPath path1 = LogisticsSystem.FindPath(actor2, thing2.Position, closest.Thing.Position);
                 PawnPath path2 = LogisticsSystem.FindPath(actor2, thing2.Position, cell.Cell);
                 cost1 = path1.TotalCost;
                 cost2 = path2.TotalCost;
@@ -99,8 +99,8 @@ namespace Logistics
             Toil carryToCell;
             if (closest != null && cost1 < cost2)
             {
-                job.SetTarget(TargetIndex.C, closest);
-                carryToCell = Toils.CarryHauledThingToTerminal(closest, TargetIndex.B, PathEndMode.ClosestTouch);
+                job.SetTarget(TargetIndex.C, closest.Thing);
+                carryToCell = Toils.CarryHauledThingToTerminal(closest.Thing, TargetIndex.B, PathEndMode.ClosestTouch);
                 yield return carryToCell;
             }
             else

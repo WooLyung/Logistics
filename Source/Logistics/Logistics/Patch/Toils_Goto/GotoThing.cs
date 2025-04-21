@@ -35,11 +35,11 @@ namespace Logistics
                     if (thing.IsInContainer())
                     {
                         Room room = thing.GetRoom();
-                        var closest = LogisticsSystem.FindAvailableClosestTerminals<Comp_OutputTerminal>(thing.GetRoom(), actor);
+                        var closest = LogisticsSystem.FindAvailableClosestTerminals(thing.GetRoom(), actor, TerminalType.Output);
 
                         if (closest != null)
                         {
-                            PawnPath path1 = LogisticsSystem.FindPath(actor, actor.Position, closest.Position);
+                            PawnPath path1 = LogisticsSystem.FindPath(actor, actor.Position, closest.Thing.Position);
                             PawnPath path2 = LogisticsSystem.FindPath(actor, actor.Position, thing.Position);
                             float cost1 = path1.TotalCost;
                             float cost2 = path2.TotalCost;
@@ -48,7 +48,7 @@ namespace Logistics
 
                             if (cost1 < cost2)
                             {
-                                thing = closest;
+                                thing = closest.Thing;
                                 dest = thing;
                             }
                         }

@@ -4,18 +4,18 @@ namespace Logistics
 {
     public enum ConveyorDeviceType
     {
-        NONE, INPUT, OUTPUT, IO
+        None, Input, Output, IO
     };
 
     public enum ConveyorDeviceDir
     {
-        NORTH, SOUTH, WEST, EAST, ALL
+        North, South, West, East, All
     }
 
     public interface IConveyorDevice
     {
         Thing Thing { get; }
-        ConveyorDeviceType Type { get; }
+        ConveyorDeviceType DeviceType { get; }
         ConveyorDeviceDir InputDir { get; }
         ConveyorDeviceDir OutputDir { get; }
     }

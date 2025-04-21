@@ -75,9 +75,9 @@ namespace Logistics
 
             public void AddTerminal(ITerminal terminal)
             {
-                if (terminal.Type != TerminalType.Input)
+                if (terminal.TermType != TerminalType.Input)
                     outputTerminals.Add(terminal);
-                if (terminal.Type != TerminalType.Output)
+                if (terminal.TermType != TerminalType.Output)
                     inputTerminals.Add(terminal);
             }
 

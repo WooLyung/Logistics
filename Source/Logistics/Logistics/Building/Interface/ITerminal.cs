@@ -10,6 +10,6 @@ namespace Logistics
     public interface ITerminal
     {
         Thing Thing { get; }
-        TerminalType Type { get; }
+        TerminalType TermType { get; }
     }
 }

@@ -61,83 +61,88 @@ namespace Logistics
             return room.GetControllers().Any(controller => controller.Thing.IsActive());
         }
 
-        private static IEnumerable<Thing> FindAvailableTerminalsInRoom<IO>(Room room, Pawn actor) where IO : Comp_Terminal
+        private static IEnumerable<ITerminal> FindAvailableTerminalsInRoom(Room room, Pawn actor, TerminalType Type)
         {
-            foreach (Thing thing in typeof(IO) == typeof(Comp_InputTerminal)
+            if (Type == TerminalType.IO)
+                yield break;
+            foreach (var terminal in Type == TerminalType.Input
                 ? room.GetInputTerminals()
                 : room.GetOutputTerminals())
-                if (thing.HasComp<IO>() && IsAvailableTerminal(thing, actor))
-                    yield return thing;
+                if (IsAvailableTerminal(terminal.Thing, actor))
+                    yield return terminal;
         }
 
-        private static IEnumerable<Thing> FindAvailableTerminalsWithLinker<IO>(Room room, Pawn actor) where IO : Comp_Terminal
+        private static IEnumerable<ITerminal> FindAvailableTerminalsWithLinker(Room room, Pawn actor, TerminalType Type)
         {
-            foreach (var linker in room.GetAllActiveLinkers())
+            if (Type == TerminalType.IO)
+                yield break;
+
+            foreach (var linker in room.GetActiveLinkers())
             {
                 string target = linker.LinkTargetID;
                 var controller = room.Map.GetControllerWithID(target);
                 if (controller != null && controller.Thing.IsActive())
                 {
-                    foreach (var terminal in FindAvailableTerminals<IO>(controller.Thing.GetRoom(), actor, false))
-                        yield return terminal;
+                    foreach (var terminal in FindAvailableTerminals(controller.Thing.GetRoom(), actor, Type, false))
+                        yield return terminal as ITerminal;
                     yield break;
                 }
 
-                foreach (var terminal in typeof(IO) == typeof(Comp_InputTerminal) 
+                foreach (var terminal in Type == TerminalType.Input
                     ? room.Map.GetRemoteInputTerminals()
                     : room.Map.GetRemoteOutputTerminals())
                 {
-                    if (terminal.NetworkID == target && IsAvailableTerminal(terminal, actor))
+                    if (terminal.NetworkID == target && IsAvailableTerminal(terminal.Thing, actor))
                     {
-                        yield return terminal;
+                        yield return terminal as ITerminal;
                         yield break;
                     }
                 }
             }
         }
 
-        private static IEnumerable<Thing> FindAvailableTerminalsWithConveyorPort<IO>(Room room, Pawn actor) where IO : Comp_Terminal
+        private static IEnumerable<ITerminal> FindAvailableTerminalsWithConveyorPort(Room room, Pawn actor, TerminalType Type)
         {
+            if (Type == TerminalType.IO)
+                yield break;
+
             foreach (IConveyorPort port in room.GetConveyorPorts())
             {
                 if (!port.Thing.IsActive())
                     continue;
 
-                foreach (var _terminal in typeof(IO) == typeof(Comp_InputTerminal)
+                foreach (var _terminal in Type == TerminalType.Input
                     ? ConveyorSystem.GetInputs(port)
                     : ConveyorSystem.GetOutputs(port))
-                {
-                    if (!(_terminal is Thing))
-                        continue;
-
-                    Thing terminal = (Thing)_terminal;
-                    if (terminal.HasComp<IO>() && IsAvailableTerminal(terminal, actor))
+                    if (_terminal is ITerminal terminal && IsAvailableTerminal(terminal.Thing, actor))
                         yield return terminal;
-                }    
             }
         }
 
-        public static IEnumerable<Thing> FindAvailableTerminals<IO>(Room room, Pawn actor, bool network = true) where IO : Comp_Terminal
+        public static IEnumerable<ITerminal> FindAvailableTerminals(Room room, Pawn actor, TerminalType Type, bool network = true)
         {
-            if (!IsAvailableSystem(room))
+            if (Type == TerminalType.IO || !IsAvailableSystem(room))
                 yield break;
 
-            foreach (Thing terminal in FindAvailableTerminalsInRoom<IO>(room, actor))
+            foreach (var terminal in FindAvailableTerminalsInRoom(room, actor, Type))
                 yield return terminal;
-            foreach (Thing terminal in FindAvailableTerminalsWithConveyorPort<IO>(room, actor))
+            foreach (var terminal in FindAvailableTerminalsWithConveyorPort(room, actor, Type))
                 yield return terminal;
              if (network)
-                foreach (Thing terminal in FindAvailableTerminalsWithLinker<IO>(room, actor))
+                foreach (var terminal in FindAvailableTerminalsWithLinker(room, actor, Type))
                     yield return terminal;
         }
-        public static Thing FindAvailableClosestTerminals<IO>(Room room, Pawn actor, IntVec3? from = null) where IO : Comp_Terminal
+        public static ITerminal FindAvailableClosestTerminals(Room room, Pawn actor, TerminalType Type, IntVec3? from = null)
         {
-            var terminals = FindAvailableTerminals<IO>(room, actor);
+            if (Type == TerminalType.IO)
+                return null;
+
+            var terminals = FindAvailableTerminals(room, actor, Type);
             if (terminals.Count() == 0)
                 return null;
-            return terminals.MinBy(t =>
+            return terminals.MinBy(terminal =>
             {
-                PawnPath path = FindPath(actor, from ?? actor.Position, t.Position);
+                PawnPath path = FindPath(actor, from ?? actor.Position, terminal.Thing.Position);
                 float totalCost = path.TotalCost;
                 path.ReleaseToPool();
                 return totalCost;

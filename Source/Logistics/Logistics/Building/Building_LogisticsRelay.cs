@@ -7,7 +7,7 @@ namespace Logistics
     {
         private StorageSettings storageSettings;
 
-        public override ConveyorDeviceType Type => ConveyorDeviceType.IO;
+        public override ConveyorDeviceType DeviceType => ConveyorDeviceType.IO;
         public override ConveyorDeviceDir OutputDir => RotDir;
         public bool StorageTabVisible => true;
 

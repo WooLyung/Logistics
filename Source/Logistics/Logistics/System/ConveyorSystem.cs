@@ -47,19 +47,19 @@ namespace Logistics
             int totalInputs = 0;
             foreach (Thing thing in (conveyor.Thing.Position + IntVec3.North).GetThingList(map))
                 if (thing is Conv neighbor && neighbor.Thing.Rotation.FacingCell == IntVec3.South
-                    || thing is Dev input && inputs.Contains(input) && (input.InputDir == ConveyorDeviceDir.ALL || input.InputDir == ConveyorDeviceDir.SOUTH))
+                    || thing is Dev input && inputs.Contains(input) && (input.InputDir == ConveyorDeviceDir.All || input.InputDir == ConveyorDeviceDir.South))
                     totalInputs++;
             foreach (Thing thing in (conveyor.Thing.Position + IntVec3.South).GetThingList(map))
                 if (thing is Conv neighbor && neighbor.Thing.Rotation.FacingCell == IntVec3.North
-                    || thing is Dev input && inputs.Contains(input) && (input.InputDir == ConveyorDeviceDir.ALL || input.InputDir == ConveyorDeviceDir.NORTH))
+                    || thing is Dev input && inputs.Contains(input) && (input.InputDir == ConveyorDeviceDir.All || input.InputDir == ConveyorDeviceDir.North))
                     totalInputs++;
             foreach (Thing thing in (conveyor.Thing.Position + IntVec3.East).GetThingList(map))
                 if (thing is Conv neighbor && neighbor.Thing.Rotation.FacingCell == IntVec3.West
-                    || thing is Dev input && inputs.Contains(input) && (input.InputDir == ConveyorDeviceDir.ALL || input.InputDir == ConveyorDeviceDir.EAST))
+                    || thing is Dev input && inputs.Contains(input) && (input.InputDir == ConveyorDeviceDir.All || input.InputDir == ConveyorDeviceDir.East))
                     totalInputs++;
             foreach (Thing thing in (conveyor.Thing.Position + IntVec3.West).GetThingList(map))
                 if (thing is Conv neighbor && neighbor.Thing.Rotation.FacingCell == IntVec3.East
-                    || thing is Dev input && inputs.Contains(input) && (input.InputDir == ConveyorDeviceDir.ALL || input.InputDir == ConveyorDeviceDir.WEST))
+                    || thing is Dev input && inputs.Contains(input) && (input.InputDir == ConveyorDeviceDir.All || input.InputDir == ConveyorDeviceDir.West))
                     totalInputs++;
 
             return totalInputs;
@@ -83,11 +83,11 @@ namespace Logistics
                         DFS(map, conveyorInputs[conveyor], neighbor, inputs, outputs, conveyorInputs, inputCount);
                     else if (thing is Dev output && outputs.Contains(output))
                     {
-                        if (output.OutputDir == ConveyorDeviceDir.ALL
-                            || conveyor.Thing.Rotation.FacingCell == IntVec3.North && output.OutputDir == ConveyorDeviceDir.SOUTH
-                            || conveyor.Thing.Rotation.FacingCell == IntVec3.North && output.OutputDir == ConveyorDeviceDir.SOUTH
-                            || conveyor.Thing.Rotation.FacingCell == IntVec3.North && output.OutputDir == ConveyorDeviceDir.SOUTH
-                            || conveyor.Thing.Rotation.FacingCell == IntVec3.North && output.OutputDir == ConveyorDeviceDir.SOUTH)
+                        if (output.OutputDir == ConveyorDeviceDir.All
+                            || conveyor.Thing.Rotation.FacingCell == IntVec3.North && output.OutputDir == ConveyorDeviceDir.South
+                            || conveyor.Thing.Rotation.FacingCell == IntVec3.North && output.OutputDir == ConveyorDeviceDir.South
+                            || conveyor.Thing.Rotation.FacingCell == IntVec3.North && output.OutputDir == ConveyorDeviceDir.South
+                            || conveyor.Thing.Rotation.FacingCell == IntVec3.North && output.OutputDir == ConveyorDeviceDir.South)
                             o2i[map][output].AddRange(conveyorInputs[conveyor]);
                     }
                 }
@@ -116,29 +116,29 @@ namespace Logistics
                     continue;
 
                 Thing input = (Thing)_input;
-                if (_input.InputDir == ConveyorDeviceDir.ALL || _input.InputDir == ConveyorDeviceDir.NORTH)
+                if (_input.InputDir == ConveyorDeviceDir.All || _input.InputDir == ConveyorDeviceDir.North)
                     foreach (Thing thing in (input.Position + IntVec3.North).GetThingList(map))
                         if (thing is Conv conveyor)
                             DFS(map, new HashSet<Dev> { _input }, conveyor, inputs, outputs, conveyorInputs, inputCount);
-                        else if (thing is Dev output && outputs.Contains(output) && (output.OutputDir == ConveyorDeviceDir.ALL || output.OutputDir == ConveyorDeviceDir.SOUTH))
+                        else if (thing is Dev output && outputs.Contains(output) && (output.OutputDir == ConveyorDeviceDir.All || output.OutputDir == ConveyorDeviceDir.South))
                             o2i[map][output].Add(_input);
-                if (_input.InputDir == ConveyorDeviceDir.ALL || _input.InputDir == ConveyorDeviceDir.SOUTH)
+                if (_input.InputDir == ConveyorDeviceDir.All || _input.InputDir == ConveyorDeviceDir.South)
                     foreach (Thing thing in (input.Position + IntVec3.South).GetThingList(map))
                         if (thing is Conv conveyor)
                             DFS(map, new HashSet<Dev> { _input }, conveyor, inputs, outputs, conveyorInputs, inputCount);
-                        else if (thing is Dev output && outputs.Contains(output) && (output.OutputDir == ConveyorDeviceDir.ALL || output.OutputDir == ConveyorDeviceDir.NORTH))
+                        else if (thing is Dev output && outputs.Contains(output) && (output.OutputDir == ConveyorDeviceDir.All || output.OutputDir == ConveyorDeviceDir.North))
                             o2i[map][output].Add(_input);
-                if (_input.InputDir == ConveyorDeviceDir.ALL || _input.InputDir == ConveyorDeviceDir.EAST)
+                if (_input.InputDir == ConveyorDeviceDir.All || _input.InputDir == ConveyorDeviceDir.East)
                     foreach (Thing thing in (input.Position + IntVec3.East).GetThingList(map))
                         if (thing is Conv conveyor)
                             DFS(map, new HashSet<Dev> { _input }, conveyor, inputs, outputs, conveyorInputs, inputCount);
-                        else if (thing is Dev output && outputs.Contains(output) && (output.OutputDir == ConveyorDeviceDir.ALL || output.OutputDir == ConveyorDeviceDir.WEST))
+                        else if (thing is Dev output && outputs.Contains(output) && (output.OutputDir == ConveyorDeviceDir.All || output.OutputDir == ConveyorDeviceDir.West))
                             o2i[map][output].Add(_input);
-                if (_input.InputDir == ConveyorDeviceDir.ALL || _input.InputDir == ConveyorDeviceDir.WEST)
+                if (_input.InputDir == ConveyorDeviceDir.All || _input.InputDir == ConveyorDeviceDir.West)
                     foreach (Thing thing in (input.Position + IntVec3.West).GetThingList(map))
                         if (thing is Conv conveyor)
                             DFS(map, new HashSet<Dev> { _input }, conveyor, inputs, outputs, conveyorInputs, inputCount);
-                        else if (thing is Dev output && outputs.Contains(output) && (output.OutputDir == ConveyorDeviceDir.ALL || output.OutputDir == ConveyorDeviceDir.EAST))
+                        else if (thing is Dev output && outputs.Contains(output) && (output.OutputDir == ConveyorDeviceDir.All || output.OutputDir == ConveyorDeviceDir.East))
                             o2i[map][output].Add(_input);
             }
 

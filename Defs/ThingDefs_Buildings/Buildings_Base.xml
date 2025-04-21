@@ -8,7 +8,6 @@
 
     <ThingDef ParentName="BuildingBase" Name="LogisticsTerminalBase" Abstract="True">
         <designationCategory>LogisticsCategory</designationCategory>
-        <thingClass>Logistics.Building_Terminal</thingClass>
         <useHitPoints>true</useHitPoints>
         <selectable>true</selectable>
         <altitudeLayer>Building</altitudeLayer>

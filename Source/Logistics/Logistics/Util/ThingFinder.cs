@@ -7,6 +7,9 @@ namespace Logistics
     {
         public static bool IsInRoom(this Thing thing, Room room)
         {
+            if (thing.Map == null || room.Map == null)
+                return false;
+
             if (thing.GetRoom() == room
                 || (thing.Position + IntVec3.North).GetRoom(thing.Map) == room
                 || (thing.Position + IntVec3.South).GetRoom(thing.Map) == room
@@ -21,13 +24,6 @@ namespace Logistics
             foreach (var controller in LCache.GetLCache(room.Map).GetControllers())
                 if (controller.Thing.IsInRoom(room))
                     yield return controller;
-        }
-
-        public static IEnumerable<INetworkDevice> GetNetworkDevices(this Room room)
-        {
-            foreach (var device in LCache.GetLCache(room.Map).GetNetworkDevices())
-                if (device.Thing.IsInRoom(room))
-                    yield return device;
         }
 
         public static IEnumerable<INetworkLinker> GetNetworkLinkers(this Room room)
@@ -58,21 +54,21 @@ namespace Logistics
                     yield return port;
         }
 
-        public static IEnumerable<Building_RemoteTerminal> GetRemoteInputTerminals(this Map map)
+        public static IEnumerable<INetworkDevice> GetRemoteInputTerminals(this Map map)
         {
-            foreach (var terminal in map.GetRemoteInputTerminals())
-                if (terminal is INetworkDevice)
-                    yield return terminal;
+            foreach (var terminal in LCache.GetLCache(map).GetInputTerminals())
+                if (terminal is INetworkDevice device)
+                    yield return device;
         }
 
-        public static IEnumerable<Building_RemoteTerminal> GetRemoteOutputTerminals(this Map map)
+        public static IEnumerable<INetworkDevice> GetRemoteOutputTerminals(this Map map)
         {
-            foreach (var terminal in map.GetRemoteOutputTerminals())
-                if (terminal is INetworkDevice)
-                    yield return terminal;
+            foreach (var terminal in LCache.GetLCache(map).GetOutputTerminals())
+                if (terminal is INetworkDevice device)
+                    yield return device;
         }
 
-        public static IEnumerable<INetworkLinker> GetAllActiveLinkers(this Room room)
+        public static IEnumerable<INetworkLinker> GetActiveLinkers(this Room room)
         {
             foreach (var linker in room.GetNetworkLinkers())
                 if (linker.Thing.IsActive())

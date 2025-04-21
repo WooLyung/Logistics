@@ -5,23 +5,23 @@ namespace Logistics
 {
     public abstract class Building_ConveyorDevice : Building, IConveyorDevice
     {
-        public virtual ConveyorDeviceType Type { get; }
-        public virtual ConveyorDeviceDir InputDir => ConveyorDeviceDir.ALL;
-        public virtual ConveyorDeviceDir OutputDir => ConveyorDeviceDir.ALL;
+        public virtual ConveyorDeviceType DeviceType { get; }
+        public virtual ConveyorDeviceDir InputDir => ConveyorDeviceDir.All;
+        public virtual ConveyorDeviceDir OutputDir => ConveyorDeviceDir.All;
 
         protected ConveyorDeviceDir RotDir
         {
             get
             {
                 if (Rotation == Rot4.North)
-                    return ConveyorDeviceDir.NORTH;
+                    return ConveyorDeviceDir.North;
                 if (Rotation == Rot4.South)
-                    return ConveyorDeviceDir.SOUTH;
+                    return ConveyorDeviceDir.South;
                 if (Rotation == Rot4.East)
-                    return ConveyorDeviceDir.EAST;
+                    return ConveyorDeviceDir.East;
                 if (Rotation == Rot4.West)
-                    return ConveyorDeviceDir.WEST;
-                return ConveyorDeviceDir.ALL;
+                    return ConveyorDeviceDir.West;
+                return ConveyorDeviceDir.All;
             }
         }
 
@@ -30,21 +30,21 @@ namespace Logistics
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
-            if (Type == ConveyorDeviceType.INPUT)
+            if (DeviceType == ConveyorDeviceType.Input)
                 ConveyorSystem.AddInput(map, this, !respawningAfterLoad);
-            if (Type == ConveyorDeviceType.OUTPUT)
+            if (DeviceType == ConveyorDeviceType.Output)
                 ConveyorSystem.AddOutput(map, this, !respawningAfterLoad);
-            if (Type == ConveyorDeviceType.IO)
+            if (DeviceType == ConveyorDeviceType.IO)
                 ConveyorSystem.AddIO(map, this, !respawningAfterLoad);
         }
 
         public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
         {
-            if (Type == ConveyorDeviceType.INPUT)
+            if (DeviceType == ConveyorDeviceType.Input)
                 ConveyorSystem.RemoveInput(Map, this);
-            if (Type == ConveyorDeviceType.OUTPUT)
+            if (DeviceType == ConveyorDeviceType.Output)
                 ConveyorSystem.RemoveOutput(Map, this);
-            if (Type == ConveyorDeviceType.IO)
+            if (DeviceType == ConveyorDeviceType.IO)
                 ConveyorSystem.RemoveIO(Map, this);
             base.DeSpawn(mode);
         }

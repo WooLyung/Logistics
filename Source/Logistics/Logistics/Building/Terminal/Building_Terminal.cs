@@ -1,21 +1,20 @@
-﻿using RimWorld;
-using Verse;
+﻿using Verse;
 
 namespace Logistics
 {
-    public class Building_ConveyorPort : Building_ConveyorDevice, IConveyorPort
+    abstract public class Building_Terminal : Building_ConveyorDevice, ITerminal
     {
-        public override ConveyorDeviceType DeviceType => ConveyorDeviceType.IO;
+        public virtual TerminalType TermType { get; }
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
-            LCache.GetLCache(map).AddConveyorPort(this);
+            LCache.GetLCache(map).AddTerminal(this);
         }
 
         public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
         {
-            LCache.GetLCache(Map).RemoveConveyorPort(this);
+            LCache.GetLCache(Map).AddTerminal(this);
             base.DeSpawn(mode);
         }
     }

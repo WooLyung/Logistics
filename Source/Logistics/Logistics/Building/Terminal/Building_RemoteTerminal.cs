@@ -5,7 +5,7 @@ using Verse;
 
 namespace Logistics
 {
-    public class Building_RemoteTerminal : Building_Terminal, INetworkDevice
+    public abstract class Building_RemoteTerminal : Building_Terminal, INetworkDevice
     {
         private string networkID;
 

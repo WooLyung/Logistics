@@ -4,7 +4,7 @@ namespace Logistics
 {
     public class Building_LogisticsInputPort : Building_ConveyorDevice
     {
-        public override ConveyorDeviceType Type => ConveyorDeviceType.INPUT;
+        public override ConveyorDeviceType DeviceType => ConveyorDeviceType.Input;
         public override ConveyorDeviceDir OutputDir => RotDir;
 
         public override void Tick()
