@@ -17,30 +17,37 @@ namespace Logistics
 
         private void Translate()
         {
-            Room room = null;
+            Room to = null;
             foreach (var device in ConveyorSystem.GetOutputs(this))
             {
                 if (device is Building_ConveyorPort port && port.IsActive())
                 {
-                    room = LogisticsSystem.GetAvailableSystemRoomWithConveyorPort(port);
-                    if (room != null)
+                    to = LogisticsSystem.GetAvailableSystemRoomWithConveyorPort(port);
+                    if (to != null)
                         break;
                     return;
                 }
             }
 
-            if (room == null)
+            if (to == null)
             {
-                room = (Position + Rotation.FacingCell).GetRoom(Map);
-                if (!LogisticsSystem.IsAvailableSystem(room))
+                to = (Position + Rotation.FacingCell).GetRoom(Map);
+                if (!LogisticsSystem.IsAvailableSystem(to))
                     return;
             }
 
             var thingList = (Position - Rotation.FacingCell).GetThingList(Map);
             foreach (Thing thing in thingList)
                 if (thing.def.EverStorable(true))
-                    if (Translator.ToWarehouseAny(thing, room))
-                        break;
+                    if (Translator.ToStorageAny(thing, to))
+                        return;
+
+            thingList = (Position - Rotation.FacingCell).GetThingList(Map);
+            foreach (Thing _thing in thingList)
+                if (_thing is IStorage storage)
+                    foreach (Thing thing in storage.StoredThings)
+                        if (Translator.ToStorageAny(thing, to))
+                            return;
         }
     }
 }

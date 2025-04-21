@@ -8,23 +8,17 @@ namespace Logistics
 {
     public static class LogisticsSystem
     {
-        public static IEnumerable<Thing> GetAllItemsInContainer(this Room room)
+        public static bool IsAvailableTerminal(ITerminal terminal, Pawn actor = null, bool area = true)
         {
-            foreach (Thing thing in room.ContainedAndAdjacentThings)
-                if (thing.IsInContainer())
-                    yield return thing;
-        }
-
-        public static bool IsAvailableTerminal(Thing t, Pawn actor = null, bool area = true)
-        {
-            if ((actor == null || (!t.IsForbidden(actor)
-                && actor.Map.reachability.CanReach(actor.Position, t.Position, PathEndMode.Touch, TraverseParms.For(actor, Danger.Some, TraverseMode.ByPawn))))
-                && t.IsActive())
+            Thing thing = terminal.Thing;
+            if ((actor == null || (!thing.IsForbidden(actor)
+                && actor.Map.reachability.CanReach(actor.Position, thing, PathEndMode.Touch, TraverseParms.For(actor, Danger.Some, TraverseMode.ByPawn))))
+                && thing.IsActive())
             {
                 if (area && actor != null && actor.playerSettings != null && actor.playerSettings.RespectsAllowedArea && !actor.Drafted)
                 {
                     Area allowed = actor.playerSettings.EffectiveAreaRestrictionInPawnCurrentMap;
-                    if (allowed != null && !allowed[t.Position])
+                    if (allowed != null && !allowed[thing.Position])
                         return false;
                 }
                 return true;
@@ -68,7 +62,7 @@ namespace Logistics
             foreach (var terminal in Type == TerminalType.Input
                 ? room.GetInputTerminals()
                 : room.GetOutputTerminals())
-                if (IsAvailableTerminal(terminal.Thing, actor))
+                if (IsAvailableTerminal(terminal, actor))
                     yield return terminal;
         }
 
@@ -84,7 +78,7 @@ namespace Logistics
                 if (controller != null && controller.Thing.IsActive())
                 {
                     foreach (var terminal in FindAvailableTerminals(controller.Thing.GetRoom(), actor, Type, false))
-                        yield return terminal as ITerminal;
+                        yield return terminal;
                     yield break;
                 }
 
@@ -92,7 +86,7 @@ namespace Logistics
                     ? room.Map.GetRemoteInputTerminals()
                     : room.Map.GetRemoteOutputTerminals())
                 {
-                    if (terminal.NetworkID == target && IsAvailableTerminal(terminal.Thing, actor))
+                    if (terminal.NetworkID == target && IsAvailableTerminal(terminal as ITerminal, actor))
                     {
                         yield return terminal as ITerminal;
                         yield break;
@@ -114,7 +108,7 @@ namespace Logistics
                 foreach (var _terminal in Type == TerminalType.Input
                     ? ConveyorSystem.GetInputs(port)
                     : ConveyorSystem.GetOutputs(port))
-                    if (_terminal is ITerminal terminal && IsAvailableTerminal(terminal.Thing, actor))
+                    if (_terminal is ITerminal terminal && IsAvailableTerminal(terminal, actor))
                         yield return terminal;
             }
         }
@@ -158,10 +152,13 @@ namespace Logistics
         {
             if (!thing.def.EverStorable(true))
                 return false;
+
             List<Thing> thingsAtCell = thing.Map.thingGrid.ThingsListAt(thing.Position);
             foreach (Thing t in thingsAtCell)
-                if (t.HasComp<Comp_LogisticsContainer>())
-                    return true;
+                if (t is IStorage storage)
+                    if (storage.HasThing(t))
+                        return true;
+
             return false;
         }
 
@@ -172,8 +169,9 @@ namespace Logistics
 
             List<Thing> thingsAtCell = map.thingGrid.ThingsListAt(target.Cell);
             foreach (Thing t in thingsAtCell)
-                if (t.HasComp<Comp_LogisticsContainer>())
-                    return true;
+                if (t is IStorage storage)
+                    if (storage.HasThing(t))
+                        return true;
 
             return false;
         }

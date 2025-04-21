@@ -20,7 +20,7 @@ namespace Logistics
 
         private static void ResetMaps(Map map)
         {
-            var maps = i2o.Keys.ToList();
+            var maps = isUpdated.Keys.ToList();
             foreach (Map map0 in maps)
             {
                 if (map0.Disposed)
@@ -149,11 +149,12 @@ namespace Logistics
             isUpdated[map] = true;
         }
 
-        public static void AddConveyor(Map map, Conv conveyor, bool updated)
+        public static void AddConveyor(Map map, Conv conveyor, bool update)
         {
             ResetMaps(map);
             conveyors[map].Add(conveyor);
-            CalculateConveyorSystem(map);
+            if (update)
+                CalculateConveyorSystem(map);
         }
 
         public static void AddInput(Map map, Dev dev, bool update)
@@ -218,9 +219,7 @@ namespace Logistics
 
         public static IEnumerable<Dev> GetInputs(Dev output)
         {
-            if (!(output is Thing))
-                yield break;
-            Map map = ((Thing)output).Map;
+            Map map = output.Thing.Map;
 
             ResetMaps(map);
             if (!isUpdated[map])
@@ -232,9 +231,7 @@ namespace Logistics
 
         public static IEnumerable<Dev> GetOutputs(Dev input)
         {
-            if (!(input is Thing))
-                yield break;
-            Map map = ((Thing)input).Map;
+            Map map = input.Thing.Map;
 
             ResetMaps(map);
             if (!isUpdated[map])

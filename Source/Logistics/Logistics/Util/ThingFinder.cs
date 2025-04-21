@@ -19,6 +19,13 @@ namespace Logistics
             return false;
         }
 
+        public static IEnumerable<IStorage> GetStorages(this Room room)
+        {
+            foreach (var storage in LCache.GetLCache(room.Map).GetStorages())
+                if (storage.Thing.IsInRoom(room))
+                    yield return storage;
+        }
+
         public static IEnumerable<IController> GetControllers(this Room room)
         {
             foreach (var controller in LCache.GetLCache(room.Map).GetControllers())

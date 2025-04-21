@@ -67,7 +67,7 @@
 
     <ThingDef ParentName="BuildingBase" Name="LogisticsContainerBase" Abstract="True">
         <size>(1,1)</size>
-        <thingClass>Building_Storage</thingClass>
+        <thingClass>Logistics.Building_Container</thingClass>
         <category>Building</category>
         <designationCategory>LogisticsCategory</designationCategory>
         <useHitPoints>true</useHitPoints>
@@ -103,9 +103,6 @@
                 <cornerBR>Damage/Corner</cornerBR>
             </damageData>
         </graphicData>
-        <comps>
-            <li Class="Logistics.CompProperties_LogisticsContainer" />
-        </comps>
     </ThingDef>
 
     <ThingDef ParentName="LogisticsContainerBase" Name="LogisticsContainerNormalBase" Abstract="True">

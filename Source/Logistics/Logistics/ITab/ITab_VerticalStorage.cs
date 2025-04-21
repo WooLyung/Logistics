@@ -1,8 +1,5 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
-using UnityEngine;
-using Verse.AI.Group;
-using Verse.AI;
 using Verse;
 
 namespace Logistics
@@ -12,11 +9,22 @@ namespace Logistics
         public override IList<Thing> container => Storage.innerContainer;
         public Comp_VerticalStorage Storage => SelThing.TryGetComp<Comp_VerticalStorage>();
 
+        public override bool IsVisible
+        {
+            get
+            {
+                if (SelThing != null && (SelThing.Faction == null || SelThing.Faction == Faction.OfPlayer) && Storage != null)
+                    return true;
+                return false;
+            }
+        }
+
+
         public ITab_VerticalStorage()
         {
-            canRemoveThings = false;
-            labelKey = "TabTransporterContents";
+            labelKey = "VerticalStorageContents";
             containedItemsKey = "ContainedItems";
+            canRemoveThings = false;
         }
     }
 }

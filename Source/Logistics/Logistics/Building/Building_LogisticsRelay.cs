@@ -1,9 +1,10 @@
 ﻿using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace Logistics
 {
-    public class Building_LogisticsRelay : Building_ConveyorDevice, IStorage, IStoreSettingsParent
+    public class Building_LogisticsRelay : Building_ConveyorDevice, IStoreSettingsParent
     {
         private StorageSettings storageSettings;
 
@@ -11,8 +12,21 @@ namespace Logistics
         public override ConveyorDeviceDir OutputDir => RotDir;
         public bool StorageTabVisible => true;
 
-        public StorageSettings GetParentStoreSettings() => null;
+        public StorageSettings GetParentStoreSettings()
+        {
+            StorageSettings fixedStorageSettings = def.building.fixedStorageSettings;
+            if (fixedStorageSettings != null)
+                return fixedStorageSettings;
+            return StorageSettings.EverStorableFixedSettings();
+        }
         public StorageSettings GetStoreSettings() => storageSettings;
+
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
+        {
+            base.SpawnSetup(map, respawningAfterLoad);
+            if (storageSettings == null)
+                storageSettings = new StorageSettings(this);
+        }
 
         public override void ExposeData()
         {
@@ -70,26 +84,12 @@ namespace Logistics
                     return;
             }
 
-            foreach (Thing target in from.GetAllItemsInContainer())
+            foreach (IStorage storage in from.GetStorages())
             {
-                if (storageSettings.AllowedToAccept(target))
-                    if (Translator.ToWarehouseAny(target, to))
-                        return;
+                Thing target = storage.GetAnyStack(GetStoreSettings());
+                if (target != null && Translator.ToStorageAny(target, to))
+                    return;
             }
-        }
-
-        public override void SpawnSetup(Map map, bool respawningAfterLoad)
-        {
-            base.SpawnSetup(map, respawningAfterLoad);
-            if (storageSettings == null)
-                storageSettings = new StorageSettings(this);
-            LCache.GetLCache(map).AddStorage(this);
-        }
-
-        public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
-        {
-            LCache.GetLCache(Map).RemoveStorage(this);
-            base.DeSpawn(mode);
         }
     }
 }

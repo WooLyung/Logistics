@@ -14,7 +14,7 @@ namespace Logistics
 
         public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
         {
-            LCache.GetLCache(Map).AddTerminal(this);
+            LCache.GetLCache(Map).RemoveTerminal(this);
             base.DeSpawn(mode);
         }
     }

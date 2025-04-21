@@ -108,6 +108,7 @@
     <ThingDef ParentName="BuildingBase">
         <defName>DeepLogisticsDepot</defName>
         <label>deep logistics depot</label>
+        <thingClass>Logistics.Building_VerticalStorage</thingClass>
         <description>A massive storage unit that uses a vertical logistics lift to store items deep underground. Can hold up to 10 stacks of a single item type.</description>
         <graphicData>
             <texPath>Things/Building/DeepLogisticsDepot</texPath>
@@ -124,6 +125,10 @@
         <pathCost>30</pathCost>
         <fillPercent>0.4</fillPercent>
         <uiOrder>450</uiOrder>
+        <inspectorTabs>
+            <li>logistics.ITab_VerticalStorage</li>
+            <li>Logistics.ITab_LogisticsFilter</li>
+        </inspectorTabs>
         <statBases>
             <MaxHitPoints>1000</MaxHitPoints>
             <WorkToBuild>8000</WorkToBuild>
@@ -138,9 +143,10 @@
             <Plasteel>20</Plasteel>
             <ComponentIndustrial>4</ComponentIndustrial>
             <LogisticsComponent>4</LogisticsComponent>
-            <ConveyorBelt>12</ConveyorBelt>
+            <ConveyorBelt>6</ConveyorBelt>
         </costList>
         <building>
+            <storageGroupTag>DeepLogisticsDepot</storageGroupTag>
             <blueprintClass>Blueprint_Storage</blueprintClass>
             <fixedStorageSettings>
                 <filter>
@@ -177,9 +183,6 @@
             </defaultStorageSettings>
         </building>
         <tickerType>Normal</tickerType>
-        <inspectorTabs>
-            <li>logistics.ITab_VerticalStorage</li>
-        </inspectorTabs>
         <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
         <canOverlapZones>false</canOverlapZones>
         <comps>

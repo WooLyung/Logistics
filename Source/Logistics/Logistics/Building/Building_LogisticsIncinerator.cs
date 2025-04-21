@@ -22,8 +22,8 @@ namespace Logistics
                 return;
 
             List<Thing> things = new List<Thing>();
-            foreach (Thing thing in this.GetRoom().ContainedAndAdjacentThings)
-                if (thing.IsInContainer())
+            foreach (IStorage storage in this.GetRoom().GetStorages())
+                foreach (Thing thing in storage.StoredThings)
                     things.Add(thing);
 
             if (!things.Empty())

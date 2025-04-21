@@ -21,7 +21,7 @@
         <description>Develop a more efficient and advanced logistics system for smarter automation.</description>
         <baseCost>3000</baseCost>
         <tab>Logistics</tab>
-        <researchViewX>2.00</researchViewX>
+        <researchViewX>1.00</researchViewX>
         <researchViewY>1.40</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -73,7 +73,7 @@
         <description>Further expand containers to build an ultra-dense logistics system.</description>
         <baseCost>2000</baseCost>
         <tab>Logistics</tab>
-        <researchViewX>3.00</researchViewX>
+        <researchViewX>2.00</researchViewX>
         <researchViewY>3.50</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -107,7 +107,7 @@
         <description>Build an interface for exchanging items with external devices.</description>
         <baseCost>2000</baseCost>
         <tab>Logistics</tab>
-        <researchViewX>4.00</researchViewX>
+        <researchViewX>3.00</researchViewX>
         <researchViewY>0.70</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -141,7 +141,7 @@
         <description>Use conveyors to extend the logistics system beyond the warehouse.</description>
         <baseCost>1000</baseCost>
         <tab>Logistics</tab>
-        <researchViewX>3.00</researchViewX>
+        <researchViewX>2.00</researchViewX>
         <researchViewY>2.10</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -234,9 +234,6 @@
         <researchViewY>2.80</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
-        <requiredResearchFacilities>
-            <li>MultiAnalyzer</li>
-        </requiredResearchFacilities>
         <prerequisites>
             <li>BasicLogistics</li>
         </prerequisites>
@@ -248,7 +245,7 @@
         <description>Build containers capable of storing all items, including corpses and waste.</description>
         <baseCost>2500</baseCost>
         <tab>Logistics</tab>
-        <researchViewX>4.00</researchViewX>
+        <researchViewX>3.00</researchViewX>
         <researchViewY>3.50</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -266,7 +263,7 @@
         <description>Use elevators to store large quantities of items. Direct access via terminals is not possible.</description>
         <baseCost>3000</baseCost>
         <tab>Logistics</tab>
-        <researchViewX>4.00</researchViewX>
+        <researchViewX>3.00</researchViewX>
         <researchViewY>4.20</researchViewY>
         <techLevel>Industrial</techLevel>
         <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -292,7 +289,7 @@
             <li>MultiAnalyzer</li>
         </requiredResearchFacilities>
         <prerequisites>
-            <li>ConveyorPort</li>
+            <li>LogisticsInterface</li>
             <li>LogisticsIncinerator</li>
         </prerequisites>
     </ResearchProjectDef>

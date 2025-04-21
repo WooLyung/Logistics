@@ -84,7 +84,7 @@ namespace Logistics
 
         public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
         {
-            LCache.GetLCache(Map).AddController(this);
+            LCache.GetLCache(Map).RemoveController(this);
             base.DeSpawn(mode);
         }
     }

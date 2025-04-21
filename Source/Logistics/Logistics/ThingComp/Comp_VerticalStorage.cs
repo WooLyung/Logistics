@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using RimWorld;
+using System.Collections.Generic;
 using Verse;
 
 namespace Logistics
@@ -39,6 +40,8 @@ namespace Logistics
             return innerContainer.Count > 0;
         }
 
+        public IEnumerable<Thing> StoredThings => innerContainer;
+
         public ThingDef GetItemDef()
         {
             if (!HasItem())
@@ -52,41 +55,36 @@ namespace Logistics
             innerContainer.TryDropAll(parent.Position, map, ThingPlaceMode.Near);
         }
 
-        public int AddItemAny(Thing thing)
+        public bool TryInsert(Thing thing, out int remained)
         {
             if (innerContainer.Count != 0 && GetItemDef() != thing.def)
-                return thing.stackCount;
+            {
+                remained = thing.stackCount;
+                return false;
+            }
 
-            int remained = 0;
+            int space = 0;
             foreach (Thing t in innerContainer)
                 if (t.CanStackWith(thing))
-                    remained += thing.def.stackLimit - t.stackCount;
+                    space += thing.def.stackLimit - t.stackCount;
 
-            if (remained >= thing.stackCount)
+            if (space >= thing.stackCount || innerContainer.Count < ((CompProperties_VerticalStorage)props).maxStack)
             {
                 if (thing.Spawned)
                     thing.DeSpawn();
                 innerContainer.TryAdd(thing, true);
-                return 0;
+                remained = 0;
+                return true;
             }
-            else
+            else if (space > 0)
             {
-                if (remained > 0)
-                {
-                    Thing split = thing.SplitOff(remained);
-                    innerContainer.TryAdd(split, true);
-                }
-
-                if (innerContainer.Count < ((CompProperties_VerticalStorage)props).maxStack)
-                {
-                    if (thing.Spawned)
-                        thing.DeSpawn();
-                    innerContainer.TryAdd(thing, true);
-                    return 0;
-                }
-
-                return thing.stackCount;
+                remained = thing.stackCount - space;
+                innerContainer.TryAdd(thing.SplitOff(space), true);
+                return true;
             }
+
+            remained = thing.stackCount;
+            return false;
         }
     }
 }

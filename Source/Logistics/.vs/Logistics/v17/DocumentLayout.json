@@ -3,28 +3,20 @@
   "WorkspaceRootPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\logistics\\source\\logistics\\logistics\\util\\thingfinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|solutionrelative:logistics\\util\\thingfinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\logistics\\source\\logistics\\logistics\\compproperties\\compproperties_verticalstorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|solutionrelative:logistics\\compproperties\\compproperties_verticalstorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\logistics\\source\\logistics\\logistics\\building\\storage\\building_container.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|solutionrelative:logistics\\building\\storage\\building_container.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\logistics\\source\\logistics\\logistics\\thingcomp\\comp_verticalstorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|solutionrelative:logistics\\thingcomp\\comp_verticalstorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\logistics\\source\\logistics\\logistics\\patch\\toils_goto\\gotothing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|solutionrelative:logistics\\patch\\toils_goto\\gotothing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\logistics\\source\\logistics\\logistics\\building\\storage\\building_verticalstorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|solutionrelative:logistics\\building\\storage\\building_verticalstorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\logistics\\source\\logistics\\logistics\\patch\\jobdriver_haultocell\\makenewtoils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|solutionrelative:logistics\\patch\\jobdriver_haultocell\\makenewtoils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\logistics\\source\\logistics\\logistics\\system\\logisticssystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|solutionrelative:logistics\\system\\logisticssystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\logistics\\source\\logistics\\logistics\\itab\\itab_verticalstorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D708957-9273-4BA9-8B17-B669FE59DDC7}|Logistics\\Logistics.csproj|solutionrelative:logistics\\itab\\itab_verticalstorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,79 +31,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ThingFinder.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Util\\ThingFinder.cs",
-              "RelativeDocumentMoniker": "Logistics\\Util\\ThingFinder.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Util\\ThingFinder.cs",
-              "RelativeToolTip": "Logistics\\Util\\ThingFinder.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Title": "Building_Container.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Building\\Storage\\Building_Container.cs",
+              "RelativeDocumentMoniker": "Logistics\\Building\\Storage\\Building_Container.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Building\\Storage\\Building_Container.cs",
+              "RelativeToolTip": "Logistics\\Building\\Storage\\Building_Container.cs",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAewEUAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T01:05:09.805Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CompProperties_VerticalStorage.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\CompProperties\\CompProperties_VerticalStorage.cs",
-              "RelativeDocumentMoniker": "Logistics\\CompProperties\\CompProperties_VerticalStorage.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\CompProperties\\CompProperties_VerticalStorage.cs",
-              "RelativeToolTip": "Logistics\\CompProperties\\CompProperties_VerticalStorage.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T00:54:11.94Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Comp_VerticalStorage.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\ThingComp\\Comp_VerticalStorage.cs",
-              "RelativeDocumentMoniker": "Logistics\\ThingComp\\Comp_VerticalStorage.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\ThingComp\\Comp_VerticalStorage.cs",
-              "RelativeToolTip": "Logistics\\ThingComp\\Comp_VerticalStorage.cs",
-              "ViewState": "AQIAAEUAAAAAAAAAAAAwwFIAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T00:53:58.188Z",
+              "WhenOpened": "2025-04-21T05:43:55.414Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "GotoThing.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Patch\\Toils_Goto\\GotoThing.cs",
-              "RelativeDocumentMoniker": "Logistics\\Patch\\Toils_Goto\\GotoThing.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Patch\\Toils_Goto\\GotoThing.cs",
-              "RelativeToolTip": "Logistics\\Patch\\Toils_Goto\\GotoThing.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAwwCUAAAB/AAAA",
+              "Title": "ITab_VerticalStorage.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\ITab\\ITab_VerticalStorage.cs",
+              "RelativeDocumentMoniker": "Logistics\\ITab\\ITab_VerticalStorage.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\ITab\\ITab_VerticalStorage.cs",
+              "RelativeToolTip": "Logistics\\ITab\\ITab_VerticalStorage.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T00:53:38.366Z",
+              "WhenOpened": "2025-04-21T05:37:11.552Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MakeNewToils.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Patch\\JobDriver_HaulToCell\\MakeNewToils.cs",
-              "RelativeDocumentMoniker": "Logistics\\Patch\\JobDriver_HaulToCell\\MakeNewToils.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Patch\\JobDriver_HaulToCell\\MakeNewToils.cs",
-              "RelativeToolTip": "Logistics\\Patch\\JobDriver_HaulToCell\\MakeNewToils.cs",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAwwFUAAABpAAAA",
+              "DocumentIndex": 1,
+              "Title": "Comp_VerticalStorage.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\ThingComp\\Comp_VerticalStorage.cs",
+              "RelativeDocumentMoniker": "Logistics\\ThingComp\\Comp_VerticalStorage.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\ThingComp\\Comp_VerticalStorage.cs",
+              "RelativeToolTip": "Logistics\\ThingComp\\Comp_VerticalStorage.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAIA2wEkAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T00:53:27.814Z",
+              "WhenOpened": "2025-04-21T05:20:38.999Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "LogisticsSystem.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\System\\LogisticsSystem.cs",
-              "RelativeDocumentMoniker": "Logistics\\System\\LogisticsSystem.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\System\\LogisticsSystem.cs",
-              "RelativeToolTip": "Logistics\\System\\LogisticsSystem.cs",
-              "ViewState": "AQIAAHwAAAAAAAAAAAAwwIsAAABFAAAA",
+              "DocumentIndex": 2,
+              "Title": "Building_VerticalStorage.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Building\\Storage\\Building_VerticalStorage.cs",
+              "RelativeDocumentMoniker": "Logistics\\Building\\Storage\\Building_VerticalStorage.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Logistics\\Source\\Logistics\\Logistics\\Building\\Storage\\Building_VerticalStorage.cs",
+              "RelativeToolTip": "Logistics\\Building\\Storage\\Building_VerticalStorage.cs",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAjwFwAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T00:49:13.686Z",
+              "WhenOpened": "2025-04-21T05:18:44.829Z",
               "EditorCaption": ""
             }
           ]

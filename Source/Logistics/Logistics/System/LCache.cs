@@ -16,6 +16,12 @@ namespace Logistics
             private HashSet<ITerminal> outputTerminals = new HashSet<ITerminal>();
             private HashSet<IConveyorPort> conveyorPorts = new HashSet<IConveyorPort>();
 
+            public IEnumerable<IStorage> GetStorages()
+            {
+                foreach (var storage in storages)
+                    yield return storage;
+            }
+
             public IEnumerable<ITerminal> GetInputTerminals()
             {
                 foreach (var inputTerminal in inputTerminals)

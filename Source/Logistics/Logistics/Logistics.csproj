@@ -67,6 +67,8 @@
     <Compile Include="Building\Building_WallConveyor.cs" />
     <Compile Include="Building\Building_Conveyor.cs" />
     <Compile Include="Building\Building_ConveyorPort.cs" />
+    <Compile Include="Building\Storage\Building_VerticalStorage.cs" />
+    <Compile Include="Building\Storage\Building_Container.cs" />
     <Compile Include="Building\Terminal\Building_RemoteIOTerminal.cs" />
     <Compile Include="Building\Terminal\Building_RemoteOutputTerminal.cs" />
     <Compile Include="Building\Terminal\Building_RemoteInputTerminal.cs" />
@@ -88,7 +90,6 @@
     <Compile Include="Building\Interface\INetworkDevice.cs" />
     <Compile Include="Building\Interface\ITerminal.cs" />
     <Compile Include="CompProperties\CompProperties_VerticalStorage.cs" />
-    <Compile Include="CompProperties\CompProperties_LogisticsContainer.cs" />
     <Compile Include="GameComponent\GameComponent_ConveyorView .cs" />
     <Compile Include="ITab\ITab_LogisticsFilter.cs" />
     <Compile Include="ITab\ITab_VerticalStorage.cs" />
@@ -97,7 +98,6 @@
     <Compile Include="RoomRoleWorker\RoomRoleWorker_LogisticsIncinerationFacility.cs" />
     <Compile Include="System\LCache.cs" />
     <Compile Include="System\ConveyorSystem.cs" />
-    <Compile Include="ThingComp\Comp_LogisticsContainer.cs" />
     <Compile Include="Logistics.cs" />
     <Compile Include="Patch\Toils_Goto\GotoThing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
