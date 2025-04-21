@@ -22,9 +22,10 @@ namespace Logistics
                 return;
 
             List<Thing> things = new List<Thing>();
-            foreach (IStorage storage in this.GetRoom().GetStorages())
-                foreach (Thing thing in storage.StoredThings)
-                    things.Add(thing);
+            foreach (IStorage storage in this.GetRoom().GetActiveStorages())
+                if (storage.IsActive)
+                    foreach (Thing thing in storage.StoredThings)
+                        things.Add(thing);
 
             if (!things.Empty())
             {

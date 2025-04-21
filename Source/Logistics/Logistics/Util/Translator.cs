@@ -10,7 +10,7 @@ namespace Logistics
             int stackCount = thing.stackCount;
             int remained = thing.stackCount;
 
-            foreach (IStorage storage in room.GetStorages(network))
+            foreach (IStorage storage in room.GetActiveStorages(network))
                 if (storage.TryInsert(thing, out remained))
                     if (remained == 0)
                         break;

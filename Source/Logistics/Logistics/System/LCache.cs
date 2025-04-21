@@ -22,6 +22,13 @@ namespace Logistics
                     yield return storage;
             }
 
+            public IEnumerable<IStorage> GetActiveStorages()
+            {
+                foreach (var storage in storages)
+                    if (storage.IsActive)
+                        yield return storage;
+            }
+
             public IEnumerable<ITerminal> GetInputTerminals()
             {
                 foreach (var inputTerminal in inputTerminals)

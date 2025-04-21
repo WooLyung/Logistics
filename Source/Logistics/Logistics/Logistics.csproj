@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Building\IO\Building_AutoTransferNode.cs" />
     <Compile Include="Building\IO\Building_LogisticsOutputPort.cs" />
+    <Compile Include="Building\IO\Building_OutputInterface.cs" />
     <Compile Include="Building\IO\Building_LogisticsRelay.cs" />
     <Compile Include="Building\IO\Building_LogisticsInputPort.cs" />
     <Compile Include="Building\Building_LogisticsIncinerator.cs" />

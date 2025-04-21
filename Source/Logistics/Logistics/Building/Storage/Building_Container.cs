@@ -7,7 +7,7 @@ namespace Logistics
     public class Building_Container : Building_Storage, IStorage
     {
         public Thing Thing => this;
-
+        public bool IsActive => true;
         public IEnumerable<Thing> StoredThings => slotGroup.HeldThings;
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
@@ -26,6 +26,22 @@ namespace Logistics
         {
             foreach (Thing thing in StoredThings)
                 if (filter.AllowedToAccept(thing))
+                    return thing;
+            return null;
+        }
+
+        public Thing GetAnyStack(ThingFilter filter)
+        {
+            foreach (Thing thing in StoredThings)
+                if (filter.Allows(thing))
+                    return thing;
+            return null;
+        }
+
+        public Thing GetAnyStack(ThingFilter filter1, StorageSettings filter2)
+        {
+            foreach (Thing thing in StoredThings)
+                if (filter1.Allows(thing) && filter2.AllowedToAccept(thing))
                     return thing;
             return null;
         }

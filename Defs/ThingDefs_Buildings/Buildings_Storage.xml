@@ -190,6 +190,11 @@
             <li Class="Logistics.CompProperties_VerticalStorage">
                 <maxStack>10</maxStack>
             </li>
+            <li Class="CompProperties_Flickable" />
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>50</basePowerConsumption>
+            </li>
         </comps>
     </ThingDef>
 </Defs>

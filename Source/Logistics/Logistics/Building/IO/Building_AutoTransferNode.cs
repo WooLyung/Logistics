@@ -7,7 +7,7 @@ using Verse;
 
 namespace Logistics
 {
-    public class Building_AutoTransferNode : Building_ConveyorDevice, INetworkDevice, IStoreSettingsParent
+    public class Building_AutoTransferNode : Building, INetworkDevice, IStoreSettingsParent
     {
         private string networkID;
         private int scanRadius = 3;
@@ -15,8 +15,7 @@ namespace Logistics
         private const int MaxScanRadius = 6;
         private StorageSettings storageSettings;
 
-        public override ConveyorDeviceType DeviceType => ConveyorDeviceType.Input;
-        public override ConveyorDeviceDir OutputDir => RotDir;
+        public Thing Thing => this;
         public bool StorageTabVisible => true;
         StorageSettings IStoreSettingsParent.GetStoreSettings() => storageSettings;
         public StorageSettings GetParentStoreSettings()

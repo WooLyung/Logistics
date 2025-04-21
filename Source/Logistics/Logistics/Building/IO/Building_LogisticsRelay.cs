@@ -1,5 +1,4 @@
 ﻿using RimWorld;
-using UnityEngine;
 using Verse;
 
 namespace Logistics
@@ -9,6 +8,7 @@ namespace Logistics
         private StorageSettings storageSettings;
 
         public override ConveyorDeviceType DeviceType => ConveyorDeviceType.IO;
+        public override ConveyorDeviceDir InputDir => RotDir;
         public override ConveyorDeviceDir OutputDir => RotDir;
         public bool StorageTabVisible => true;
 
@@ -84,7 +84,7 @@ namespace Logistics
                     return;
             }
 
-            foreach (IStorage storage in from.GetStorages())
+            foreach (IStorage storage in from.GetActiveStorages())
             {
                 Thing target = storage.GetAnyStack(GetStoreSettings());
                 if (target != null && Translator.ToStorageAny(target, to))

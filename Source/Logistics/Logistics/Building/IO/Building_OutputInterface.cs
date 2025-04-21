@@ -1,16 +1,15 @@
 ﻿using RimWorld;
 using Verse;
-using Verse.Noise;
 
 namespace Logistics
 {
-    public class Building_LogisticsOutputPort : Building_ConveyorDevice, IStoreSettingsParent
+    public class Building_OutputInterface : Building_ConveyorDevice, IStoreSettingsParent
     {
         private StorageSettings storageSettings;
 
         public override ConveyorDeviceType DeviceType => ConveyorDeviceType.Output;
         public bool StorageTabVisible => true;
-        StorageSettings IStoreSettingsParent.GetStoreSettings() => storageSettings;
+
         public StorageSettings GetParentStoreSettings()
         {
             StorageSettings fixedStorageSettings = def.building.fixedStorageSettings;
@@ -18,6 +17,7 @@ namespace Logistics
                 return fixedStorageSettings;
             return StorageSettings.EverStorableFixedSettings();
         }
+        public StorageSettings GetStoreSettings() => storageSettings;
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
@@ -32,16 +32,16 @@ namespace Logistics
             Scribe_Deep.Look(ref storageSettings, "storageSettings", this);
         }
 
+        public void Notify_SettingsChanged()
+        {
+        }
+
         public override void Tick()
         {
             base.Tick();
 
             if (this.IsHashIntervalTick(500) && this.IsActive())
                 Translate();
-        }
-
-        public void Notify_SettingsChanged()
-        {
         }
 
         private void Translate()
@@ -65,50 +65,35 @@ namespace Logistics
                     return;
             }
 
-            var cell = Position + Rotation.FacingCell;
-            var thingList = cell.GetThingList(Map);
-            foreach (IStorage storage in from.GetActiveStorages())
-                foreach (Thing item in storage.StoredThings)
-                    foreach (Thing thing in thingList)
-                        if (thing is IStorage storage0 && storage0.TryInsert(item, out _))
-                            return;
-
-            thingList = cell.GetThingList(Map);
-            foreach (IStorage storage in from.GetActiveStorages())
+            foreach (Thing target in (Position + Rotation.FacingCell).GetThingList(Map))
             {
-                foreach (Thing item in storage.StoredThings)
+                if (target.HasComp<CompRefuelable>())
                 {
-                    if (!storageSettings.AllowedToAccept(item))
-                        continue;
+                    CompRefuelable refuelable = target.TryGetComp<CompRefuelable>();
+                    CompProperties_Refuelable props = refuelable.props as CompProperties_Refuelable;
 
-                    int stackCount = item.stackCount;
-                    int itemCount = 0;
-                    foreach (Thing thing in thingList)
+                    if (props != null && (int)(props.fuelCapacity - refuelable.Fuel) > 0)
                     {
-                        if (thing.def.EverHaulable)
-                            itemCount++;
-                        if (thing.CanStackWith(item))
+                        int need = (int)(props.fuelCapacity - refuelable.Fuel);
+                        foreach (IStorage storage in from.GetActiveStorages())
                         {
-                            int space = thing.def.stackLimit - thing.stackCount;
-                            if (space >= item.stackCount)
+                            Thing fuel = storage.GetAnyStack(props.fuelFilter, storageSettings);
+                            if (fuel != null)
                             {
-                                thing.TryAbsorbStack(item, true);
-                                return;
+                                if (fuel.stackCount >= need)
+                                {
+                                    refuelable.Refuel(need);
+                                    fuel.SplitOff(need).Destroy();
+                                    break;
+                                }
+                                else
+                                {
+                                    refuelable.Refuel(fuel.stackCount);
+                                    fuel.Destroy();
+                                }
                             }
-                            else if (space > 0)
-                                thing.TryAbsorbStack(item.SplitOff(space), true);
                         }
                     }
-                    if (itemCount < cell.GetMaxItemsAllowedInCell(Map))
-                    {
-                        if (item.Spawned)
-                            item.DeSpawn();
-                        GenPlace.TryPlaceThing(item, cell, Map, ThingPlaceMode.Direct);
-                        return;
-                    }
-
-                    if (stackCount != item.stackCount)
-                        return;
                 }
             }
         }

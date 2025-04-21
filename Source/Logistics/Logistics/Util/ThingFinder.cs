@@ -20,7 +20,7 @@ namespace Logistics
             return false;
         }
 
-        public static IEnumerable<IStorage> GetStorages(this Room room, bool network = true)
+        public static IEnumerable<IStorage> GetActiveStorages(this Room room, bool network = true)
         {
             if (network)
             {
@@ -35,14 +35,14 @@ namespace Logistics
                         Room room2 = linker.Thing.GetRoom();
                         if (LogisticsSystem.IsAvailableSystem(room2))
                         {
-                            foreach (var storage in room2.GetStorages(false))
+                            foreach (var storage in room2.GetActiveStorages(false))
                                 yield return storage;
                         }
                     }
                 }
             }
 
-            foreach (var storage in LCache.GetLCache(room.Map).GetStorages())
+            foreach (var storage in LCache.GetLCache(room.Map).GetActiveStorages())
                 if (storage.Thing.IsInRoom(room))
                     yield return storage;
         }

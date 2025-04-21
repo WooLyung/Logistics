@@ -12,6 +12,8 @@ namespace Logistics
 
         private Comp_VerticalStorage Comp => (comp = comp ?? GetComp<Comp_VerticalStorage>());
         public bool StorageTabVisible => true;
+        public bool IsActive => this.IsActive();
+
         public StorageSettings GetParentStoreSettings()
         {
             StorageSettings fixedStorageSettings = def.building.fixedStorageSettings;
@@ -71,6 +73,21 @@ namespace Logistics
         {
             foreach (Thing thing in StoredThings)
                 if (filter.AllowedToAccept(thing))
+                    return thing;
+            return null;
+        }
+        public Thing GetAnyStack(ThingFilter filter)
+        {
+            foreach (Thing thing in StoredThings)
+                if (filter.Allows(thing))
+                    return thing;
+            return null;
+        }
+
+        public Thing GetAnyStack(ThingFilter filter1, StorageSettings filter2)
+        {
+            foreach (Thing thing in StoredThings)
+                if (filter1.Allows(thing) && filter2.AllowedToAccept(thing))
                     return thing;
             return null;
         }

@@ -5,7 +5,6 @@ namespace Logistics
     public class Building_LogisticsInputPort : Building_ConveyorDevice
     {
         public override ConveyorDeviceType DeviceType => ConveyorDeviceType.Input;
-        public override ConveyorDeviceDir OutputDir => RotDir;
 
         public override void Tick()
         {
@@ -44,7 +43,7 @@ namespace Logistics
 
             thingList = (Position - Rotation.FacingCell).GetThingList(Map);
             foreach (Thing _thing in thingList)
-                if (_thing is IStorage storage)
+                if (_thing is IStorage storage && storage.IsActive)
                     foreach (Thing thing in storage.StoredThings)
                         if (Translator.ToStorageAny(thing, to))
                             return;
