@@ -303,23 +303,38 @@
         <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
     </ThingDef>
 
-
     <ThingDef ParentName="BuildingBase">
         <thingClass>Logistics.Building_MatterCondenser</thingClass>
         <designationCategory>LogisticsCategory</designationCategory>
         <defName>MatterCondenser</defName>
         <label>matter condenser</label>
-        <description>Allows construction of a device that condenses countless materials into pure matter cores. Operates more slowly than an incinerator.</description>
+        <description>Condenses countless materials into a pure matter core. Slower than an incinerator.</description>
         <graphicData>
             <texPath>Things/Building/MatterCondenser</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>(3.0, 3.0)</drawSize>
         </graphicData>
+        <inspectorTabs>
+            <li>Logistics.ITab_LogisticsFilter</li>
+        </inspectorTabs>
         <tickerType>Normal</tickerType>
         <fillPercent>0.5</fillPercent>
         <building>
             <canPlaceOverWall>false</canPlaceOverWall>
             <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+            <fixedStorageSettings>
+                <filter>
+                    <disallowNotEverStorable>true</disallowNotEverStorable>
+                    <categories>
+                        <li>Root</li>
+                    </categories>
+                    <disallowedCategories>
+                        <li>Chunks</li>
+                        <li>Plants</li>
+                        <li>Buildings</li>
+                    </disallowedCategories>
+                </filter>
+            </fixedStorageSettings>
         </building>
         <passability>PassThroughOnly</passability>
         <staticSunShadowHeight>1.0</staticSunShadowHeight>
@@ -342,6 +357,7 @@
                 <shortCircuitInRain>true</shortCircuitInRain>
             </li>
             <li Class="CompProperties_Flickable" />
+            <li Class="Logistics.CompProperties_InputCompotable_MatterCondenser" />
         </comps>
         <researchPrerequisites>
             <li>MatterCondenser</li>

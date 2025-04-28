@@ -94,7 +94,7 @@
     <Compile Include="Building\BuildingInterface\Impl\Dialog_RenameController.cs" />
     <Compile Include="Building\BuildingInterface\INetworkDevice.cs" />
     <Compile Include="Building\BuildingInterface\ITerminal.cs" />
-    <Compile Include="CompProperties\CompProperties_OutputCompotable_TransportPod.cs" />
+    <Compile Include="CompProperties\CompProperties_InputCompotable_MatterCondenser.cs" />
     <Compile Include="CompProperties\CompProperties_VerticalStorage.cs" />
     <Compile Include="GameComponent\GameComponent_ConveyorView .cs" />
     <Compile Include="ITab\ITab_LogisticsFilter.cs" />
@@ -111,13 +111,15 @@
     <Compile Include="ThingComp\Comp_VerticalStorage.cs" />
     <Compile Include="ThingComp\IComp_InputCompotable.cs" />
     <Compile Include="ThingComp\IComp_OutputCompotable.cs" />
-    <Compile Include="ThingComp\OutputCompotable\Comp_OutputCompatible_TransportPod.cs" />
+    <Compile Include="ThingComp\InputCompotable\Comp_InputCompatible_MatterCondenser.cs" />
     <Compile Include="Util\Power.cs" />
     <Compile Include="System\LogisticsSystem.cs" />
     <Compile Include="System\Toils.cs" />
     <Compile Include="Util\ThingFinder.cs" />
     <Compile Include="Util\Translator.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ThingComp\OutputCompotable\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

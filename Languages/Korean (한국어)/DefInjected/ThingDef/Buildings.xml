@@ -79,5 +79,5 @@
     <DeepLogisticsDepot.description>수직 물류 승강기를 이용해 지하 깊은 곳까지 물류를 저장하는 대규모 저장소입니다. 한 종류의 물류를 10스택까지 저장할 수 있습니다.</DeepLogisticsDepot.description>
 
     <MatterCondenser.label>물질 응축기</MatterCondenser.label>
-    <MatterCondenser.description>무수한 물질을 응축하여 순수한 물질핵을 만드는 장치를 제작합니다. 소각기보다 느리게 동작합니다.</MatterCondenser.description>
+    <MatterCondenser.description>무수한 물질을 응축하여 순수한 물질핵을 만드는 장치입니다. 소각기보다 느리게 동작합니다.</MatterCondenser.description>
 </LanguageData>

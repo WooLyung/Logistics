@@ -47,7 +47,7 @@ namespace Logistics
 
         private void Translate()
         {
-            Room from = LogisticsSystem.GetAvailableBackwardWarehouse(this, ConveyorDeviceType.Input, false);
+            Room from = LogisticsSystem.GetAvailableBackwardWarehouse(this, ConveyorDeviceType.Input);
             if (from == null)
                 return;
 
