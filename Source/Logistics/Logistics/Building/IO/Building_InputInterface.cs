@@ -3,13 +3,12 @@ using Verse;
 
 namespace Logistics
 {
-    public class Building_LogisticsRelay : Building_ConveyorDevice, IStoreSettingsParent
+    public class Building_InputInterface : Building_ConveyorDevice, IStoreSettingsParent
     {
         private StorageSettings storageSettings;
 
-        public override ConveyorDeviceType DeviceType => ConveyorDeviceType.IO;
+        public override ConveyorDeviceType DeviceType => ConveyorDeviceType.Input;
         public override ConveyorDeviceDir InputDir => RotDir;
-        public override ConveyorDeviceDir OutputDir => RotDir;
         public bool StorageTabVisible => true;
 
         public StorageSettings GetParentStoreSettings()
@@ -48,17 +47,19 @@ namespace Logistics
 
         private void Translate()
         {
-            Room to = LogisticsSystem.GetAvailableForwardWarehouse(this, ConveyorDeviceType.Output);
-            Room from = LogisticsSystem.GetAvailableBackwardWarehouse(this, ConveyorDeviceType.Input);
-
-            if (to == null || from == null)
+            Room to = LogisticsSystem.GetAvailableForwardWarehouse(this, ConveyorDeviceType.Output, false);
+            if (to == null)
                 return;
 
-            foreach (IStorage storage in from.GetActiveStorages())
+            foreach (Thing target in (Position + Rotation.FacingCell).GetThingList(Map))
             {
-                Thing target = storage.GetAnyStack(null, GetStoreSettings());
-                if (target != null && Translator.ToStorageAny(target, to))
-                    return;
+                if (target is ThingWithComps target2)
+                {
+                    foreach (ThingComp comp in target2.AllComps)
+                        if (comp is IComp_InputCompotable compotable)
+                            if (compotable.TryExtract(to))
+                                return;
+                }
             }
         }
     }

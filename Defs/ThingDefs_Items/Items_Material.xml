@@ -80,4 +80,31 @@
         </thingCategories>
         <allowedArchonexusCount>4</allowedArchonexusCount>
     </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>MatterCore</defName>
+        <label>matter core</label>
+        <description>A pure essence of material extracted from countless substances. Its unique, inexplicable properties make it the primary material for network linkers.</description>
+        <graphicData>
+            <texPath>Things/Item/MatterCore</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(0.5, 0.5)</drawSize>
+        </graphicData>
+        <soundInteract>Metal_Drop</soundInteract>
+        <soundDrop>Standard_Drop</soundDrop>
+        <stackLimit>1</stackLimit>
+        <healthAffectsPrice>false</healthAffectsPrice>
+        <statBases>
+            <MaxHitPoints>70</MaxHitPoints>
+            <MarketValue>1200</MarketValue>
+            <Mass>0.6</Mass>
+            <Flammability>0.6</Flammability>
+            <DeteriorationRate>2.0</DeteriorationRate>
+        </statBases>
+        <intricate>true</intricate>
+        <thingCategories>
+            <li>Manufactured</li>
+        </thingCategories>
+        <allowedArchonexusCount>1</allowedArchonexusCount>
+    </ThingDef>
 </Defs>

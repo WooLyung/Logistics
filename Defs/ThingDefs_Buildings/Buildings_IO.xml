@@ -36,7 +36,6 @@
                 <shortCircuitInRain>true</shortCircuitInRain>
             </li>
             <li Class="CompProperties_Flickable" />
-            <li Class="CompProperties_Breakdownable" />
         </comps>
         <researchPrerequisites>
             <li>LogisticsInputPort</li>
@@ -105,7 +104,6 @@
                 <shortCircuitInRain>true</shortCircuitInRain>
             </li>
             <li Class="CompProperties_Flickable" />
-            <li Class="CompProperties_Breakdownable" />
         </comps>
         <researchPrerequisites>
             <li>LogisticsOutputPort</li>
@@ -174,7 +172,6 @@
                 <shortCircuitInRain>true</shortCircuitInRain>
             </li>
             <li Class="CompProperties_Flickable" />
-            <li Class="CompProperties_Breakdownable" />
         </comps>
         <researchPrerequisites>
             <li>LogisticsRelay</li>
@@ -252,7 +249,6 @@
                 <basePowerConsumption>600</basePowerConsumption>
             </li>
             <li Class="CompProperties_Flickable" />
-            <li Class="CompProperties_Breakdownable" />
         </comps>
         <researchPrerequisites>
             <li>AutoTransferNode</li>
@@ -261,9 +257,9 @@
 
     <ThingDef ParentName="BuildingBase">
         <defName>OutputInterface</defName>
-        <label>input interface</label>
+        <label>output interface</label>
         <thingClass>Logistics.Building_OutputInterface</thingClass>
-        <description>...</description>
+        <description>Automatically transfers items from a logistics warehouse into compatible nearby devices that accept them.</description>
         <uiOrder>750</uiOrder>
         <graphicData>
             <texPath>Things/Building/OutputInterface</texPath>
@@ -318,7 +314,71 @@
                 <basePowerConsumption>100</basePowerConsumption>
             </li>
             <li Class="CompProperties_Flickable" />
-            <li Class="CompProperties_Breakdownable" />
+        </comps>
+        <researchPrerequisites>
+            <li>LogisticsInterface</li>
+        </researchPrerequisites>
+    </ThingDef>
+
+    <ThingDef ParentName="BuildingBase">
+        <defName>InputInterface</defName>
+        <label>input interface</label>
+        <thingClass>Logistics.Building_InputInterface</thingClass>
+        <description>Extracts items from compatible devices and inserts them into a connected logistics warehouse.</description>
+        <uiOrder>751</uiOrder>
+        <graphicData>
+            <texPath>Things/Building/InputInterface</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(1.0,1.0)</drawSize>
+        </graphicData>
+        <altitudeLayer>Building</altitudeLayer>
+        <passability>PassThroughOnly</passability>
+        <pathCost>50</pathCost>
+        <blockWind>true</blockWind>
+        <castEdgeShadows>false</castEdgeShadows>
+        <fillPercent>0.5</fillPercent>
+        <canOverlapZones>false</canOverlapZones>
+        <statBases>
+            <WorkToBuild>2500</WorkToBuild>
+            <MaxHitPoints>300</MaxHitPoints>
+            <Flammability>0.5</Flammability>
+        </statBases>
+        <costList>
+            <Steel>120</Steel>
+            <ConveyorBelt>4</ConveyorBelt>
+            <ComponentIndustrial>4</ComponentIndustrial>
+            <LogisticsComponent>1</LogisticsComponent>
+        </costList>
+        <inspectorTabs>
+            <li>Logistics.ITab_LogisticsFilter</li>
+        </inspectorTabs>
+        <size>(1,1)</size>
+        <building>
+            <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+            <fixedStorageSettings>
+                <filter>
+                    <disallowNotEverStorable>true</disallowNotEverStorable>
+                    <categories>
+                        <li>Root</li>
+                    </categories>
+                    <disallowedCategories>
+                        <li>Plants</li>
+                        <li>Buildings</li>
+                    </disallowedCategories>
+                </filter>
+            </fixedStorageSettings>
+        </building>
+        <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+        <designationCategory>LogisticsCategory</designationCategory>
+        <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+        <tickerType>Normal</tickerType>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <shortCircuitInRain>true</shortCircuitInRain>
+                <basePowerConsumption>100</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Flickable" />
         </comps>
         <researchPrerequisites>
             <li>LogisticsInterface</li>

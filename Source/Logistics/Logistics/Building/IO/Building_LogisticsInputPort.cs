@@ -5,6 +5,7 @@ namespace Logistics
     public class Building_LogisticsInputPort : Building_ConveyorDevice
     {
         public override ConveyorDeviceType DeviceType => ConveyorDeviceType.Input;
+        public override ConveyorDeviceDir InputDir => RotDir;
 
         public override void Tick()
         {
@@ -16,24 +17,9 @@ namespace Logistics
 
         private void Translate()
         {
-            Room to = null;
-            foreach (var device in ConveyorSystem.GetOutputs(this))
-            {
-                if (device is Building_ConveyorPort port && port.IsActive())
-                {
-                    to = LogisticsSystem.GetAvailableSystemRoomWithConveyorPort(port);
-                    if (to != null)
-                        break;
-                    return;
-                }
-            }
-
+            Room to = LogisticsSystem.GetAvailableForwardWarehouse(this, ConveyorDeviceType.Output);
             if (to == null)
-            {
-                to = (Position + Rotation.FacingCell).GetRoom(Map);
-                if (!LogisticsSystem.IsAvailableSystem(to))
-                    return;
-            }
+                return;
 
             var thingList = (Position - Rotation.FacingCell).GetThingList(Map);
             foreach (Thing thing in thingList)

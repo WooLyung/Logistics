@@ -268,9 +268,9 @@
         </statBases>
         <costList>
             <Steel>30</Steel>
-            <LogisticsComponent>1</LogisticsComponent>
             <ConveyorBelt>2</ConveyorBelt>
             <NetworkComponent>2</NetworkComponent>
+            <LogisticsComponent>1</LogisticsComponent>
         </costList>
         <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
     </ThingDef>

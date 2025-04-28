@@ -15,8 +15,7 @@
         <rotatable>false</rotatable>
         <comps>
             <li Class="CompProperties_Flickable" />
-            <li Class="CompProperties_Breakdownable" />
-             <li Class="CompProperties_Forbiddable" />
+            <li Class="CompProperties_Forbiddable" />
         </comps>
         <building>
             <destroySound>BuildingDestroyed_Metal_Small</destroySound>

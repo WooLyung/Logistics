@@ -63,13 +63,15 @@
   <ItemGroup>
     <Compile Include="Building\IO\Building_AutoTransferNode.cs" />
     <Compile Include="Building\IO\Building_LogisticsOutputPort.cs" />
+    <Compile Include="Building\IO\Building_InputInterface.cs" />
     <Compile Include="Building\IO\Building_OutputInterface.cs" />
     <Compile Include="Building\IO\Building_LogisticsRelay.cs" />
     <Compile Include="Building\IO\Building_LogisticsInputPort.cs" />
-    <Compile Include="Building\Building_LogisticsIncinerator.cs" />
-    <Compile Include="Building\Building_WallConveyor.cs" />
-    <Compile Include="Building\Building_Conveyor.cs" />
-    <Compile Include="Building\Building_ConveyorPort.cs" />
+    <Compile Include="Building\Misc\Building_LogisticsIncinerator.cs" />
+    <Compile Include="Building\Conveyor\Building_WallConveyor.cs" />
+    <Compile Include="Building\Conveyor\Building_Conveyor.cs" />
+    <Compile Include="Building\Conveyor\Building_ConveyorPort.cs" />
+    <Compile Include="Building\Misc\Building_MatterCondenser.cs" />
     <Compile Include="Building\Storage\Building_VerticalStorage.cs" />
     <Compile Include="Building\Storage\Building_Container.cs" />
     <Compile Include="Building\Terminal\Building_RemoteIOTerminal.cs" />
@@ -79,9 +81,9 @@
     <Compile Include="Building\Terminal\Building_OutputTerminal.cs" />
     <Compile Include="Building\Terminal\Building_InputTerminal.cs" />
     <Compile Include="Building\Terminal\Building_Terminal.cs" />
-    <Compile Include="Building\Building_LogisticsNetworkLinker.cs" />
+    <Compile Include="Building\Misc\Building_LogisticsNetworkLinker.cs" />
     <Compile Include="Building\Terminal\Building_RemoteTerminal.cs" />
-    <Compile Include="Building\Building_LogisticsSystemController.cs" />
+    <Compile Include="Building\Misc\Building_LogisticsSystemController.cs" />
     <Compile Include="Building\BuildingInterface\IController.cs" />
     <Compile Include="Building\BuildingInterface\IConveyorPort.cs" />
     <Compile Include="Building\BuildingInterface\INetworkLinker.cs" />
@@ -92,6 +94,7 @@
     <Compile Include="Building\BuildingInterface\Impl\Dialog_RenameController.cs" />
     <Compile Include="Building\BuildingInterface\INetworkDevice.cs" />
     <Compile Include="Building\BuildingInterface\ITerminal.cs" />
+    <Compile Include="CompProperties\CompProperties_OutputCompotable_TransportPod.cs" />
     <Compile Include="CompProperties\CompProperties_VerticalStorage.cs" />
     <Compile Include="GameComponent\GameComponent_ConveyorView .cs" />
     <Compile Include="ITab\ITab_LogisticsFilter.cs" />
@@ -106,6 +109,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoomRoleWorker\RoomRoleWorker_Warehouse.cs" />
     <Compile Include="ThingComp\Comp_VerticalStorage.cs" />
+    <Compile Include="ThingComp\IComp_InputCompotable.cs" />
+    <Compile Include="ThingComp\IComp_OutputCompotable.cs" />
+    <Compile Include="ThingComp\OutputCompotable\Comp_OutputCompatible_TransportPod.cs" />
     <Compile Include="Util\Power.cs" />
     <Compile Include="System\LogisticsSystem.cs" />
     <Compile Include="System\Toils.cs" />

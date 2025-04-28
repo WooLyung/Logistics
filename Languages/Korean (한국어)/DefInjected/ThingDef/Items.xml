@@ -8,4 +8,7 @@
     
     <NetworkComponent.label>네트워크 부품</NetworkComponent.label>
     <NetworkComponent.description>네트워크와 연결된 물류 장치를 제작하기 위한 첨단 부품 모음입니다.</NetworkComponent.description>
+    
+    <MatterCore.label>물질핵</MatterCore.label>
+    <MatterCore.description>무수한 물질로부터 추출한 순수한 물질의 정수입니다. 일반적으로 설명할 수 없는 독특한 특성으로 네트워크 링커의 주 재료가 됩니다.</MatterCore.description>
 </LanguageData>

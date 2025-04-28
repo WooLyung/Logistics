@@ -9,6 +9,7 @@ namespace Logistics
         private StorageSettings storageSettings;
 
         public override ConveyorDeviceType DeviceType => ConveyorDeviceType.Output;
+        public override ConveyorDeviceDir OutputDir => RotDir;
         public bool StorageTabVisible => true;
         StorageSettings IStoreSettingsParent.GetStoreSettings() => storageSettings;
         public StorageSettings GetParentStoreSettings()
@@ -46,24 +47,9 @@ namespace Logistics
 
         private void Translate()
         {
-            Room from = null;
-            foreach (var device in ConveyorSystem.GetInputs(this))
-            {
-                if (device is Building_ConveyorPort port && port.IsActive())
-                {
-                    from = LogisticsSystem.GetAvailableSystemRoomWithConveyorPort(port);
-                    if (from != null)
-                        break;
-                    return;
-                }
-            }
-
+            Room from = LogisticsSystem.GetAvailableBackwardWarehouse(this, ConveyorDeviceType.Input);
             if (from == null)
-            {
-                from = (Position - Rotation.FacingCell).GetRoom(Map);
-                if (!LogisticsSystem.IsAvailableSystem(from))
-                    return;
-            }
+                return;
 
             var cell = Position + Rotation.FacingCell;
             var thingList = cell.GetThingList(Map);

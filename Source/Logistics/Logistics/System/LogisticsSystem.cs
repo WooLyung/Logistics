@@ -8,6 +8,64 @@ namespace Logistics
 {
     public static class LogisticsSystem
     {
+        public static Room GetAvailableForwardWarehouse(IConveyorDevice dev, ConveyorDeviceType type, bool isWall = true)
+        {
+            if (type == ConveyorDeviceType.IO || type == ConveyorDeviceType.None)
+                return null;
+
+            Room room = null;
+            foreach (var device in type == ConveyorDeviceType.Output ? ConveyorSystem.GetOutputs(dev) : ConveyorSystem.GetInputs(dev))
+            {
+                if (device is Building_ConveyorPort port && port.IsActive())
+                {
+                    room = GetAvailableSystemRoomWithConveyorPort(port);
+                    if (room != null)
+                        break;
+                    return null;
+                }
+            }
+            if (room == null)
+            {
+                if (!isWall)
+                    return null;
+
+                room = (dev.Thing.Position + dev.Thing.Rotation.FacingCell).GetRoom(dev.Thing.Map);
+                if (!IsAvailableSystem(room))
+                    return null;
+            }
+
+            return room;
+        }
+
+        public static Room GetAvailableBackwardWarehouse(IConveyorDevice dev, ConveyorDeviceType type, bool isWall = true)
+        {
+            if (type == ConveyorDeviceType.IO || type == ConveyorDeviceType.None)
+                return null;
+
+            Room room = null;
+            foreach (var device in type == ConveyorDeviceType.Output ? ConveyorSystem.GetOutputs(dev) : ConveyorSystem.GetInputs(dev))
+            {
+                if (device is Building_ConveyorPort port && port.IsActive())
+                {
+                    room = GetAvailableSystemRoomWithConveyorPort(port);
+                    if (room != null)
+                        break;
+                    return null;
+                }
+            }
+            if (room == null)
+            {
+                if (!isWall)
+                    return null;
+
+                room = (dev.Thing.Position - dev.Thing.Rotation.FacingCell).GetRoom(dev.Thing.Map);
+                if (!IsAvailableSystem(room))
+                    return null;
+            }
+
+            return room;
+        }
+
         public static bool IsAvailableTerminal(ITerminal terminal, Pawn actor = null, bool area = true)
         {
             Thing thing = terminal.Thing;
@@ -49,7 +107,7 @@ namespace Logistics
         
         public static bool IsAvailableSystem(Room room)
         {
-            if (room.PsychologicallyOutdoors)
+            if (room == null || room.PsychologicallyOutdoors)
                 return false;
 
             return room.GetControllers().Any(controller => controller.Thing.IsActive());
@@ -88,10 +146,7 @@ namespace Logistics
                     : room.Map.GetRemoteOutputTerminals())
                 {
                     if (terminal.NetworkID == target && IsAvailableTerminal(terminal as ITerminal, actor))
-                    {
                         yield return terminal as ITerminal;
-                        yield break;
-                    }
                 }
             }
         }

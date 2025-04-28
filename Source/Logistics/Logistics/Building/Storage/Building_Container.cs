@@ -22,28 +22,37 @@ namespace Logistics
             base.DeSpawn(mode);
         }
 
-        public Thing GetAnyStack(StorageSettings filter)
-        {
-            foreach (Thing thing in StoredThings)
-                if (filter.AllowedToAccept(thing))
-                    return thing;
-            return null;
-        }
-
-        public Thing GetAnyStack(ThingFilter filter)
-        {
-            foreach (Thing thing in StoredThings)
-                if (filter.Allows(thing))
-                    return thing;
-            return null;
-        }
-
         public Thing GetAnyStack(ThingFilter filter1, StorageSettings filter2)
         {
             foreach (Thing thing in StoredThings)
-                if (filter1.Allows(thing) && filter2.AllowedToAccept(thing))
+                if (thing.stackCount > 0 && (filter1 == null || filter1.Allows(thing)) && (filter2 == null || filter2.AllowedToAccept(thing)))
                     return thing;
             return null;
+        }
+
+        public int TryConsume(ThingFilter filter1, StorageSettings filter2, int max)
+        {
+            int cnt = 0;
+            while (max > 0)
+            {
+                Thing thing = GetAnyStack(filter1, filter2);
+                if (thing == null)
+                    return cnt;
+
+                if (thing.stackCount >= max)
+                {
+                    thing.SplitOff(max).Destroy();
+                    cnt += max;
+                    return cnt;
+                }
+                else
+                {
+                    max -= thing.stackCount;
+                    cnt += thing.stackCount;
+                    thing.Destroy();
+                }
+            }
+            return cnt;
         }
 
         public bool HasThing(Thing thing)

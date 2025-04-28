@@ -8,6 +8,7 @@ namespace Logistics
         private StorageSettings storageSettings;
 
         public override ConveyorDeviceType DeviceType => ConveyorDeviceType.Output;
+        public override ConveyorDeviceDir OutputDir => RotDir;
         public bool StorageTabVisible => true;
 
         public StorageSettings GetParentStoreSettings()
@@ -46,24 +47,9 @@ namespace Logistics
 
         private void Translate()
         {
-            Room from = null;
-            foreach (var device in ConveyorSystem.GetInputs(this))
-            {
-                if (device is Building_ConveyorPort port && port.IsActive())
-                {
-                    from = LogisticsSystem.GetAvailableSystemRoomWithConveyorPort(port);
-                    if (from != null)
-                        break;
-                    return;
-                }
-            }
-
+            Room from = LogisticsSystem.GetAvailableBackwardWarehouse(this, ConveyorDeviceType.Input, false);
             if (from == null)
-            {
-                from = (Position - Rotation.FacingCell).GetRoom(Map);
-                if (!LogisticsSystem.IsAvailableSystem(from))
-                    return;
-            }
+                return;
 
             foreach (Thing target in (Position + Rotation.FacingCell).GetThingList(Map))
             {
@@ -74,26 +60,25 @@ namespace Logistics
 
                     if (props != null && (int)(props.fuelCapacity - refuelable.Fuel) > 0)
                     {
-                        int need = (int)(props.fuelCapacity - refuelable.Fuel);
+                        int need = refuelable.GetFuelCountToFullyRefuel();
                         foreach (IStorage storage in from.GetActiveStorages())
                         {
-                            Thing fuel = storage.GetAnyStack(props.fuelFilter, storageSettings);
-                            if (fuel != null)
+                            int consume = storage.TryConsume(props.fuelFilter, storageSettings, need);
+                            if (consume > 0)
                             {
-                                if (fuel.stackCount >= need)
-                                {
-                                    refuelable.Refuel(need);
-                                    fuel.SplitOff(need).Destroy();
-                                    break;
-                                }
-                                else
-                                {
-                                    refuelable.Refuel(fuel.stackCount);
-                                    fuel.Destroy();
-                                }
+                                refuelable.Refuel(consume);
+                                return;
                             }
                         }
                     }
+                }
+
+                if (target is ThingWithComps target2)
+                {
+                    foreach (ThingComp comp in target2.AllComps)
+                        if (comp is IComp_OutputCompotable compotable)
+                            if (compotable.TryInsert(from))
+                                return;
                 }
             }
         }
