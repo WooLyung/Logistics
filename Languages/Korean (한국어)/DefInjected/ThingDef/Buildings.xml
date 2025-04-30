@@ -75,6 +75,12 @@
     <OutputInterface.label>출력 인터페이스</OutputInterface.label>
     <OutputInterface.description>물류 창고의 물품을 자동으로 바라보는 호환 가능한 장치로 집어넣는 장치입니다.</OutputInterface.description>
 
+    <RemoteInputInterface.label>원격 입력 인터페이스</RemoteInputInterface.label>
+    <RemoteInputInterface.description>물류 네트워크를 통해 작동하는 원격 인터페이스입니다.</RemoteInputInterface.description>
+
+    <RemoteOutputInterface.label>원격 출력 인터페이스</RemoteOutputInterface.label>
+    <RemoteOutputInterface.description>물류 네트워크를 통해 작동하는 원격 인터페이스입니다.</RemoteOutputInterface.description>
+
     <DeepLogisticsDepot.label>심층 물류 저장소</DeepLogisticsDepot.label>
     <DeepLogisticsDepot.description>수직 물류 승강기를 이용해 지하 깊은 곳까지 물류를 저장하는 대규모 저장소입니다. 한 종류의 물류를 10스택까지 저장할 수 있습니다.</DeepLogisticsDepot.description>
 

@@ -256,11 +256,76 @@
     </ThingDef>
 
     <ThingDef ParentName="BuildingBase">
+        <defName>InputInterface</defName>
+        <label>input interface</label>
+        <thingClass>Logistics.Building_InputInterface</thingClass>
+        <description>Extracts items from compatible devices and inserts them into a connected logistics warehouse.</description>
+        <uiOrder>750</uiOrder>
+        <graphicData>
+            <texPath>Things/Building/InputInterface</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(1.0,1.0)</drawSize>
+        </graphicData>
+        <altitudeLayer>Building</altitudeLayer>
+        <passability>PassThroughOnly</passability>
+        <pathCost>50</pathCost>
+        <blockWind>true</blockWind>
+        <castEdgeShadows>false</castEdgeShadows>
+        <fillPercent>0.5</fillPercent>
+        <canOverlapZones>false</canOverlapZones>
+        <statBases>
+            <WorkToBuild>2500</WorkToBuild>
+            <MaxHitPoints>300</MaxHitPoints>
+            <Flammability>0.5</Flammability>
+        </statBases>
+        <costList>
+            <Steel>120</Steel>
+            <ConveyorBelt>4</ConveyorBelt>
+            <ComponentIndustrial>4</ComponentIndustrial>
+            <LogisticsComponent>1</LogisticsComponent>
+        </costList>
+        <inspectorTabs>
+            <li>Logistics.ITab_LogisticsFilter</li>
+        </inspectorTabs>
+        <size>(1,1)</size>
+        <building>
+            <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+            <fixedStorageSettings>
+                <filter>
+                    <disallowNotEverStorable>true</disallowNotEverStorable>
+                    <categories>
+                        <li>Root</li>
+                    </categories>
+                    <disallowedCategories>
+                        <li>Plants</li>
+                        <li>Buildings</li>
+                    </disallowedCategories>
+                </filter>
+            </fixedStorageSettings>
+        </building>
+        <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+        <designationCategory>LogisticsCategory</designationCategory>
+        <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+        <tickerType>Normal</tickerType>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <shortCircuitInRain>true</shortCircuitInRain>
+                <basePowerConsumption>100</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Flickable" />
+        </comps>
+        <researchPrerequisites>
+            <li>LogisticsInterface</li>
+        </researchPrerequisites>
+    </ThingDef>
+
+    <ThingDef ParentName="BuildingBase">
         <defName>OutputInterface</defName>
         <label>output interface</label>
         <thingClass>Logistics.Building_OutputInterface</thingClass>
         <description>Automatically transfers items from a logistics warehouse into compatible nearby devices that accept them.</description>
-        <uiOrder>750</uiOrder>
+        <uiOrder>751</uiOrder>
         <graphicData>
             <texPath>Things/Building/OutputInterface</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
@@ -321,13 +386,13 @@
     </ThingDef>
 
     <ThingDef ParentName="BuildingBase">
-        <defName>InputInterface</defName>
-        <label>input interface</label>
-        <thingClass>Logistics.Building_InputInterface</thingClass>
-        <description>Extracts items from compatible devices and inserts them into a connected logistics warehouse.</description>
-        <uiOrder>751</uiOrder>
+        <defName>RemoteInputInterface</defName>
+        <label>remote input interface</label>
+        <thingClass>Logistics.Building_RemoteInputInterface</thingClass>
+        <description>A remote interface that operates through the logistics network.</description>
+        <uiOrder>752</uiOrder>
         <graphicData>
-            <texPath>Things/Building/InputInterface</texPath>
+            <texPath>Things/Building/RemoteInputInterface</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>(1.0,1.0)</drawSize>
         </graphicData>
@@ -344,10 +409,11 @@
             <Flammability>0.5</Flammability>
         </statBases>
         <costList>
-            <Steel>120</Steel>
+            <Steel>160</Steel>
             <ConveyorBelt>4</ConveyorBelt>
             <ComponentIndustrial>4</ComponentIndustrial>
-            <LogisticsComponent>1</LogisticsComponent>
+            <LogisticsComponent>2</LogisticsComponent>
+            <NetworkComponent>2</NetworkComponent>
         </costList>
         <inspectorTabs>
             <li>Logistics.ITab_LogisticsFilter</li>
@@ -376,12 +442,78 @@
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>
                 <shortCircuitInRain>true</shortCircuitInRain>
-                <basePowerConsumption>100</basePowerConsumption>
+                <basePowerConsumption>200</basePowerConsumption>
             </li>
             <li Class="CompProperties_Flickable" />
         </comps>
         <researchPrerequisites>
-            <li>LogisticsInterface</li>
+            <li>RemoteTransport</li>
+        </researchPrerequisites>
+    </ThingDef>
+
+    <ThingDef ParentName="BuildingBase">
+        <defName>RemoteOutputInterface</defName>
+        <label>remote output interface</label>
+        <thingClass>Logistics.Building_RemoteOutputInterface</thingClass>
+        <description>A remote interface that operates through the logistics network.</description>
+        <uiOrder>753</uiOrder>
+        <graphicData>
+            <texPath>Things/Building/RemoteOutputInterface</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(1.0,1.0)</drawSize>
+        </graphicData>
+        <altitudeLayer>Building</altitudeLayer>
+        <passability>PassThroughOnly</passability>
+        <pathCost>50</pathCost>
+        <blockWind>true</blockWind>
+        <castEdgeShadows>false</castEdgeShadows>
+        <fillPercent>0.5</fillPercent>
+        <canOverlapZones>false</canOverlapZones>
+        <statBases>
+            <WorkToBuild>2500</WorkToBuild>
+            <MaxHitPoints>300</MaxHitPoints>
+            <Flammability>0.5</Flammability>
+        </statBases>
+        <costList>
+            <Steel>160</Steel>
+            <ConveyorBelt>4</ConveyorBelt>
+            <ComponentIndustrial>4</ComponentIndustrial>
+            <LogisticsComponent>2</LogisticsComponent>
+            <NetworkComponent>2</NetworkComponent>
+        </costList>
+        <inspectorTabs>
+            <li>Logistics.ITab_LogisticsFilter</li>
+        </inspectorTabs>
+        <size>(1,1)</size>
+        <building>
+            <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+            <fixedStorageSettings>
+                <filter>
+                    <disallowNotEverStorable>true</disallowNotEverStorable>
+                    <categories>
+                        <li>Root</li>
+                    </categories>
+                    <disallowedCategories>
+                        <li>Plants</li>
+                        <li>Buildings</li>
+                    </disallowedCategories>
+                </filter>
+            </fixedStorageSettings>
+        </building>
+        <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+        <designationCategory>LogisticsCategory</designationCategory>
+        <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+        <tickerType>Normal</tickerType>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <shortCircuitInRain>true</shortCircuitInRain>
+                <basePowerConsumption>200</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Flickable" />
+        </comps>
+        <researchPrerequisites>
+            <li>RemoteTransport</li>
         </researchPrerequisites>
     </ThingDef>
 </Defs>

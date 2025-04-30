@@ -6,7 +6,7 @@ namespace Logistics
 {
     public class Comp_InputCompatible_MatterCondenser : ThingComp, IComp_InputCompotable
     {
-        public bool TryExtract(Room room)
+        public bool TryExtract(Room room, bool network = true)
         {
             if (!(parent is Building_MatterCondenser))
                 return false;
@@ -18,7 +18,7 @@ namespace Logistics
             ThingDef def = DefDatabase<ThingDef>.GetNamed("MatterCore");
             Thing thing = ThingMaker.MakeThing(def);
 
-            foreach (IStorage storage in room.GetActiveStorages())
+            foreach (IStorage storage in room.GetActiveStorages(network))
             {
                 int remained;
                 if (storage.TryInsert(thing, out remained))

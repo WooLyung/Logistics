@@ -4,6 +4,6 @@ namespace Logistics
 {
     public interface IComp_InputCompotable
     {
-        bool TryExtract(Room room);
+        bool TryExtract(Room room, bool network = true);
     }
 }

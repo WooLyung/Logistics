@@ -131,7 +131,7 @@ namespace Logistics
 
         public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
         {
-            LCache.GetLCache(Map).AddNetworkDevice(this);
+            LCache.GetLCache(Map).RemoveNetworkDevice(this);
             base.DeSpawn(mode);
         }
 
