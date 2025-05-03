@@ -20,6 +20,12 @@
     <LinkTargetCancel>취소</LinkTargetCancel>
     <LinkTargetMessage>링크 대상을 설정했습니다.</LinkTargetMessage>
 
+    <ScanRadiusLabel>탐색 범위 설정</ScanRadiusLabel>
+    <ScanRadiusDesc>주변 물품을 찾는 탐색 범위를 설정합니다.</ScanRadiusDesc>
+    <ScanRadiusEnter>탐색 범위 설정</ScanRadiusEnter>
+    <ScanRadiusMessage>탐색 범위를 설정했습니다.</ScanRadiusMessage>
+
+    <ScanRadius>탐색 범위</ScanRadius>
     <LogisticsFilter>필터</LogisticsFilter>
     <VerticalStorageContents>내용물</VerticalStorageContents>
 </LanguageData>

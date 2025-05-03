@@ -20,6 +20,12 @@
     <LinkTargetCancel>Cancel</LinkTargetCancel>
     <LinkTargetMessage>Link target set.</LinkTargetMessage>
 
+    <ScanRadiusLabel>Set Scan radius</ScanRadiusLabel>
+    <ScanRadiusDesc>Set the radius used to detect nearby items.</ScanRadiusDesc>
+    <ScanRadiusEnter>Set scan radius</ScanRadiusEnter>
+    <ScanRadiusMessage>scan radius set.</ScanRadiusMessage>
+
+    <ScanRadius>Scan radius</ScanRadius>
     <LogisticsFilter>Filter</LogisticsFilter>
     <VerticalStorageContents>Contents</VerticalStorageContents>
 </LanguageData>

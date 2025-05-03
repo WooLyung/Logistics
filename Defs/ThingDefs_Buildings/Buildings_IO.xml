@@ -7,7 +7,7 @@
         <label>logistics input port</label>
         <description>Periodically transfers adjacent items into the connected logistics warehouse. Can send items over long distances via conveyors.</description>
         <graphicData>
-            <texPath>Things/Building/LogisticsInputPort</texPath>
+            <texPath>Things/Building/IO/LogisticsInputPort</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>(1.0, 1.0)</drawSize>
         </graphicData>
@@ -24,6 +24,8 @@
         <castEdgeShadows>true</castEdgeShadows>
         <canOverlapZones>false</canOverlapZones>
         <useHitPoints>true</useHitPoints>
+        <staticSunShadowHeight>1.0</staticSunShadowHeight>
+        <coversFloor>true</coversFloor>
         <tickerType>Normal</tickerType>
         <selectable>true</selectable>
         <altitudeLayer>Building</altitudeLayer>
@@ -60,7 +62,7 @@
         <label>logistics output port</label>
         <description>Periodically expels items from a logistics warehouse. Can transport them over long distances via conveyors.</description>
         <graphicData>
-            <texPath>Things/Building/LogisticsOutputPort</texPath>
+            <texPath>Things/Building/IO/LogisticsOutputPort</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>(1.0, 1.0)</drawSize>
         </graphicData>
@@ -90,6 +92,8 @@
         <canOverlapZones>false</canOverlapZones>
         <useHitPoints>true</useHitPoints>
         <tickerType>Normal</tickerType>
+        <staticSunShadowHeight>1.0</staticSunShadowHeight>
+        <coversFloor>true</coversFloor>
         <selectable>true</selectable>
         <altitudeLayer>Building</altitudeLayer>
         <rotatable>true</rotatable>
@@ -128,7 +132,7 @@
         <label>logistics relay</label>
         <description>Relays transport between logistics warehouses connected via adjacent walls or conveyors. Assigned items are periodically transferred from the input warehouse to the output warehouse.</description>
         <graphicData>
-            <texPath>Things/Building/LogisticsRelay</texPath>
+            <texPath>Things/Building/IO/LogisticsRelay</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>(1.0, 1.0)</drawSize>
         </graphicData>
@@ -158,6 +162,8 @@
         <canOverlapZones>false</canOverlapZones>
         <useHitPoints>true</useHitPoints>
         <tickerType>Normal</tickerType>
+        <staticSunShadowHeight>1.0</staticSunShadowHeight>
+        <coversFloor>true</coversFloor>
         <selectable>true</selectable>
         <altitudeLayer>Building</altitudeLayer>
         <rotatable>true</rotatable>

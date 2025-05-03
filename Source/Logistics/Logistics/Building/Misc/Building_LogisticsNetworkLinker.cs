@@ -66,8 +66,9 @@ namespace Logistics
             {
                 defaultLabel = "LinkTargetLabel".Translate(),
                 defaultDesc = "LinkTargetDesc".Translate(),
-                icon = ContentFinder<Texture2D>.Get("Things/Building/LogisticsSystemController"),
-                action = () => {
+                icon = ContentFinder<Texture2D>.Get("Things/Building/Misc/LogisticsSystemController"),
+                action = () =>
+                {
                     Find.WindowStack.Add(new Dialog_RenameController(this));
                 }
             };

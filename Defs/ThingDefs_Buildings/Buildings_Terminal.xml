@@ -6,7 +6,7 @@
         <thingClass>Logistics.Building_InputTerminal</thingClass>
         <description>Quickly insert items through a terminal within the same logistics system, without moving to the container. The terminal itself must be physically reachable.</description>
         <graphicData>
-            <texPath>Things/Building/LogisticsInputTerminal</texPath>
+            <texPath>Things/Building/Terminal/LogisticsInputTerminal</texPath>
         </graphicData>
         <uiOrder>200</uiOrder>
         <comps>
@@ -36,7 +36,7 @@
         <thingClass>Logistics.Building_OutputTerminal</thingClass>
         <description>Quickly retrieve items through a terminal within the same logistics system, without moving to the container. The terminal itself must be physically reachable.</description>
         <graphicData>
-            <texPath>Things/Building/LogisticsOutputTerminal</texPath>
+            <texPath>Things/Building/Terminal/LogisticsOutputTerminal</texPath>
         </graphicData>
         <uiOrder>201</uiOrder>
         <comps>
@@ -66,7 +66,7 @@
         <thingClass>Logistics.Building_IOTerminal</thingClass>
         <description>A terminal with integrated input and output. More efficient than separate units.</description>
         <graphicData>
-            <texPath>Things/Building/LogisticsIOTerminal</texPath>
+            <texPath>Things/Building/Terminal/LogisticsIOTerminal</texPath>
         </graphicData>
         <uiOrder>202</uiOrder>
         <comps>
@@ -96,7 +96,7 @@
         <thingClass>Logistics.Building_InputTerminal</thingClass>
         <description>A wall-integrated terminal. Can be placed as part of a warehouse wall to allow external access.</description>
         <graphicData>
-            <texPath>Things/Building/LogisticsInputWallTerminal</texPath>
+            <texPath>Things/Building/Terminal/LogisticsInputWallTerminal</texPath>
         </graphicData>
         <uiOrder>300</uiOrder>
         <comps>
@@ -126,7 +126,7 @@
         <thingClass>Logistics.Building_OutputTerminal</thingClass>
         <description>A wall-integrated terminal. Can be placed as part of a warehouse wall to allow external access.</description>
         <graphicData>
-            <texPath>Things/Building/LogisticsOutputWallTerminal</texPath>
+            <texPath>Things/Building/Terminal/LogisticsOutputWallTerminal</texPath>
         </graphicData>
         <uiOrder>301</uiOrder>
         <comps>
@@ -156,7 +156,7 @@
         <thingClass>Logistics.Building_IOTerminal</thingClass>
         <description>A wall-integrated terminal. Can be placed as part of a warehouse wall to allow external access.</description>
         <graphicData>
-            <texPath>Things/Building/LogisticsIOWallTerminal</texPath>
+            <texPath>Things/Building/Terminal/LogisticsIOWallTerminal</texPath>
         </graphicData>
         <uiOrder>302</uiOrder>
         <comps>
@@ -187,7 +187,7 @@
         <label>remote input terminal</label>
         <description>A network-connected terminal. Always provides access to logistics warehouses linked by a linker."</description>
         <graphicData>
-            <texPath>Things/Building/RemoteInputTerminal</texPath>
+            <texPath>Things/Building/Terminal/RemoteInputTerminal</texPath>
         </graphicData>
         <uiOrder>203</uiOrder>
         <comps>
@@ -218,7 +218,7 @@
         <label>remote output terminal</label>
         <description>A network-connected terminal. Always provides access to logistics warehouses linked by a linker."</description>
         <graphicData>
-            <texPath>Things/Building/RemoteOutputTerminal</texPath>
+            <texPath>Things/Building/Terminal/RemoteOutputTerminal</texPath>
         </graphicData>
         <uiOrder>203</uiOrder>
         <comps>
@@ -249,7 +249,7 @@
         <label>remote input/output terminal</label>
         <description>A network-connected terminal. Always provides access to logistics warehouses linked by a linker."</description>
         <graphicData>
-            <texPath>Things/Building/RemoteIOTerminal</texPath>
+            <texPath>Things/Building/Terminal/RemoteIOTerminal</texPath>
         </graphicData>
         <uiOrder>205</uiOrder>
         <comps>

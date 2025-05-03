@@ -105,12 +105,15 @@ namespace Logistics
 
             yield return new Command_Action
             {
-                defaultLabel = "Set Scan Radius",
-                defaultDesc = "Adjust the radius used to detect nearby items.",
+                defaultLabel = "ScanRadiusLabel".Translate(),
+                defaultDesc = "ScanRadiusDesc".Translate(),
                 icon = ContentFinder<Texture2D>.Get("UI/Commands/RenameZone"),
                 action = () =>
                 {
-                    Find.WindowStack.Add(new Dialog_Slider("TEXT", MinScanRadius, MaxScanRadius, x => scanRadius = x, scanRadius));
+                    Find.WindowStack.Add(new Dialog_Slider("ScanRadiusEnter".Translate(), MinScanRadius, MaxScanRadius, x => {
+                        scanRadius = x;
+                        Messages.Message("ScanRadiusMessage".Translate(), MessageTypeDefOf.NeutralEvent);
+                    }, scanRadius));
                 }
             };
         }
@@ -124,7 +127,7 @@ namespace Logistics
                 sb.AppendLine(baseStr);
 
             sb.AppendLine($"{"NetworkID".Translate()}: {networkID}");
-            sb.AppendLine($"{scanRadius:0}");
+            sb.AppendLine($"{"ScanRadius".Translate()}: {scanRadius}");
 
             return sb.ToString().TrimEndNewlines();
         }

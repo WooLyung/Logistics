@@ -5,7 +5,7 @@
         <label>small logistics container</label>
         <description>Items stored in this container can be accessed by various parts of the logistics system. Can store up to 2 stacks of items.</description>
         <graphicData>
-            <texPath>Things/Building/SmallLogisticsContainer</texPath>
+            <texPath>Things/Building/Storage/SmallLogisticsContainer</texPath>
         </graphicData>
         <uiOrder>400</uiOrder>
         <statBases>
@@ -30,7 +30,7 @@
         <label>medium logistics container</label>
         <description>Items stored in this container can be accessed by various parts of the logistics system. Can store up to 3 stacks of items.</description>
         <graphicData>
-            <texPath>Things/Building/MediumLogisticsContainer</texPath>
+            <texPath>Things/Building/Storage/MediumLogisticsContainer</texPath>
         </graphicData>
         <uiOrder>401</uiOrder>
         <statBases>
@@ -56,7 +56,7 @@
         <label>large logistics container</label>
         <description>Items stored in this container can be accessed by various parts of the logistics system. Can store up to 4 stacks of items.</description>
         <graphicData>
-            <texPath>Things/Building/LargeLogisticsContainer</texPath>
+            <texPath>Things/Building/Storage/LargeLogisticsContainer</texPath>
         </graphicData>
         <uiOrder>402</uiOrder>
         <statBases>
@@ -83,7 +83,7 @@
         <label>integrated logistics container</label>
         <description>Stores all types of items within the logistics system. Can store up to 2 stacks of items.</description>
         <graphicData>
-            <texPath>Things/Building/IntegratedLogisticsContainer</texPath>
+            <texPath>Things/Building/Storage/IntegratedLogisticsContainer</texPath>
         </graphicData>
         <uiOrder>403</uiOrder>
         <statBases>
@@ -111,7 +111,7 @@
         <thingClass>Logistics.Building_VerticalStorage</thingClass>
         <description>A massive storage unit that uses a vertical logistics lift to store items deep underground. Can hold up to 10 stacks of a single item type.</description>
         <graphicData>
-            <texPath>Things/Building/DeepLogisticsDepot</texPath>
+            <texPath>Things/Building/Storage/DeepLogisticsDepot</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>(1.0, 1.0)</drawSize>
         </graphicData>

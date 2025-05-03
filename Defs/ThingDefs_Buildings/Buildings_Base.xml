@@ -26,10 +26,6 @@
         <graphicData>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>(1.0, 1.0)</drawSize>
-            <shadowData>
-                <volume>(0.5,0.3,0.7)</volume>
-                <offset>(0,0,-0.15)</offset>
-            </shadowData>
         </graphicData>
         <passability>PassThroughOnly</passability>
         <pathCost>30</pathCost>
